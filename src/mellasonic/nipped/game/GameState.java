@@ -15,7 +15,8 @@ public class GameState implements AppState {
     public Scene getScene(){
         return cur;
     }
-    public void changeParent(Parent to){
-        cur.setRoot(to);
+    public void changeLevel(Level to){
+        curLevel = to;
+        cur.setRoot(curLevel.render());
     }
 }
