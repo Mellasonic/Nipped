@@ -1,7 +1,7 @@
 package mellasonic.nipped.game;
 
-import javafx.scene.Scene;
+import javafx.scene.Parent;
 
 public interface Level {
-    public Scene render();
+    Parent render();
 }

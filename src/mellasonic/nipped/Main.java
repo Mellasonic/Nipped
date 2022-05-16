@@ -16,12 +16,12 @@ public class Main extends Application {
     }
     public void changeState(AppState to){
         curState = to;
-        curState.render();
+        curState.getScene();
     }
 
     @Override
     public void start(Stage stage) throws Exception {
-        curState.render();
+        curState.getScene();
     }
     public static void main(String[] args){
         launch(args);
