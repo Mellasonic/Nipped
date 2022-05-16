@@ -23,11 +23,10 @@ public class Main extends Application {
         Scene s1 = new Scene(p1);
         Scene s2 = new Scene(p2);
 
-        p1.setOnMousePressed(new EventHandler<MouseEvent>(){
+        a.setOnMousePressed(new EventHandler<MouseEvent>(){
             @Override
             public void handle(MouseEvent me){
-                if(100 <= me.getX() && me.getX() <= 300 && 100 <= me.getY() && me.getY() <= 300)
-                    primaryStage.setScene(s2);
+                primaryStage.setScene(s2);
             }
         });
 
