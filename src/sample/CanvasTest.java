@@ -20,11 +20,12 @@ public class CanvasTest extends Application {
         GraphicsContext draw = c.getGraphicsContext2D();
         FileInputStream fs = new FileInputStream("assets/catface.png");
         Image img = new Image(fs);
-        draw.drawImage(img, 0, 0);
+        draw.drawImage(img, 0, 0, 100, 100);
         Pane p = new Pane(c);
-        p.setPrefSize(300, 300);
+        p.setPrefSize(852, 480);
         Scene s = new Scene(p);
         primaryStage.setScene(s);
+        primaryStage.show();
     }
 
     public static void main(String[] args){

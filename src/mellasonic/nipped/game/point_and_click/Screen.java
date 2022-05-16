@@ -4,5 +4,6 @@ import javafx.scene.Node;
 
 public interface Screen {
     void onClick(int x, int y);
+    void onMove(int x, int y);
     Node render();
 }

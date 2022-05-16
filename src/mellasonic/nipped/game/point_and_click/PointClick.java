@@ -5,8 +5,9 @@ import javafx.scene.layout.Pane;
 import mellasonic.nipped.game.Level;
 
 public class PointClick implements Level {
-    Screen curScreen;
-    Pane cur;
+    private Screen curScreen;
+    private final Pane cur;
+
     public PointClick(Screen startScreen){
         curScreen = startScreen;
         cur = new Pane(startScreen.render());

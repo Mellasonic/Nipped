@@ -1,14 +1,19 @@
 package mellasonic.nipped;
 
-import javafx.application.Application;
 import javafx.stage.Stage;
 
-public class Main extends Application {
-    AppState curState;
-    public static Main instance = null;
-    private Main(){}
-    public static Main newApp(){
-        instance = new Main();
+public class Main {
+    private AppState curState;
+    private final Stage stage;
+    private static Main instance = null;
+    public static final int WIDTH = 852, HEIGHT=480;
+
+    private Main(Stage primaryStage, AppState start){
+        this.curState = start;
+        this.stage = primaryStage;
+    }
+    public static Main newApp(Stage primaryStage, AppState start){
+        instance = new Main(primaryStage, start);
         return instance;
     }
     public static Main getApp(){
@@ -16,14 +21,10 @@ public class Main extends Application {
     }
     public void changeState(AppState to){
         curState = to;
-        curState.getScene();
+        stage.setScene(curState.getScene());
     }
-
-    @Override
-    public void start(Stage stage) throws Exception {
-        curState.getScene();
-    }
-    public static void main(String[] args){
-        launch(args);
+    public void render(){
+        stage.setScene(curState.getScene());
+        stage.show();
     }
 }
