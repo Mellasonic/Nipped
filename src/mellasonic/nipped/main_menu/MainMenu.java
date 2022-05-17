@@ -22,6 +22,9 @@ import mellasonic.nipped.interactable.Interactive;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 
+/**
+ * The main menu
+ */
 public class MainMenu implements AppState {
     public static final int BUTTON_WIDTH = (int) (Main.WIDTH / 2.5);
     public static final int BUTTON_HEIGHT = 55;

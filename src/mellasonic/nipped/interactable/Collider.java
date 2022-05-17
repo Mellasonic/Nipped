@@ -3,7 +3,8 @@
  * Daniel Ye, Eric Jin
  * Ms. Krasteva
  * May 17, 2022
- * Default Collider
+ * 1 hour
+ * Daniel Ye: Created Collider collision detection & node return
  */
 
 package mellasonic.nipped.interactable;

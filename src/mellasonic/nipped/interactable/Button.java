@@ -2,7 +2,7 @@
  * Daniel Ye, James Huynh, Eric Jin
  * Version 0.0.1
  * 1 hours
- * Daniel Ye: create button object
+ * Daniel Ye: create image changing and click function
  */
 
 package mellasonic.nipped.interactable;

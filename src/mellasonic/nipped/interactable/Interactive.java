@@ -4,6 +4,8 @@
 * Ms. Krasteva
 * May 17, 2022
 * Interactive objects
+* 10 mins
+* Daniel Ye: Create interface
  */
 
 package mellasonic.nipped.interactable;
