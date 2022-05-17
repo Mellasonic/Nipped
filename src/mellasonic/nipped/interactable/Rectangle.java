@@ -4,6 +4,8 @@
  * Ms. Krasteva
  * May 17, 2022
  * Rectangle Collider
+ * 30 mins
+ * Daniel Ye: Create rectangle logic
  */
 package mellasonic.nipped.interactable;
 

@@ -5,7 +5,7 @@ import mellasonic.nipped.game.Level;
 
 public class Level2 implements Level {
     @Override
-    public Parent render() {
+    public Parent getNode() {
         return null;
     }
 }

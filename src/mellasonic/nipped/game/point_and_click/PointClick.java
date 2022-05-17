@@ -10,15 +10,15 @@ public class PointClick implements Level {
 
     public PointClick(Screen startScreen){
         curScreen = startScreen;
-        cur = new Pane(startScreen.render());
+        cur = new Pane(startScreen.getNode());
     }
     @Override
-    public Parent render() {
+    public Parent getNode() {
         return null;
     }
     public void changeScreen(Screen to){
         curScreen = to;
         cur.getChildren().clear();
-        cur.getChildren().add(to.render());
+        cur.getChildren().add(to.getNode());
     }
 }

@@ -1,52 +1,67 @@
 package mellasonic.nipped.game.point_and_click;
 
 import javafx.scene.Node;
-import javafx.scene.canvas.Canvas;
-import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import mellasonic.nipped.Main;
-import mellasonic.nipped.game.point_and_click.interactable.Interactive;
+import mellasonic.nipped.interactable.Interactive;
 
 import java.util.ArrayList;
 
+/**
+ * A Location in the point and click game
+ */
 public abstract class Location implements Screen{
 
+    /**
+     * A list of interactive objects
+     */
     private final ArrayList<Interactive> objects;
+    /**
+     * The image to display in the background
+     */
     private final Image background;
+    /**
+     * The node of the location
+     */
     private final Pane cur;
 
+    /**
+     * Class constructor
+     * @param background the background of the image
+     * @param interactive the list of interactive objects
+     */
     public Location(Image background, ArrayList<Interactive> interactive){
         this.background = background;
         this.objects = interactive;
-        cur = new Pane(drawElements(-9999, -9999));
+
+        // initialize the current node and draw elements onto it
+        cur = new Pane();
+        drawElements();
     }
 
-    @Override
-    public void onClick(int x, int y) {
-        for(Interactive i : objects){
-            i.onClick(x, y);
-        }
-    }
-
-    private Canvas drawElements(int x, int y){
-        Canvas canvas = new Canvas(Main.WIDTH, Main.HEIGHT);
-        GraphicsContext drawer = canvas.getGraphicsContext2D();
-        drawer.drawImage(background, 0, 0, Main.WIDTH, Main.HEIGHT);
-        for(Interactive i : objects){
-            i.render(drawer, x, y);
-        }
-        return canvas;
-    }
-
-    @Override
-    public void onMove(int x, int y) {
+    /**
+     * Draws elements onto the pane
+     */
+    private void drawElements(){
+        // clear the children
         cur.getChildren().clear();
-        cur.getChildren().add(drawElements(x, y));
+
+        // draw the background onto the screen
+        ImageView backgroundView = new ImageView(background);
+        backgroundView.setFitWidth(Main.WIDTH);
+        backgroundView.setFitHeight(Main.HEIGHT);
+        cur.getChildren().add(backgroundView);
+
+        // add every interactive object onto the pane
+        for(Interactive i : objects){
+            cur.getChildren().add(i.getNode());
+        }
     }
 
     @Override
-    public Node render() {
+    public Node getNode() {
         return cur;
     }
 }
