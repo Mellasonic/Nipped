@@ -1,6 +1,5 @@
 package mellasonic.nipped.game;
 
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import mellasonic.nipped.AppState;
 import mellasonic.nipped.game.point_and_click.Level1;
@@ -10,13 +9,13 @@ public class GameState implements AppState {
     Scene cur;
     public GameState(){
         curLevel = new Level1();
-        cur = new Scene(curLevel.render());
+        cur = new Scene(curLevel.getNode());
     }
     public Scene getScene(){
         return cur;
     }
     public void changeLevel(Level to){
         curLevel = to;
-        cur.setRoot(curLevel.render());
+        cur.setRoot(curLevel.getNode());
     }
 }
