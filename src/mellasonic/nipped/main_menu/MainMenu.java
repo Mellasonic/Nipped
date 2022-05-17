@@ -70,7 +70,7 @@ public class MainMenu implements AppState {
                 quit();
             }
         };
-        Interactive playButton = new Button(getImage("assets/playbutton.png"), getImage("assets/playbutton.png"), BUTTON_WIDTH, BUTTON_HEIGHT) {
+        Interactive playButton = new Button(getImage("assets/playbutton.png"), getImage("assets/playbuttonhover.png"), BUTTON_WIDTH, BUTTON_HEIGHT) {
             @Override
             public void onClick() {
                 play();
