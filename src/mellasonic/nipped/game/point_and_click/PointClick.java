@@ -14,7 +14,7 @@ public class PointClick implements Level {
     }
     @Override
     public Parent getNode() {
-        return null;
+        return cur;
     }
     public void changeScreen(Screen to){
         curScreen = to;
