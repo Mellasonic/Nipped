@@ -8,6 +8,8 @@ import mellasonic.nipped.Main;
 import mellasonic.nipped.interactable.Interactive;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 
 /**
  * A Location in the point and click game
@@ -17,7 +19,7 @@ public abstract class Location implements Screen{
     /**
      * A list of interactive objects
      */
-    private final ArrayList<Interactive> objects;
+    private final List<Interactive> objects;
     /**
      * The image to display in the background
      */
@@ -32,12 +34,21 @@ public abstract class Location implements Screen{
      * @param background the background of the image
      * @param interactive the list of interactive objects
      */
-    public Location(Image background, ArrayList<Interactive> interactive){
+    public Location(Image background, List<Interactive> interactive){
         this.background = background;
         this.objects = interactive;
 
         // initialize the current node and draw elements onto it
         cur = new Pane();
+        drawElements();
+    }
+
+    /**
+     * Adds an interactive object
+     * @param toAdd the interactive objects to add
+     */
+    public void addObjects(Collection<Interactive> toAdd){
+        objects.addAll(toAdd);
         drawElements();
     }
 

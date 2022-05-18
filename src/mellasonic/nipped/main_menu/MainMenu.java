@@ -16,11 +16,15 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import mellasonic.nipped.AppState;
 import mellasonic.nipped.Main;
+import mellasonic.nipped.Tools;
+import mellasonic.nipped.game.GameState;
 import mellasonic.nipped.interactable.Button;
 import mellasonic.nipped.interactable.Interactive;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+
+import static mellasonic.nipped.Tools.getImage;
 
 /**
  * The main menu
@@ -29,21 +33,6 @@ public class MainMenu implements AppState {
     public static final int BUTTON_WIDTH = (int) (Main.WIDTH / 2.5);
     public static final int BUTTON_HEIGHT = 55;
     public static final int BUTTON_START = 235;
-
-    /**
-     * gets an image from a url
-     *
-     * @param url the url to query from
-     * @return the Image at the url
-     */
-    private Image getImage(String url) throws IllegalArgumentException {
-        try {
-            return new Image(new FileInputStream(url));
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-        throw new IllegalArgumentException("Invalid URL!");
-    }
 
     @Override
     public Scene getScene() {
@@ -96,7 +85,8 @@ public class MainMenu implements AppState {
      * Behavior when play button is clicked
      */
     private void play() {
-        System.out.println("play");
+        GameState gameState = new GameState();
+        Main.getApp().changeState(gameState);
     }
 
     /**
