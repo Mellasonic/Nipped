@@ -1,6 +1,6 @@
 /* ICS Final Project Nipped
  2022/05/18
- Time spent: 2 hours
+ Time spent: 2 hour 10 min
 */
 
 /*
@@ -25,6 +25,14 @@
  New features/processing: Add Interactive elements
 */
 
+/*
+ Modification Authors: Daniel
+ Version 1.2
+ 2022/05/19
+ Time spent: 10 min
+ New features/processing: Extrapolate food consume
+*/
+
 package mellasonic.nipped.game.point_and_click;
 
 // imports
@@ -39,7 +47,7 @@ import static mellasonic.nipped.Tools.getImage;
 /**
  * The first room - a living room in level 1 and 3
  */
-public class LivingRoom extends Location {
+public abstract class LivingRoom extends Location {
     /**
      * Class constructor
      */
@@ -50,8 +58,13 @@ public class LivingRoom extends Location {
         addObjects(Arrays.asList(new Food(100, 100) {
             @Override
             public void onClick() {
-                System.out.println("Meow");
+                foodConsumed();
             }
         }));
     }
+
+    /**
+     * called when a piece of food is clicked
+     */
+    public abstract void foodConsumed();
 }

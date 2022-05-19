@@ -1,6 +1,6 @@
 /* ICS Final Project Nipped
  2022/05/16
- Time spent: 10 mins
+ Time spent: 20 min
 */
 
 /*
@@ -17,6 +17,14 @@
  New features/processing: created level 1
 */
 
+/*
+ Modification Authors: Daniel Ye
+ Version 1.2
+ 2022/05/19
+ Time spent: 10 min
+ New features/processing: override on food consume method
+*/
+
 package mellasonic.nipped.game.point_and_click;
 
 import javafx.scene.Scene;
@@ -29,6 +37,20 @@ public class Level1 extends PointClick{
      * Class constructor
      */
     public Level1() {
-        super(new LivingRoom());
+        super();
+        // go to a living room screen
+        changeScreen(new LivingRoom(){
+            @Override
+            public void foodConsumed() {
+                onFoodConsume();
+            }
+        });
+    }
+
+    /**
+     * Called when food is consumed
+     */
+    private void onFoodConsume(){
+        System.out.println("meow");
     }
 }

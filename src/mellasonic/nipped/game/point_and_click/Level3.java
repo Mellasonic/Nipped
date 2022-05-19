@@ -1,6 +1,6 @@
 /* ICS Final Project Nipped
  2022/05/16
- Time spent: 10 mins
+ Time spent: 20 min
 */
 
 /*
@@ -17,6 +17,14 @@
  New features/processing: created Level 3 Template
 */
 
+/*
+ Modification Authors: Daniel Ye
+ Version 1.0.1
+ 2022/05/19
+ Time spent: 10 mins
+ New features/processing: Refactor
+*/
+
 package mellasonic.nipped.game.point_and_click;
 
 /**
@@ -24,6 +32,6 @@ package mellasonic.nipped.game.point_and_click;
  */
 public class Level3 extends PointClick{
     public Level3() {
-        super(null);
+        super();
     }
 }

@@ -1,6 +1,6 @@
 /* ICS Final Project Nipped
  2022/05/16
- Time spent: 20 mins
+ Time spent: 30 min
 */
 
 /*
@@ -15,6 +15,14 @@
  2022/05/16
  Time spent: 20 mins
  New features/processing: created class, implement methods, implement changing screen
+*/
+
+/*
+ Modification Authors: Daniel Ye
+ Version 1.2
+ 2022/05/19
+ Time spent: 10 min
+ New features/processing: remove need for starting screen
 */
 
 package mellasonic.nipped.game.point_and_click;
@@ -38,11 +46,9 @@ public class PointClick implements Level {
 
     /**
      * Class constructor
-     * @param startScreen the starting screen
      */
-    public PointClick(Screen startScreen){
-        curScreen = startScreen;
-        cur = new Pane(startScreen.getNode());
+    public PointClick(){
+        cur = new Pane();
     }
 
     @Override
