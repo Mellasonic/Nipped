@@ -19,6 +19,9 @@
 
 package mellasonic.nipped.game;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Singleton class for the current game data
  */
@@ -29,37 +32,33 @@ public class GameData {
     private static GameData instance;
 
     /**
-     * Number of foods consumes
+     * Map of foods consumed
      */
-    private int numFood;
+    Map<String, Boolean> consumed;
 
     /**
      * Private class constructor - there should only be one instance
      */
     private GameData(){
-        numFood = 0;
+        consumed = new HashMap<>();
     }
 
     /**
-     * @return the amount of food consumed
+     * Returns whether a particular piece of food was consumed
+     * @param id the id of the desired food
+     * @return whether or not it was consumed
      */
-    public int getNumFood() {
-        return numFood;
+    public boolean isConsumed(String id) {
+        if(!consumed.containsKey(id)) consumed.put(id, false);
+        return consumed.get(id);
     }
 
     /**
-     * Sets the amount of food consumer
-     * @param numFood the amount of food consumed
+     * Consumes food, setting consumed to true
+     * @param id the id of the piece of food
      */
-    public void setNumFood(int numFood) {
-        this.numFood = numFood;
-    }
-
-    /**
-     * consumes a piece of food - increasing the amount of food
-     */
-    public void consume(){
-        setNumFood(getNumFood() + 1);
+    public void consume(String id){
+        consumed.put(id, true);
     }
 
     /**
