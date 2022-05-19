@@ -28,10 +28,8 @@
 package mellasonic.nipped.game.point_and_click;
 
 // imports
-import javafx.scene.image.Image;
+
 import mellasonic.nipped.game.point_and_click.interactives.Food;
-import mellasonic.nipped.interactable.Interactive;
-import mellasonic.nipped.interactable.Rectangle;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -41,7 +39,7 @@ import static mellasonic.nipped.Tools.getImage;
 /**
  * The first room - a living room in level 1 and 3
  */
-public class LivingRoom extends Location{
+public class LivingRoom extends Location {
     /**
      * Class constructor
      */
@@ -49,7 +47,7 @@ public class LivingRoom extends Location{
         super(getImage("assets/livingroom.png"), new ArrayList<>());
 
         // add objects to the list of interactives
-        addObjects(Arrays.asList(new Food(100, 100){
+        addObjects(Arrays.asList(new Food(100, 100) {
             @Override
             public void onClick() {
                 System.out.println("Meow");
