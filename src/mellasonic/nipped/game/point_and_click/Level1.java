@@ -27,7 +27,7 @@
 
 package mellasonic.nipped.game.point_and_click;
 
-import javafx.scene.Scene;
+import mellasonic.nipped.game.point_and_click.locations.LivingRoom;
 
 /**
  * the first level

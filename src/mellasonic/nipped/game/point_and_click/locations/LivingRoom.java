@@ -33,7 +33,7 @@
  New features/processing: Extrapolate food consume
 */
 
-package mellasonic.nipped.game.point_and_click;
+package mellasonic.nipped.game.point_and_click.locations;
 
 // imports
 

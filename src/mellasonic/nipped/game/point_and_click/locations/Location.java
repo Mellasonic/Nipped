@@ -25,13 +25,14 @@
  New features/processing: Allow adding multiple objects at once + re-rendering
 */
 
-package mellasonic.nipped.game.point_and_click;
+package mellasonic.nipped.game.point_and_click.locations;
 
 import javafx.scene.Node;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import mellasonic.nipped.Main;
+import mellasonic.nipped.game.point_and_click.Screen;
 import mellasonic.nipped.interactable.Interactive;
 
 import java.util.ArrayList;
@@ -41,7 +42,7 @@ import java.util.List;
 /**
  * A Location in the point and click game
  */
-public abstract class Location implements Screen{
+public abstract class Location implements Screen {
 
     /**
      * A list of interactive objects
