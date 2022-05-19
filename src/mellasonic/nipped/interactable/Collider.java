@@ -1,11 +1,21 @@
+/* ICS Final Project Nipped
+ 2022/05/17
+ Time spent: 30 mins
+*/
+
 /*
- * Version 0.0.01
- * Daniel Ye, Eric Jin
- * Ms. Krasteva
- * May 17, 2022
- * 1 hour
- * Daniel Ye: Created Collider collision detection & node return
- */
+ Nipped is a java game with three different levels.
+ Version 1.1 - 17 May 2022
+ Authors: Daniel Ye, James Huynh, Eric Jin
+*/
+
+/*
+ Modification Authors: Daniel Ye
+ Version 1.1
+ 2022/05/17
+ Time spent: 30 mins
+ New features/processing: Collider collision detection, override methods
+*/
 
 package mellasonic.nipped.interactable;
 
@@ -75,9 +85,7 @@ public abstract class Collider implements Interactive{
         });
 
         // when the mouse exits the node, unhighlight it
-        view.setOnMouseExited(me -> {
-            view.setImage(normal);
-        });
+        view.setOnMouseExited(me -> view.setImage(normal));
 
         view.setOnMouseClicked(me -> {
             // perform the onClick function when the node is considered to be "clicked"

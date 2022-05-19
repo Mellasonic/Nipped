@@ -1,12 +1,22 @@
+/* ICS Final Project Nipped
+ 2022/05/17
+ Time spent: 10 mins
+*/
+
 /*
- * Version 0.0.01
- * Daniel Ye, Eric Jin
- * Ms. Krasteva
- * May 17, 2022
- * Rectangle Collider
- * 30 mins
- * Daniel Ye: Create rectangle logic
- */
+ Nipped is a java game with three different levels.
+ Version 1.1 - 17 May 2022
+ Authors: Daniel Ye, James Huynh, Eric Jin
+*/
+
+/*
+ Modification Authors: Daniel Ye
+ Version 1.1
+ 2022/05/17
+ Time spent: 10 mins
+ New features/processing: Created Rectangle, override logic
+*/
+
 package mellasonic.nipped.interactable;
 
 // imports

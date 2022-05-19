@@ -1,9 +1,21 @@
+/* ICS Final Project Nipped
+ 2022/05/17
+ Time spent: 20 mins
+*/
+
 /*
- * Daniel Ye, James Huynh, Eric Jin
- * Version 0.0.1
- * 1 hours
- * Daniel Ye: create image changing and click function
- */
+ Nipped is a java game with three different levels.
+ Version 1.1 - 17 May 2022
+ Authors: Daniel Ye, James Huynh, Eric Jin
+*/
+
+/*
+ Modification Authors: Daniel Ye
+ Version 1.1
+ 2022/05/17
+ Time spent: 20 mins
+ New features/processing: create button image, add hover animation & click functionality
+*/
 
 package mellasonic.nipped.interactable;
 
@@ -35,15 +47,9 @@ public abstract class Button implements Interactive{
         ret.setFitHeight(height);
 
         // set events to handle
-        ret.setOnMouseEntered(me -> {
-            ret.setImage(onHover);
-        });
-        ret.setOnMouseExited(me -> {
-            ret.setImage(normal);
-        });
-        ret.setOnMouseClicked(me -> {
-            onClick();
-        });
+        ret.setOnMouseEntered(me -> ret.setImage(onHover));
+        ret.setOnMouseExited(me -> ret.setImage(normal));
+        ret.setOnMouseClicked(me -> onClick());
     }
 
     @Override
