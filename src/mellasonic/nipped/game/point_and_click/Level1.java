@@ -68,6 +68,7 @@ public class Level1 extends PointClick{
                 changeScreen(to);
             }
         };
+
         start.setLeft(secondary);
         secondary.setLeft(start);
         // go to a living room screen
