@@ -1,6 +1,6 @@
 /* ICS Final Project Nipped
  2022/05/18
- Time spent: 1 hour 10 mins
+ Time spent: 1 hour 20 min
 */
 
 /*
@@ -23,6 +23,14 @@
  2022/05/18
  Time spent: 10 mins
  New features/processing: Allow adding multiple objects at once + re-rendering
+*/
+
+/*
+ Modification Authors: Daniel Ye
+ Version 1.3
+ 2022/05/20
+ Time spent: 10 min
+ New features/processing: Add request location change
 */
 
 package mellasonic.nipped.game.point_and_click.locations;
@@ -103,4 +111,10 @@ public abstract class Location implements Screen {
     public Node getNode() {
         return cur;
     }
+
+    /**
+     * Requests a change in screen
+     * @param to the screen to change to
+     */
+    public abstract void screenChange(Screen to);
 }
