@@ -1,11 +1,11 @@
 /* ICS Final Project Nipped
  2022/05/16
- Time spent: 20 min
+ Time spent: 30 min
 */
 
 /*
  Nipped is a java game with three different levels.
- Version 1.1 - 16 May 2022
+ Version 1.3 - 20 May 2022
  Authors: Daniel Ye, James Huynh, Eric Jin
 */
 
@@ -25,9 +25,18 @@
  New features/processing: override on food consume method
 */
 
+/*
+ Modification Authors: Daniel Ye
+ Version 1.3
+ 2022/05/20
+ Time spent: 10 min
+ New features/processing: extrapolate living room
+*/
+
 package mellasonic.nipped.game.point_and_click;
 
 import mellasonic.nipped.game.point_and_click.locations.LivingRoom;
+import mellasonic.nipped.game.point_and_click.locations.Location;
 
 /**
  * the first level
@@ -38,13 +47,18 @@ public class Level1 extends PointClick{
      */
     public Level1() {
         super();
-        // go to a living room screen
-        changeScreen(new LivingRoom(){
+        Location start = new LivingRoom(){
+            @Override
+            public void screenChange(Screen to) {
+                changeScreen(to);
+            }
             @Override
             public void foodConsumed() {
                 onFoodConsume();
             }
-        });
+        };
+        // go to a living room screen
+        changeScreen(start);
     }
 
     /**
