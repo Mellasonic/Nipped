@@ -46,7 +46,6 @@ public class Main {
      * Class Constructor
      * @param primaryStage The screen
      * @param start the starting application state
-     * @implNote To implement the singleton pattern, the constructor is private - classes cannot easily make an instance of it
      */
     private Main(Stage primaryStage, AppState start){
         this.curState = start;
