@@ -60,6 +60,7 @@ public abstract class Collider implements Interactive{
     }
 
     /**
+     * returns whether or not the cursor hits the collider
      * @param x x coordinate relative to bounding box
      * @param y y coordinate relative to bounding box
      * @return whether or not the cursor is considered to be within the "interactive range" of the object

@@ -56,6 +56,9 @@ import static mellasonic.nipped.Tools.getImage;
  * The first room - a living room in level 1 and 3
  */
 public abstract class LivingRoom extends Location {
+    /**
+     * Rooms in the various directions of the current location
+     */
     private Location left, right, down;
 
     /**

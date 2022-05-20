@@ -31,6 +31,9 @@ package mellasonic.nipped.game.point_and_click;
  * The third level
  */
 public class Level3 extends PointClick{
+    /**
+     * Class Constructor
+     */
     public Level3() {
         super();
     }

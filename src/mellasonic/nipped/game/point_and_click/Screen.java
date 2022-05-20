@@ -26,6 +26,7 @@ import javafx.scene.Node;
  */
 public interface Screen {
     /**
+     * returns the node representation of the screen
      * @return the node of the current screen
      */
     Node getNode();
