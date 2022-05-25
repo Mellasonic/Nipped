@@ -45,7 +45,9 @@ package mellasonic.nipped.game.point_and_click.locations;
 
 // imports
 
-import mellasonic.nipped.game.point_and_click.interactives.Food;
+import mellasonic.nipped.Main;
+import mellasonic.nipped.game.point_and_click.interactives.Button;
+import mellasonic.nipped.game.point_and_click.interactives.Direction;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -57,9 +59,13 @@ import static mellasonic.nipped.Tools.getImage;
  */
 public abstract class LivingRoom extends Location {
     /**
-     * Rooms in the various directions of the current location
+     * The kitchen
      */
-    private Location left, right, down;
+    private Location kitchen;
+    /**
+     * the bedroom
+     */
+    private Location bedroom;
 
     /**
      * Class constructor
@@ -68,42 +74,35 @@ public abstract class LivingRoom extends Location {
         super(getImage("assets/livingroom.png"), new ArrayList<>());
 
         // add objects to the list of interactives
-        addObjects(Arrays.asList(new Food(100, 100) {
+        addObjects(Arrays.asList(new Button(Direction.L, 20, Main.HEIGHT / 2 - Button.HEIGHT / 2) {
             @Override
             public void onClick() {
-                foodConsumed();
+                assert kitchen != null;
+                screenChange(kitchen);
             }
-        }, new Food(0, 300){
+        }, new Button(Direction.U, Main.WIDTH / 2 - Button.WIDTH / 2, 20){
             @Override
             public void onClick() {
-                assert left != null;
-                screenChange(left);
+                assert bedroom != null;
+                screenChange(bedroom);
             }
         }));
     }
 
     /**
      * Set the location to the left
-     * @param left the location to the left
+     * @param kitchen the location to the left
      */
-    public void setLeft(Location left) {
-        this.left = left;
+    public void setKitchen(Location kitchen) {
+        this.kitchen = kitchen;
     }
 
     /**
      * Set the location to the right
-     * @param right the location to the right
+     * @param bedroom the location to the right
      */
-    public void setRight(Location right) {
-        this.right = right;
-    }
-
-    /**
-     * Set the location to the bottom
-     * @param down the location to the bottom
-     */
-    public void setDown(Location down) {
-        this.down = down;
+    public void setBedroom(Location bedroom) {
+        this.bedroom = bedroom;
     }
 
     /**
