@@ -32,6 +32,11 @@ public class Driver extends Application {
         Main m = Main.newApp(stage, new MainMenu());
         m.render();
     }
+
+    /**
+     * main method
+     * @param args args
+     */
     public static void main(String[] args){
         launch(args);
     }

@@ -20,5 +20,8 @@
 package mellasonic.nipped.game.point_and_click.interactives;
 
 public enum Direction {
+    /**
+     * single letter directions
+     */
     D, L, R, U
 }
