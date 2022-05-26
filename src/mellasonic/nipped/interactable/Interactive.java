@@ -32,6 +32,7 @@ public interface Interactive {
     void onClick();
 
     /**
+     * returns a node representation of the object
      * @return the node representation of this interactive object
      */
     Node getNode();
