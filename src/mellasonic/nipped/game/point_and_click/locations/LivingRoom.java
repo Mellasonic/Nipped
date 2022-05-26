@@ -37,14 +37,17 @@
  Modification Authors: Daniel
  Version 1.3
  2022/05/20
- Time spent: 20 min
- New features/processing: allow setting locations & moving to them
+ Time spent: 30 min
+ New features/processing: allow setting locations & moving to them, further extrapolate food clicking, add food
 */
 
 package mellasonic.nipped.game.point_and_click.locations;
 
 // imports
 
+import mellasonic.nipped.Main;
+import mellasonic.nipped.game.point_and_click.interactives.Button;
+import mellasonic.nipped.game.point_and_click.interactives.Direction;
 import mellasonic.nipped.game.point_and_click.interactives.Food;
 
 import java.util.ArrayList;
@@ -57,9 +60,13 @@ import static mellasonic.nipped.Tools.getImage;
  */
 public abstract class LivingRoom extends Location {
     /**
-     * Rooms in the various directions of the current location
+     * The kitchen
      */
-    private Location left, right, down;
+    private Location kitchen;
+    /**
+     * the bedroom
+     */
+    private Location bedroom;
 
     /**
      * Class constructor
@@ -68,42 +75,59 @@ public abstract class LivingRoom extends Location {
         super(getImage("assets/livingroom.png"), new ArrayList<>());
 
         // add objects to the list of interactives
-        addObjects(Arrays.asList(new Food(100, 100) {
+        addObjects(Arrays.asList(new Button(Direction.L, 20, Main.HEIGHT / 2 - Button.HEIGHT / 2) {
             @Override
             public void onClick() {
-                foodConsumed();
+                assert kitchen != null;
+                screenChange(kitchen);
             }
-        }, new Food(0, 300){
+        }, new Button(Direction.U, Main.WIDTH / 2 - Button.WIDTH / 2, 20) {
             @Override
             public void onClick() {
-                assert left != null;
-                screenChange(left);
+                assert bedroom != null;
+                screenChange(bedroom);
             }
-        }));
+        }, new Food(600, 75) {
+            @Override
+            public void onClick() {
+                onFoodClicked(this);
+            }
+        }, new Food(650, 235) {
+            @Override
+            public void onClick() {
+                onFoodClicked(this);
+            }
+        }, new Food(300, 290){
+             @Override
+             public void onClick() {
+                 onFoodClicked(this);
+             }
+         }
+        ));
     }
 
     /**
      * Set the location to the left
-     * @param left the location to the left
+     * @param kitchen the location to the left
      */
-    public void setLeft(Location left) {
-        this.left = left;
+    public void setKitchen(Location kitchen) {
+        this.kitchen = kitchen;
     }
 
     /**
      * Set the location to the right
-     * @param right the location to the right
+     * @param bedroom the location to the right
      */
-    public void setRight(Location right) {
-        this.right = right;
+    public void setBedroom(Location bedroom) {
+        this.bedroom = bedroom;
     }
 
     /**
-     * Set the location to the bottom
-     * @param down the location to the bottom
+     * Handles food clicking
+     * @param clicked the food clicked
      */
-    public void setDown(Location down) {
-        this.down = down;
+    private void onFoodClicked(Food clicked){
+        foodConsumed();
     }
 
     /**

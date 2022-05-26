@@ -41,6 +41,10 @@ public class Main {
      * Dimensions of the screen
      */
     public static final int WIDTH = 852, HEIGHT=480;
+    /**
+     * Debugging variable
+     */
+    public static final boolean DEBUG_MOUSE = true;
 
     /**
      * Class Constructor
@@ -64,6 +68,7 @@ public class Main {
     }
 
     /**
+     * instance getter method
      * @return the instance of the application
      */
     public static Main getApp(){
@@ -77,6 +82,9 @@ public class Main {
     public void changeState(AppState to){
         curState = to;
         stage.setScene(curState.getScene());
+        if(DEBUG_MOUSE){
+            stage.getScene().getRoot().setOnMousePressed(me -> System.out.println(me.getX() + " " + me.getY()));
+        }
     }
 
     /**

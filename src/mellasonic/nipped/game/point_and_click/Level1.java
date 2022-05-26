@@ -1,11 +1,11 @@
 /* ICS Final Project Nipped
- 2022/05/16
- Time spent: 30 min
+ 2022/05/26
+ Time spent: 1 hour
 */
 
 /*
  Nipped is a java game with three different levels.
- Version 1.3 - 20 May 2022
+ Version 1.4 - 26 May 2022
  Authors: Daniel Ye, James Huynh, Eric Jin
 */
 
@@ -33,10 +33,20 @@
  New features/processing: extrapolate living room
 */
 
+/*
+ Modification Authors: Daniel Ye
+ Version 1.4
+ 2022/05/26
+ Time spent: 20 min
+ New features/processing: add locations
+*/
+
 package mellasonic.nipped.game.point_and_click;
 
+import mellasonic.nipped.Tools;
+import mellasonic.nipped.game.point_and_click.locations.Bedroom;
+import mellasonic.nipped.game.point_and_click.locations.Kitchen;
 import mellasonic.nipped.game.point_and_click.locations.LivingRoom;
-import mellasonic.nipped.game.point_and_click.locations.Location;
 
 /**
  * the first level
@@ -47,7 +57,9 @@ public class Level1 extends PointClick{
      */
     public Level1() {
         super();
-        LivingRoom start = new LivingRoom(){
+
+        // initialize rooms
+        LivingRoom living = new LivingRoom(){
             @Override
             public void screenChange(Screen to) {
                 changeScreen(to);
@@ -57,22 +69,27 @@ public class Level1 extends PointClick{
                 onFoodConsume();
             }
         };
-        LivingRoom secondary = new LivingRoom() {
+        Kitchen kitchen = new Kitchen() {
             @Override
-            public void foodConsumed() {
-                System.out.println("Meow!");
-            }
-
+            public void foodConsumed() {onFoodConsume();}
             @Override
-            public void screenChange(Screen to) {
-                changeScreen(to);
-            }
+            public void screenChange(Screen to) {changeScreen(to);}
+        };
+        Bedroom bedroom = new Bedroom() {
+            @Override
+            public void foodConsumed() { onFoodConsume(); }
+            @Override
+            public void screenChange(Screen to) { changeScreen(to); }
         };
 
-        start.setLeft(secondary);
-        secondary.setLeft(start);
+        // link rooms to each other
+        living.setKitchen(kitchen);
+        living.setBedroom(bedroom);
+        kitchen.setLiving(living);
+        bedroom.setLiving(living);
+
         // go to a living room screen
-        changeScreen(start);
+        changeScreen(living);
     }
 
     /**

@@ -26,6 +26,7 @@ import javafx.scene.Parent;
  */
 public interface Level {
     /**
+     * node getter method
      * @return the screen/mini application of the current level
      */
     Parent getNode();
