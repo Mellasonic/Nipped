@@ -67,6 +67,10 @@ public abstract class LivingRoom extends Location implements FoodLocation{
      * the bedroom
      */
     private Location bedroom;
+    /**
+     * the door
+     */
+    private Location door;
 
     /**
      * Class constructor
@@ -87,6 +91,12 @@ public abstract class LivingRoom extends Location implements FoodLocation{
                 assert bedroom != null;
                 screenChange(bedroom);
             }
+        }, new Button(Direction.R, Main.WIDTH - Button.WIDTH - 20, Main.HEIGHT / 2 - Button.HEIGHT) {
+            @Override
+            public void onClick() {
+                assert door != null;
+                screenChange(door);
+            }
         }, new Food(600, 75) {
             @Override
             public void onClick() {
@@ -104,6 +114,14 @@ public abstract class LivingRoom extends Location implements FoodLocation{
              }
          }
         ));
+    }
+
+    /**
+     * set the location to the right
+     * @param door the location to the right (the door)
+     */
+    public void setDoor(Location door) {
+        this.door = door;
     }
 
     /**

@@ -39,6 +39,10 @@ public abstract class Bedroom extends Location{
      * the living room
      */
     private Location living;
+    /**
+     * the attic
+     */
+    private Location attic;
 
     /**
      * Class constructor
@@ -48,14 +52,28 @@ public abstract class Bedroom extends Location{
         super(Tools.getImage("assets/bedroom.png"), new ArrayList<>());
 
         addObjects(Arrays.asList(
-                new Button(Direction.D, Main.HEIGHT - Button.HEIGHT - 20, Main.WIDTH / 2 - Button.WIDTH / 2) {
+                new Button(Direction.D, Main.WIDTH / 2 - Button.WIDTH / 2, Main.HEIGHT - Button.HEIGHT - 20) {
                     @Override
                     public void onClick() {
                         assert living != null;
                         screenChange(living);
                     }
+                }, new Button(Direction.U, Main.WIDTH / 2 - Button.WIDTH / 2, 20){
+                    @Override
+                    public void onClick() {
+                        assert attic != null;
+                        screenChange(attic);
+                    }
                 }
         ));
+    }
+
+    /**
+     * sets the attic
+     * @param attic the location of the attic
+     */
+    public void setAttic(Location attic) {
+        this.attic = attic;
     }
 
     /**

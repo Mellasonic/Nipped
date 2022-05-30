@@ -1,7 +1,10 @@
 package mellasonic.nipped.game.point_and_click.locations;
 
 import javafx.scene.image.Image;
+import mellasonic.nipped.Main;
 import mellasonic.nipped.Tools;
+import mellasonic.nipped.game.point_and_click.interactives.Button;
+import mellasonic.nipped.game.point_and_click.interactives.Direction;
 import mellasonic.nipped.interactable.Interactive;
 import mellasonic.nipped.interactable.Rectangle;
 
@@ -17,6 +20,10 @@ public abstract class Door extends Location{
      * whether or not the rest of the game is finished
      */
     private boolean finished = false;
+    /**
+     * the living room
+     */
+    private Location living;
 
     /**
      * Class constructor
@@ -26,17 +33,38 @@ public abstract class Door extends Location{
         // a ghost collider for detecting the door
         Image ghostCollide = Tools.getImage("assets/invisible.png");
         addObjects(Arrays.asList(
-                new Rectangle(ghostCollide, ghostCollide, 0, 0, 10, 10) {
+                new Rectangle(ghostCollide, ghostCollide, 368, 144, 138, 251) {
                     @Override
                     public void onClick() {
-                        if(finished){
+                        if (finished) {
                             setBackground(Tools.getImage("assets/dooropen.png"));
-                            System.out.println("clicked");
+                            onDoorClicked();
+                        } else {
+                            System.out.println("not done yet");
                         }
+                    }
+                }, new Button(Direction.L, 20, Main.HEIGHT / 2 - Button.HEIGHT / 2) {
+                    @Override
+                    public void onClick() {
+                        assert living != null;
+                        screenChange(living);
                     }
                 }
         ));
     }
+
+    /**
+     * sets the living room
+     * @param living the living room
+     */
+    public void setLiving(Location living) {
+        this.living = living;
+    }
+
+    /**
+     * called when the door is clicked **and** the game is supposedly done
+     */
+    public abstract void onDoorClicked();
 
     /**
      * enables the door - should be called when all other activities have been completed
