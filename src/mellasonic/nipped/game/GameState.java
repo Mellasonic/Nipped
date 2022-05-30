@@ -40,7 +40,12 @@ public class GameState implements AppState {
      * Class constructor
      */
     public GameState(){
-        curLevel = new Level1();
+        curLevel = new Level1(){
+            @Override
+            public void nextLevel() {
+                System.out.println("Level 2");
+            }
+        };
         cur = new Scene(curLevel.getNode());
     }
     @Override

@@ -21,6 +21,10 @@ public abstract class Door extends Location{
      */
     private boolean finished = false;
     /**
+     * whether or not the door has already been opened
+     */
+    private boolean doorOpened = false;
+    /**
      * the living room
      */
     private Location living;
@@ -36,10 +40,15 @@ public abstract class Door extends Location{
                 new Rectangle(ghostCollide, ghostCollide, 368, 144, 138, 251) {
                     @Override
                     public void onClick() {
-                        if (finished) {
-                            setBackground(Tools.getImage("assets/dooropen.png"));
+                        if(doorOpened) {
+                            // if the door was opened and is clicked again, continue
                             onDoorClicked();
+                        } else if (finished) {
+                            // open the door if ready
+                            setBackground(Tools.getImage("assets/dooropen.png"));
+                            doorOpened = true;
                         } else {
+                            // do nothing
                             System.out.println("not done yet");
                         }
                     }

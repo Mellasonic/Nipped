@@ -49,7 +49,7 @@ import mellasonic.nipped.game.point_and_click.locations.*;
 /**
  * the first level
  */
-public class Level1 extends PointClick{
+public abstract class Level1 extends PointClick{
     /**
      * Class constructor
      */
@@ -96,7 +96,7 @@ public class Level1 extends PointClick{
         Door door = new Door() {
             @Override
             public void onDoorClicked() {
-                System.out.println("Level 1 finished");
+                nextLevel();
             }
             @Override
             public void screenChange(Screen to) {
@@ -118,9 +118,6 @@ public class Level1 extends PointClick{
 
         // go to a living room screen
         changeScreen(living);
-
-        // TODO testing code
-        door.enable();
     }
 
     /**

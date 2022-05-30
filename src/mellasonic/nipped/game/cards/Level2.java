@@ -25,7 +25,7 @@ import mellasonic.nipped.game.Level;
 /**
  * Level 2
  */
-public class Level2 implements Level {
+public abstract class Level2 implements Level {
     @Override
     public Parent getNode() {
         return null;

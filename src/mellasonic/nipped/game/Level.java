@@ -30,4 +30,9 @@ public interface Level {
      * @return the screen/mini application of the current level
      */
     Parent getNode();
+
+    /**
+     * moves to the next level
+     */
+    void nextLevel();
 }

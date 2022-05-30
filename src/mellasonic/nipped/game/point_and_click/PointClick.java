@@ -34,7 +34,7 @@ import mellasonic.nipped.game.Level;
 /**
  * A point and click level
  */
-public class PointClick implements Level {
+public abstract class PointClick implements Level {
     /**
      * The current screen/location of the level
      */
