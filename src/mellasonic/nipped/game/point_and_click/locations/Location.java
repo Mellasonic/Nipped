@@ -59,7 +59,7 @@ public abstract class Location implements Screen {
     /**
      * The image to display in the background
      */
-    private final Image background;
+    private Image background;
     /**
      * The node of the location
      */
@@ -85,6 +85,15 @@ public abstract class Location implements Screen {
      */
     public void addObjects(Collection<Interactive> toAdd){
         objects.addAll(toAdd);
+        drawElements();
+    }
+
+    /**
+     * sets the background
+     * @param to the image to set the background to
+     */
+    public void setBackground(Image to){
+        background = to;
         drawElements();
     }
 

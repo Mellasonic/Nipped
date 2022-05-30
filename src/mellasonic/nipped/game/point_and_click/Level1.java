@@ -46,6 +46,7 @@ package mellasonic.nipped.game.point_and_click;
 import mellasonic.nipped.Tools;
 import mellasonic.nipped.game.point_and_click.locations.Bedroom;
 import mellasonic.nipped.game.point_and_click.locations.Kitchen;
+import mellasonic.nipped.game.point_and_click.locations.KitchenDrawer;
 import mellasonic.nipped.game.point_and_click.locations.LivingRoom;
 
 /**
@@ -77,6 +78,10 @@ public class Level1 extends PointClick{
         };
         Bedroom bedroom = new Bedroom() {
             @Override
+            public void screenChange(Screen to) { changeScreen(to); }
+        };
+        KitchenDrawer kDrawer = new KitchenDrawer() {
+            @Override
             public void foodConsumed() { onFoodConsume(); }
             @Override
             public void screenChange(Screen to) { changeScreen(to); }
@@ -86,6 +91,8 @@ public class Level1 extends PointClick{
         living.setKitchen(kitchen);
         living.setBedroom(bedroom);
         kitchen.setLiving(living);
+        kitchen.setDrawer(kDrawer);
+        kDrawer.setPrev(kitchen);
         bedroom.setLiving(living);
 
         // go to a living room screen

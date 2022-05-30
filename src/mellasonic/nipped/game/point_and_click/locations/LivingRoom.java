@@ -58,7 +58,7 @@ import static mellasonic.nipped.Tools.getImage;
 /**
  * The first room - a living room in level 1 and 3
  */
-public abstract class LivingRoom extends Location {
+public abstract class LivingRoom extends Location implements FoodLocation{
     /**
      * The kitchen
      */
@@ -121,17 +121,4 @@ public abstract class LivingRoom extends Location {
     public void setBedroom(Location bedroom) {
         this.bedroom = bedroom;
     }
-
-    /**
-     * Handles food clicking
-     * @param clicked the food clicked
-     */
-    private void onFoodClicked(Food clicked){
-        foodConsumed();
-    }
-
-    /**
-     * called when a piece of food is clicked
-     */
-    public abstract void foodConsumed();
 }

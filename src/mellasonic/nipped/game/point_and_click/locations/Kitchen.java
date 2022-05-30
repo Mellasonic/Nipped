@@ -19,27 +19,29 @@
 
 package mellasonic.nipped.game.point_and_click.locations;
 
-import javafx.scene.image.Image;
 import mellasonic.nipped.Main;
 import mellasonic.nipped.Tools;
 import mellasonic.nipped.game.point_and_click.interactives.Button;
 import mellasonic.nipped.game.point_and_click.interactives.Direction;
 import mellasonic.nipped.game.point_and_click.interactives.Food;
-import mellasonic.nipped.interactable.Interactive;
+import mellasonic.nipped.game.point_and_click.interactives.Invisible;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 /**
  * Kitchen room
  */
-public abstract class Kitchen extends Location{
+public abstract class Kitchen extends Location implements FoodLocation{
 
     /**
      * The living room
      */
     private Location living;
+    /**
+     * The drawer
+     */
+    private Location drawer;
 
     /**
      * Class constructor
@@ -55,6 +57,13 @@ public abstract class Kitchen extends Location{
                         screenChange(living);
                     }
                 },
+                new Button(Direction.L, 20, Main.HEIGHT / 2 - Button.HEIGHT / 2) {
+                    @Override
+                    public void onClick() {
+                        assert drawer != null;
+                        screenChange(drawer);
+                    }
+                },
                 new Food(200, 235) {
                     @Override
                     public void onClick() {
@@ -65,6 +74,12 @@ public abstract class Kitchen extends Location{
                     @Override
                     public void onClick() {
                         onFoodClicked(this);
+                    }
+                }, new Invisible(83, 281, 160, 109){
+                    @Override
+                    public void onClick() {
+                        assert drawer != null;
+                        screenChange(drawer);
                     }
                 }
         ));
@@ -79,15 +94,10 @@ public abstract class Kitchen extends Location{
     }
 
     /**
-     * Handles food clicking
-     * @param clicked the food clicked
+     * set the drawer
+     * @param drawer the location of the drawer
      */
-    private void onFoodClicked(Food clicked){
-        foodConsumed();
+    public void setDrawer(Location drawer) {
+        this.drawer = drawer;
     }
-
-    /**
-     * called when a piece of food is clicked
-     */
-    public abstract void foodConsumed();
 }

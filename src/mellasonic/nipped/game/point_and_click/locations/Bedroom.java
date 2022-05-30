@@ -65,9 +65,4 @@ public abstract class Bedroom extends Location{
     public void setLiving(Location living) {
         this.living = living;
     }
-
-    /**
-     * called when a piece of food is clicked
-     */
-    public abstract void foodConsumed();
 }

@@ -64,6 +64,8 @@ public abstract class Food extends Rectangle {
      */
     public void disable(){
         enabled = false;
+        setNormal(Tools.getImage("assets/catfood.png"));
+        setOnHover(Tools.getImage("assets/catfood.png"));
     }
 
     @Override

@@ -31,11 +31,11 @@ public abstract class Collider implements Interactive{
     /**
      * The image to normally display
      */
-    private final Image normal;
+    private Image normal;
     /**
      * The image to display when the cursor is hovered over the sprite
      */
-    private final Image onHover;
+    private Image onHover;
     /**
      * the bounding box of the image
      */
@@ -57,6 +57,22 @@ public abstract class Collider implements Interactive{
         this.y = y;
         this.width = width;
         this.height = height;
+    }
+
+    /**
+     * sets the normal image
+     * @param normal the image to set it to
+     */
+    protected void setNormal(Image normal) {
+        this.normal = normal;
+    }
+
+    /**
+     * sets the image on hover
+     * @param onHover the image to set it to
+     */
+    protected void setOnHover(Image onHover) {
+        this.onHover = onHover;
     }
 
     /**

@@ -91,7 +91,7 @@ public class MainMenu implements AppState {
         buttons.setSpacing(10);
 
         // initialize buttons
-        Interactive exitButton = new Button(getImage("assets/exitbutton.png"), getImage("assets/exitbutton.png"), BUTTON_WIDTH, BUTTON_HEIGHT) {
+        Interactive exitButton = new Button(getImage("assets/exitbutton.png"), getImage("assets/exitbuttonhover.png"), BUTTON_WIDTH, BUTTON_HEIGHT) {
             @Override
             public void onClick() {
                 quit();
@@ -103,7 +103,7 @@ public class MainMenu implements AppState {
                 play();
             }
         };
-        Interactive instructionsButton = new Button(getImage("assets/instructionsbutton.png"), getImage("assets/instructionsbutton.png"), BUTTON_WIDTH, BUTTON_HEIGHT) {
+        Interactive instructionsButton = new Button(getImage("assets/instructionsbutton.png"), getImage("assets/instructionsbuttonhover.png"), BUTTON_WIDTH, BUTTON_HEIGHT) {
             @Override
             public void onClick() {
                 instructions();
