@@ -14,7 +14,7 @@
  Version 1.1
  2022/05/31
  Time spent: 30 min
- New features/processing: create panel, position & wrap text, position panel
+ New features/processing: create panel, position & wrap text, position panel, add close button
 */
 
 package mellasonic.nipped.game.point_and_click.interactives;
@@ -41,6 +41,10 @@ public abstract class Panel implements Interactive {
      * default margins around the screen of the pane
      */
     public static final int DEFAULT_MARGINS = 30;
+    /**
+     * the size of the close button
+     */
+    public static final int CLOSE_SIZE = 40;
 
     /**
      * Class Constructor with default margins
@@ -79,8 +83,14 @@ public abstract class Panel implements Interactive {
         text.setTextOrigin(VPos.TOP);
         cur.getChildren().add(text);
 
-        // add behavior for when the panel is clicked
-        cur.setOnMouseClicked(me -> onClick());
+        // create the "close panel" button
+        ImageView close = new ImageView(Tools.getImage("assets/xbutton.png"));
+        close.setFitWidth(CLOSE_SIZE);
+        close.setFitHeight(CLOSE_SIZE);
+        close.setLayoutX(Main.WIDTH - margins - CLOSE_SIZE / 2.0 - 7);
+        close.setLayoutY(margins - CLOSE_SIZE / 2.0 + 7);
+        close.setOnMouseClicked(me -> onClick());
+        cur.getChildren().add(close);
     }
 
     @Override
