@@ -19,6 +19,7 @@
 
 package mellasonic.nipped.game.point_and_click.interactives;
 
+import javafx.geometry.VPos;
 import javafx.scene.Node;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
@@ -74,7 +75,8 @@ public abstract class Panel implements Interactive {
         text.setFont(new Font("Sitka Text", 24));
         text.setWrappingWidth(Main.WIDTH - 2 * margins - 20);
         text.setLayoutX(margins + 15);
-        text.setLayoutY(margins + 34);
+        text.setLayoutY(margins + 15);
+        text.setTextOrigin(VPos.TOP);
         cur.getChildren().add(text);
 
         // add behavior for when the panel is clicked
