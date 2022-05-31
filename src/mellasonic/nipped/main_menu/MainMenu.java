@@ -133,7 +133,8 @@ public class MainMenu implements AppState {
      * Behavior when instructions button is clicked
      */
     private void instructions() {
-        System.out.println("instructions");
+        Instructions instructions = new Instructions();
+        Main.getApp().changeState(instructions);
     }
 
     /**
