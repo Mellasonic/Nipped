@@ -1,6 +1,24 @@
+/* ICS Final Project Nipped
+ 2022/05/31
+ Time spent: 30 min
+*/
+
+/*
+ Nipped is a java game with three different levels.
+ Version 1.1 - 31 May 2022
+ Authors: Daniel Ye, James Huynh, Eric Jin
+*/
+
+/*
+ Modification Authors: Daniel Ye
+ Version 1.1
+ 2022/05/31
+ Time spent: 30 min
+ New features/processing: create panel, position & wrap text, position panel
+*/
+
 package mellasonic.nipped.game.point_and_click.interactives;
 
-import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
@@ -37,11 +55,13 @@ public abstract class Panel implements Interactive {
      * @param display the string the display on the pane
      */
     public Panel(int margins, String display){
+        // create parent pane
         cur = new Pane();
         cur.setPrefSize(Main.WIDTH, Main.HEIGHT);
         cur.setLayoutX(0);
         cur.setLayoutY(0);
 
+        // add the picture of the panel
         ImageView view = new ImageView(Tools.getImage("assets/panel.png"));
         view.setFitWidth(Main.WIDTH - 2 * margins);
         view.setFitHeight(Main.HEIGHT - 2 * margins);
@@ -49,6 +69,7 @@ public abstract class Panel implements Interactive {
         view.setLayoutX(margins);
         cur.getChildren().add(view);
 
+        // display the text in the panel
         Text text = new Text(display);
         text.setFont(new Font("Sitka Text", 24));
         text.setWrappingWidth(Main.WIDTH - 2 * margins - 20);
@@ -56,9 +77,8 @@ public abstract class Panel implements Interactive {
         text.setLayoutY(margins + 34);
         cur.getChildren().add(text);
 
-        cur.setOnMouseClicked(me -> {
-            onClick();
-        });
+        // add behavior for when the panel is clicked
+        cur.setOnMouseClicked(me -> onClick());
     }
 
     @Override

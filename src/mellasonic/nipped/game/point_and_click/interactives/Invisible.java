@@ -1,16 +1,33 @@
+/* ICS Final Project Nipped
+ 2022/05/31
+ Time spent: 40 min
+*/
+
+/*
+ Nipped is a java game with three different levels.
+ Version 1.1 - 31 May 2022
+ Authors: Daniel Ye, James Huynh, Eric Jin
+*/
+
+/*
+ Modification Authors: Daniel Ye
+ Version 1.1
+ 2022/05/31
+ Time spent: 40 min
+ New features/processing: Create Collider, add star, position rectangle, create assets
+*/
+
 package mellasonic.nipped.game.point_and_click.interactives;
 
 import javafx.scene.Node;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import mellasonic.nipped.Tools;
-import mellasonic.nipped.interactable.Collider;
 import mellasonic.nipped.interactable.Interactive;
-import mellasonic.nipped.interactable.Rectangle;
 
 /**
- * an invisible collider
+ * an invisible collider that is meant to symbolize an object in the background.
+ * It contains a yellow tint and outline, and potentially a star for when it hasn't been clicked yet
  */
 public abstract class Invisible implements Interactive {
     /**
@@ -73,6 +90,7 @@ public abstract class Invisible implements Interactive {
         });
     }
 
+    @Override
     public Node getNode(){
         return cur;
     }
