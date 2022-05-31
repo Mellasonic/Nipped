@@ -23,6 +23,7 @@ import mellasonic.nipped.Main;
 import mellasonic.nipped.Tools;
 import mellasonic.nipped.game.point_and_click.interactives.Button;
 import mellasonic.nipped.game.point_and_click.interactives.Direction;
+import mellasonic.nipped.game.point_and_click.interactives.Invisible;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -39,6 +40,10 @@ public abstract class Bedroom extends Location{
      * the attic
      */
     private Location attic;
+    /**
+     * the drawer
+     */
+    private Location drawer;
 
     /**
      * Class constructor
@@ -54,14 +59,28 @@ public abstract class Bedroom extends Location{
                         assert living != null;
                         screenChange(living);
                     }
-                }, new Button(Direction.U, Main.WIDTH / 2 - Button.WIDTH / 2, 20){
+                }, new Button(Direction.U, Main.WIDTH / 2 - Button.WIDTH / 2, 20) {
                     @Override
                     public void onClick() {
                         assert attic != null;
                         screenChange(attic);
                     }
+                }, new Invisible(97, 356, 127, 40, true) {
+                    @Override
+                    public void onClick() {
+                        assert drawer != null;
+                        screenChange(drawer);
+                    }
                 }
         ));
+    }
+
+    /**
+     * sets the drawer
+     * @param drawer the locatin of the drawer
+     */
+    public void setDrawer(Location drawer) {
+        this.drawer = drawer;
     }
 
     /**
