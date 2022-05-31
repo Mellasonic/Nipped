@@ -52,8 +52,8 @@ import mellasonic.nipped.game.point_and_click.locations.level1.*;
  */
 public abstract class Level1 extends PointClick{
     private int numConsumed = 0;
-    private static final int totFood = 8;
-    private Door door;
+    private static final int totFood = 9;
+    private final Door door;
 
     /**
      * Class constructor
@@ -81,6 +81,17 @@ public abstract class Level1 extends PointClick{
         Bedroom bedroom = new Bedroom() {
             @Override
             public void screenChange(Screen to) { changeScreen(to); }
+        };
+        BedroomDrawer bDrawer = new BedroomDrawer() {
+            @Override
+            public void foodConsumed() {
+                onFoodConsume();
+            }
+
+            @Override
+            public void screenChange(Screen to) {
+                changeScreen(to);
+            }
         };
         KitchenDrawer kDrawer = new KitchenDrawer() {
             @Override
@@ -119,6 +130,8 @@ public abstract class Level1 extends PointClick{
         kDrawer.setPrev(kitchen);
         bedroom.setLiving(living);
         bedroom.setAttic(attic);
+        bedroom.setDrawer(bDrawer);
+        bDrawer.setPrev(bedroom);
         attic.setBedroom(bedroom);
 
         // go to a living room screen
