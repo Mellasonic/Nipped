@@ -43,13 +43,18 @@
 
 package mellasonic.nipped.game.point_and_click;
 
-import mellasonic.nipped.Tools;
-import mellasonic.nipped.game.point_and_click.locations.*;
+import javafx.scene.text.Font;
+import mellasonic.nipped.game.point_and_click.interactives.Panel;
+import mellasonic.nipped.game.point_and_click.locations.level1.*;
 
 /**
  * the first level
  */
 public abstract class Level1 extends PointClick{
+    private int numConsumed = 0;
+    private static final int totFood = 8;
+    private Door door;
+
     /**
      * Class constructor
      */
@@ -93,7 +98,7 @@ public abstract class Level1 extends PointClick{
                 changeScreen(to);
             }
         };
-        Door door = new Door() {
+        door = new Door() {
             @Override
             public void onDoorClicked() {
                 nextLevel();
@@ -118,12 +123,23 @@ public abstract class Level1 extends PointClick{
 
         // go to a living room screen
         changeScreen(living);
+        System.out.println(Font.getFamilies());
     }
 
     /**
      * Called when food is consumed
      */
     private void onFoodConsume(){
-        System.out.println("meow");
+        ++numConsumed;
+        if(numConsumed == totFood) door.enable();
+        if(numConsumed == 3){
+            Panel display = new Panel("Hello this is a super duper cool text"){
+                @Override
+                public void onClick() {
+                    getPane().getChildren().remove(getNode());
+                }
+            };
+            getPane().getChildren().add(display.getNode());
+        }
     }
 }

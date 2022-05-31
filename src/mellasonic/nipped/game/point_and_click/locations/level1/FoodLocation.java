@@ -1,4 +1,4 @@
-package mellasonic.nipped.game.point_and_click.locations;
+package mellasonic.nipped.game.point_and_click.locations.level1;
 
 import javafx.scene.image.Image;
 import mellasonic.nipped.game.point_and_click.interactives.Food;

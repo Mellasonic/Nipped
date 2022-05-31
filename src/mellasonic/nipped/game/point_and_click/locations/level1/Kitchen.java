@@ -17,7 +17,7 @@
  New features/processing: create kitchen, add food
 */
 
-package mellasonic.nipped.game.point_and_click.locations;
+package mellasonic.nipped.game.point_and_click.locations.level1;
 
 import mellasonic.nipped.Main;
 import mellasonic.nipped.Tools;
@@ -55,13 +55,6 @@ public abstract class Kitchen extends Location implements FoodLocation{
                     public void onClick() {
                         assert living != null;
                         screenChange(living);
-                    }
-                },
-                new Button(Direction.L, 20, Main.HEIGHT / 2 - Button.HEIGHT / 2) {
-                    @Override
-                    public void onClick() {
-                        assert drawer != null;
-                        screenChange(drawer);
                     }
                 },
                 new Food(200, 235) {

@@ -20,14 +20,31 @@
 package mellasonic.nipped.game.cards;
 
 import javafx.scene.Parent;
+import javafx.scene.layout.Pane;
+import mellasonic.nipped.Main;
 import mellasonic.nipped.game.Level;
 
 /**
  * Level 2
  */
 public abstract class Level2 implements Level {
+    /**
+     * The current pane
+     */
+    private final Pane cur;
+
+    /**
+     * Class Constructor
+     */
+    public Level2(){
+        cur = new Pane();
+        cur.setPrefSize(Main.WIDTH, Main.HEIGHT);
+
+
+    }
+
     @Override
     public Parent getNode() {
-        return null;
+        return cur;
     }
 }

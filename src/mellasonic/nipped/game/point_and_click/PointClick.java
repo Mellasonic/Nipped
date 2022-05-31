@@ -51,6 +51,14 @@ public abstract class PointClick implements Level {
         cur = new Pane();
     }
 
+    /**
+     * returns the root pane
+     * @return the root
+     */
+    protected Pane getPane(){
+        return cur;
+    }
+
     @Override
     public Parent getNode() {
         return cur;

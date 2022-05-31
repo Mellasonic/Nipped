@@ -17,19 +17,15 @@
  New features/processing: create bedroom, add food
 */
 
-package mellasonic.nipped.game.point_and_click.locations;
+package mellasonic.nipped.game.point_and_click.locations.level1;
 
-import javafx.scene.image.Image;
 import mellasonic.nipped.Main;
 import mellasonic.nipped.Tools;
-import mellasonic.nipped.game.point_and_click.Screen;
 import mellasonic.nipped.game.point_and_click.interactives.Button;
 import mellasonic.nipped.game.point_and_click.interactives.Direction;
-import mellasonic.nipped.interactable.Interactive;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 /**
  * the bedroom

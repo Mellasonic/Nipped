@@ -33,7 +33,7 @@
  New features/processing: Add request location change
 */
 
-package mellasonic.nipped.game.point_and_click.locations;
+package mellasonic.nipped.game.point_and_click.locations.level1;
 
 import javafx.scene.Node;
 import javafx.scene.image.Image;

@@ -41,7 +41,7 @@
  New features/processing: allow setting locations & moving to them, further extrapolate food clicking, add food
 */
 
-package mellasonic.nipped.game.point_and_click.locations;
+package mellasonic.nipped.game.point_and_click.locations.level1;
 
 // imports
 
