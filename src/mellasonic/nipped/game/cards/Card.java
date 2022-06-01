@@ -26,8 +26,11 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
+import javafx.scene.text.TextAlignment;
 import mellasonic.nipped.Main;
 import mellasonic.nipped.Tools;
+
+import java.beans.EventHandler;
 
 /**
  * A card for the quiz
@@ -46,6 +49,10 @@ public abstract class Card {
      * Dimensions of the card
      */
     public static final int WIDTH=270, HEIGHT=360;
+    /**
+     * Dimensions of the arrows
+     */
+    public static final int ARROW_WIDTH = 40, ARROW_HEIGHT = 32;
 
     /**
      * Class constructor
@@ -88,7 +95,41 @@ public abstract class Card {
         question.setTextOrigin(VPos.TOP);
         cur.getChildren().add(question);
 
+        // add "arrows" for yes and no prompt
+        ImageView yArrow = new ImageView(Tools.getImage("assets/R-greenarrow.png"));
+        yArrow.setFitWidth(ARROW_WIDTH);
+        yArrow.setFitHeight(ARROW_HEIGHT);
+        yArrow.setLayoutX(Main.WIDTH / 2.0 + WIDTH / 2.0 - ARROW_WIDTH - 15);
+        yArrow.setLayoutY(Main.HEIGHT / 2.0 + HEIGHT / 2.0 - ARROW_HEIGHT - 15);
 
+        ImageView nArrow = new ImageView(Tools.getImage("assets/R-redarrow.png"));
+        nArrow.setFitWidth(ARROW_WIDTH);
+        nArrow.setFitHeight(ARROW_HEIGHT);
+        nArrow.setLayoutX(Main.WIDTH / 2.0 - WIDTH / 2.0 + 15);
+        nArrow.setLayoutY(Main.HEIGHT / 2.0 + HEIGHT / 2.0 - ARROW_HEIGHT - 15);
+
+        // add prompts for the arrows
+        Text yes = new Text("YES");
+        yes.setFont(new Font("Old Antic Outline", 18));
+        yes.setLayoutX(0);
+        yes.setWrappingWidth(yArrow.getLayoutX() - 10);
+        yes.setTextAlignment(TextAlignment.RIGHT);
+        yes.setTextOrigin(VPos.CENTER);
+        yes.setLayoutY(yArrow.getLayoutY() + ARROW_HEIGHT / 2.0);
+
+        Text no = new Text("NO");
+        no.setFont(new Font("Old Antic Outline", 18));
+        no.setLayoutX(nArrow.getLayoutX() + ARROW_WIDTH + 10);
+        no.setLayoutY(nArrow.getLayoutY() + ARROW_HEIGHT / 2.0);
+        no.setTextOrigin(VPos.CENTER);
+
+        cur.getChildren().add(yes);
+        cur.getChildren().add(no);
+        cur.getChildren().add(yArrow);
+        cur.getChildren().add(nArrow);
+
+        nArrow.setOnMouseClicked(me -> onAnswer(!isYes));
+        yArrow.setOnMouseClicked(me -> onAnswer(isYes));
     }
 
     /**
