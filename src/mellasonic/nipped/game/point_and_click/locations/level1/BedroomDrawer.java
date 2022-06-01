@@ -19,7 +19,7 @@
 
 package mellasonic.nipped.game.point_and_click.locations.level1;
 
-import mellasonic.nipped.game.point_and_click.interactives.Food;
+import mellasonic.nipped.game.point_and_click.locations.level1.Note;
 import mellasonic.nipped.game.point_and_click.locations.Drawer;
 
 import java.util.Arrays;
@@ -27,17 +27,23 @@ import java.util.Arrays;
 /**
  * a drawer in the bedroom
  */
-public abstract class BedroomDrawer extends Drawer implements FoodLocation {
+public abstract class BedroomDrawer extends Drawer{
     /**
      * class constructor
      */
-    public BedroomDrawer(){
+    public BedroomDrawer(ConsumableHandler handler){
         super();
         addObjects(Arrays.asList(
                 new Food(502, 250){
                     @Override
                     public void onClick() {
-                        onFoodClicked(this);
+                        handler.onConsume(this);
+                    }
+                },
+                new Note(311, 241){
+                    @Override
+                    public void onClick() {
+                        handler.onConsume(this);
                     }
                 }
         ));

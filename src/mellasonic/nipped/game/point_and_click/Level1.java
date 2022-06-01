@@ -60,7 +60,7 @@ import mellasonic.nipped.game.point_and_click.locations.level1.*;
  */
 public abstract class Level1 extends PointClick{
     private int numConsumed = 0;
-    private static final int totFood = 9;
+    private static final int totObject = 11;
     private final Door door;
 
     /**
@@ -69,49 +69,38 @@ public abstract class Level1 extends PointClick{
     public Level1() {
         super();
 
+        // initialize handlers
+        ConsumableHandler handler = consumed -> {
+            consumed.disable();
+            onConsume();
+        };
+
         // initialize rooms
-        LivingRoom living = new LivingRoom(){
+        LivingRoom living = new LivingRoom(handler){
             @Override
             public void screenChange(Screen to) {
                 changeScreen(to);
             }
-            @Override
-            public void foodConsumed() {
-                onFoodConsume();
-            }
         };
-        Kitchen kitchen = new Kitchen() {
-            @Override
-            public void foodConsumed() {onFoodConsume();}
+        Kitchen kitchen = new Kitchen(handler) {
             @Override
             public void screenChange(Screen to) {changeScreen(to);}
         };
-        Bedroom bedroom = new Bedroom() {
+        Bedroom bedroom = new Bedroom(handler) {
             @Override
             public void screenChange(Screen to) { changeScreen(to); }
         };
-        BedroomDrawer bDrawer = new BedroomDrawer() {
-            @Override
-            public void foodConsumed() {
-                onFoodConsume();
-            }
-
+        BedroomDrawer bDrawer = new BedroomDrawer(handler) {
             @Override
             public void screenChange(Screen to) {
                 changeScreen(to);
             }
         };
-        KitchenDrawer kDrawer = new KitchenDrawer() {
-            @Override
-            public void foodConsumed() { onFoodConsume(); }
+        KitchenDrawer kDrawer = new KitchenDrawer(handler) {
             @Override
             public void screenChange(Screen to) { changeScreen(to); }
         };
-        Attic attic = new Attic() {
-            @Override
-            public void foodConsumed() {
-                onFoodConsume();
-            }
+        Attic attic = new Attic(handler) {
             @Override
             public void screenChange(Screen to) {
                 changeScreen(to);
@@ -148,11 +137,11 @@ public abstract class Level1 extends PointClick{
     }
 
     /**
-     * Called when food is consumed
+     * Called when something is consumed
      */
-    private void onFoodConsume(){
+    private void onConsume(){
         ++numConsumed;
-        if(numConsumed == totFood) door.enable();
+        if(numConsumed == totObject) door.enable();
         if(numConsumed == 3){
             Screen prev = getCurScreen();
             Panel display = new Panel("Hello this is a super duper cool text", prev.getNode()){

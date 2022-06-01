@@ -23,7 +23,6 @@ import mellasonic.nipped.Main;
 import mellasonic.nipped.Tools;
 import mellasonic.nipped.game.point_and_click.interactives.Button;
 import mellasonic.nipped.game.point_and_click.interactives.Direction;
-import mellasonic.nipped.game.point_and_click.interactives.Food;
 import mellasonic.nipped.game.point_and_click.interactives.Invisible;
 
 import java.util.ArrayList;

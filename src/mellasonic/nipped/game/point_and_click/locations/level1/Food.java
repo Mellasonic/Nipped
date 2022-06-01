@@ -25,7 +25,7 @@
  New features/processing: add enabled/disabled
 */
 
-package mellasonic.nipped.game.point_and_click.interactives;
+package mellasonic.nipped.game.point_and_click.locations.level1;
 
 import javafx.scene.image.Image;
 import mellasonic.nipped.Tools;
@@ -34,7 +34,7 @@ import mellasonic.nipped.interactable.Rectangle;
 /**
  * A food interactible for point and click games
  */
-public abstract class Food extends Rectangle {
+public abstract class Food extends Consumable {
     /**
      * Default width of food
      */
@@ -43,10 +43,6 @@ public abstract class Food extends Rectangle {
      * Default height of food
      */
     public static final int HEIGHT = 30;
-    /**
-     * whether or not the food has already been clicked
-     */
-    private boolean enabled;
 
     /**
      * Class constructor
@@ -55,22 +51,7 @@ public abstract class Food extends Rectangle {
      * @param y       y of bounding box of the food
      */
     public Food(int x, int y) {
-        super(Tools.getImage("assets/catfood.png"), Tools.getImage("assets/catfood.png"), x, y, WIDTH, HEIGHT);
-        enabled = true;
-    }
-
-    /**
-     * disables the food (usually after it's been clicked)
-     */
-    public void disable(){
-        enabled = false;
-        setNormal(Tools.getImage("assets/catfoodgs.png"));
-        setOnHover(Tools.getImage("assets/catfoodgs.png"));
-    }
-
-    @Override
-    public boolean hit(double x, double y){
-        if(enabled) return super.hit(x, y);
-        else return false;
+        super(Tools.getImage("assets/catfood.png"), Tools.getImage("assets/catfood.png"),
+                Tools.getImage("assets/catfoodgs.png"), x, y, WIDTH, HEIGHT);
     }
 }

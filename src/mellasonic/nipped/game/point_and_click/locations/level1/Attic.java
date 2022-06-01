@@ -19,36 +19,28 @@
 
 package mellasonic.nipped.game.point_and_click.locations.level1;
 
-import mellasonic.nipped.Main;
-import mellasonic.nipped.Tools;
-import mellasonic.nipped.game.point_and_click.interactives.Button;
-import mellasonic.nipped.game.point_and_click.interactives.Direction;
-import mellasonic.nipped.game.point_and_click.interactives.Food;
-import mellasonic.nipped.game.point_and_click.locations.Location;
-
-import java.util.ArrayList;
 import java.util.Arrays;
 
 /**
  * an attic
  */
-public abstract class Attic extends mellasonic.nipped.game.point_and_click.locations.Attic implements FoodLocation{
+public abstract class Attic extends mellasonic.nipped.game.point_and_click.locations.Attic{
     /**
      * Class constructor
      *
      */
-    public Attic() {
+    public Attic(ConsumableHandler handler) {
         addObjects(Arrays.asList(
                 new Food(599, 392) {
                     @Override
                     public void onClick() {
-                        onFoodClicked(this);
+                        handler.onConsume(this);
                     }
                 },
                 new Food(564, 153){
                     @Override
                     public void onClick() {
-                        onFoodClicked(this);
+                        handler.onConsume(this);
                     }
                 }
         ));

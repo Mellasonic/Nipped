@@ -19,30 +19,29 @@
 
 package mellasonic.nipped.game.point_and_click.locations.level1;
 
-import mellasonic.nipped.game.point_and_click.interactives.Food;
 import java.util.Arrays;
 
 /**
  * Kitchen room
  */
-public abstract class Kitchen extends mellasonic.nipped.game.point_and_click.locations.Kitchen implements FoodLocation{
+public abstract class Kitchen extends mellasonic.nipped.game.point_and_click.locations.Kitchen{
 
     /**
      * Class constructor
      *
      */
-    public Kitchen() {
+    public Kitchen(ConsumableHandler handler) {
         addObjects(Arrays.asList(
                 new Food(200, 235) {
                     @Override
                     public void onClick() {
-                        onFoodClicked(this);
+                        handler.onConsume(this);
                     }
                 },
                 new Food(700, 235){
                     @Override
                     public void onClick() {
-                        onFoodClicked(this);
+                        handler.onConsume(this);
                     }
                 }
         ));

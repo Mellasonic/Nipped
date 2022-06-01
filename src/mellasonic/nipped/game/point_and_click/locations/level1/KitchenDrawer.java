@@ -19,22 +19,21 @@
 
 package mellasonic.nipped.game.point_and_click.locations.level1;
 
-import mellasonic.nipped.game.point_and_click.interactives.Food;
 import mellasonic.nipped.game.point_and_click.locations.Drawer;
 
 import java.util.Arrays;
 
-public abstract class KitchenDrawer extends Drawer implements FoodLocation{
+public abstract class KitchenDrawer extends Drawer{
     /**
      * Class Constructor
      */
-    public KitchenDrawer(){
+    public KitchenDrawer(ConsumableHandler handler){
         super();
         addObjects(Arrays.asList(
                 new Food(502, 250){
                     @Override
                     public void onClick() {
-                        onFoodClicked(this);
+                        handler.onConsume(this);
                     }
                 }
         ));

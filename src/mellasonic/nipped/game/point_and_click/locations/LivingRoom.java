@@ -48,7 +48,6 @@ package mellasonic.nipped.game.point_and_click.locations;
 import mellasonic.nipped.Main;
 import mellasonic.nipped.game.point_and_click.interactives.Button;
 import mellasonic.nipped.game.point_and_click.interactives.Direction;
-import mellasonic.nipped.game.point_and_click.interactives.Food;
 
 import java.util.ArrayList;
 import java.util.Arrays;

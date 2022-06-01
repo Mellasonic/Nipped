@@ -87,6 +87,8 @@ public abstract class Card {
         question.setLayoutY(245);
         question.setTextOrigin(VPos.TOP);
         cur.getChildren().add(question);
+
+
     }
 
     /**

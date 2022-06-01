@@ -19,6 +19,8 @@
 
 package mellasonic.nipped.game.point_and_click.locations.level1;
 
+import java.util.Arrays;
+
 /**
  * the bedroom
  */
@@ -27,6 +29,14 @@ public abstract class Bedroom extends mellasonic.nipped.game.point_and_click.loc
      * Class constructor
      *
      */
-    public Bedroom() {
+    public Bedroom(ConsumableHandler handler) {
+        addObjects(Arrays.asList(
+                new Note(366, 298){
+                    @Override
+                    public void onClick() {
+                        handler.onConsume(this);
+                    }
+                }
+        ));
     }
 }
