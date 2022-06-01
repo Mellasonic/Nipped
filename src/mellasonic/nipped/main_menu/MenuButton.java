@@ -16,6 +16,6 @@ public abstract class MenuButton extends Rectangle {
      * @param y       y of bounding box
      */
     public MenuButton(int x, int y) {
-        super(Tools.getImage("assets/menubutton.png"), Tools.getImage("assets/menubuttonhover.png"), x, y, WIDTH, HEIGHT);
+        super(Tools.getImage("assets/xbutton.png"), Tools.getImage("assets/xbuttonhover.png"), x, y, WIDTH, HEIGHT);
     }
 }

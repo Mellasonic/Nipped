@@ -1,25 +1,26 @@
 /* ICS Final Project Nipped
- 2022/05/31
- Time spent: 10 min
+ 2022/06/01
+ Time spent: 20 min
 */
 
 /*
  Nipped is a java game with three different levels.
- Version 1.1 - 31 May 2022
+ Version 1.1 - 1 June 2022
  Authors: Daniel Ye, James Huynh, Eric Jin
 */
 
 /*
  Modification Authors: Daniel Ye
  Version 1.1
- 2022/05/31
- Time spent: 10 min
- New features/processing: Create Kitchen Drawer, add & position Food
+ 2022/06/1
+ Time spent: 20 min
+ New features/processing: extrapolate locations
 */
 
 package mellasonic.nipped.game.point_and_click.locations.level1;
 
 import mellasonic.nipped.game.point_and_click.interactives.Food;
+import mellasonic.nipped.game.point_and_click.locations.Drawer;
 
 import java.util.Arrays;
 

@@ -154,13 +154,14 @@ public abstract class Level1 extends PointClick{
         ++numConsumed;
         if(numConsumed == totFood) door.enable();
         if(numConsumed == 3){
-            Panel display = new Panel("Hello this is a super duper cool text"){
+            Screen prev = getCurScreen();
+            Panel display = new Panel("Hello this is a super duper cool text", prev.getNode()){
                 @Override
-                public void onClick() {
-                    getPane().getChildren().remove(getNode());
+                public void onExit() {
+                    changeScreen(prev);
                 }
             };
-            getPane().getChildren().add(display.getNode());
+            changeScreen(display);
         }
     }
 }

@@ -17,12 +17,13 @@
  New features/processing: Created Drawer subclass of Location, add "previous" button & add bg
 */
 
-package mellasonic.nipped.game.point_and_click.locations.level1;
+package mellasonic.nipped.game.point_and_click.locations;
 
 import mellasonic.nipped.Tools;
 import mellasonic.nipped.game.point_and_click.Screen;
 import mellasonic.nipped.game.point_and_click.interactives.Button;
 import mellasonic.nipped.game.point_and_click.interactives.Direction;
+import mellasonic.nipped.game.point_and_click.locations.Location;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -30,7 +31,7 @@ import java.util.Arrays;
 /**
  * a drawer
  */
-public abstract class Drawer extends Location{
+public abstract class Drawer extends Location {
     /**
      * the previous scene
      */

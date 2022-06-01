@@ -65,6 +65,14 @@ public abstract class PointClick implements Level {
     }
 
     /**
+     * return the current screen
+     * @return the current screen
+     */
+    protected Screen getCurScreen() {
+        return curScreen;
+    }
+
+    /**
      * changes the screen to another screen/location
      * @param to the screen/location to change to
      */
