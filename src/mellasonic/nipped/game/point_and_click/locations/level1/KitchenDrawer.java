@@ -20,6 +20,7 @@
 package mellasonic.nipped.game.point_and_click.locations.level1;
 
 import mellasonic.nipped.game.point_and_click.interactives.Food;
+import mellasonic.nipped.game.point_and_click.locations.Drawer;
 
 import java.util.Arrays;
 

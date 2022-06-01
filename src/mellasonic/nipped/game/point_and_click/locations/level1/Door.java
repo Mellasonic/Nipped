@@ -24,6 +24,7 @@ import mellasonic.nipped.Main;
 import mellasonic.nipped.Tools;
 import mellasonic.nipped.game.point_and_click.interactives.Button;
 import mellasonic.nipped.game.point_and_click.interactives.Direction;
+import mellasonic.nipped.game.point_and_click.locations.Location;
 import mellasonic.nipped.interactable.Rectangle;
 
 import java.util.ArrayList;
@@ -32,7 +33,7 @@ import java.util.Arrays;
 /**
  * The door
  */
-public abstract class Door extends Location{
+public abstract class Door extends Location {
     /**
      * whether or not the door has already been opened
      */

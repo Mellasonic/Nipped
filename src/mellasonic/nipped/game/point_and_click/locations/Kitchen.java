@@ -17,7 +17,7 @@
  New features/processing: create kitchen, add food
 */
 
-package mellasonic.nipped.game.point_and_click.locations.level1;
+package mellasonic.nipped.game.point_and_click.locations;
 
 import mellasonic.nipped.Main;
 import mellasonic.nipped.Tools;
@@ -25,7 +25,6 @@ import mellasonic.nipped.game.point_and_click.interactives.Button;
 import mellasonic.nipped.game.point_and_click.interactives.Direction;
 import mellasonic.nipped.game.point_and_click.interactives.Food;
 import mellasonic.nipped.game.point_and_click.interactives.Invisible;
-import mellasonic.nipped.game.point_and_click.locations.Location;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -33,26 +32,53 @@ import java.util.Arrays;
 /**
  * Kitchen room
  */
-public abstract class Kitchen extends mellasonic.nipped.game.point_and_click.locations.Kitchen implements FoodLocation{
+public abstract class Kitchen extends Location {
+
+    /**
+     * The living room
+     */
+    private Location living;
+    /**
+     * The drawer
+     */
+    private Location drawer;
 
     /**
      * Class constructor
      *
      */
     public Kitchen() {
+        super(Tools.getImage("assets/kitchen.png"), new ArrayList<>());
         addObjects(Arrays.asList(
-                new Food(200, 235) {
+                new Button(Direction.R, Main.WIDTH - Button.WIDTH - 20, Main.HEIGHT / 2 - Button.HEIGHT / 2) {
                     @Override
                     public void onClick() {
-                        onFoodClicked(this);
+                        assert living != null;
+                        screenChange(living);
                     }
-                },
-                new Food(700, 235){
+                }, new Invisible(83, 281, 160, 109){
                     @Override
                     public void onClick() {
-                        onFoodClicked(this);
+                        assert drawer != null;
+                        screenChange(drawer);
                     }
                 }
         ));
+    }
+
+    /**
+     * set the living room
+     * @param living the room to set the living room to
+     */
+    public void setLiving(Location living) {
+        this.living = living;
+    }
+
+    /**
+     * set the drawer
+     * @param drawer the location of the drawer
+     */
+    public void setDrawer(Location drawer) {
+        this.drawer = drawer;
     }
 }

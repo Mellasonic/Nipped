@@ -45,98 +45,38 @@ package mellasonic.nipped.game.point_and_click.locations.level1;
 
 // imports
 
-import mellasonic.nipped.Main;
-import mellasonic.nipped.game.point_and_click.interactives.Button;
-import mellasonic.nipped.game.point_and_click.interactives.Direction;
 import mellasonic.nipped.game.point_and_click.interactives.Food;
+import mellasonic.nipped.game.point_and_click.locations.Location;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-
-import static mellasonic.nipped.Tools.getImage;
 
 /**
  * The first room - a living room in level 1 and 3
  */
-public abstract class LivingRoom extends Location implements FoodLocation{
-    /**
-     * The kitchen
-     */
-    private Location kitchen;
-    /**
-     * the bedroom
-     */
-    private Location bedroom;
-    /**
-     * the door
-     */
-    private Location door;
+public abstract class LivingRoom extends mellasonic.nipped.game.point_and_click.locations.LivingRoom implements FoodLocation {
 
     /**
      * Class constructor
      */
     public LivingRoom() {
-        super(getImage("assets/livingroom.png"), new ArrayList<>());
-
         // add objects to the list of interactives
-        addObjects(Arrays.asList(new Button(Direction.L, 20, Main.HEIGHT / 2 - Button.HEIGHT / 2) {
-            @Override
-            public void onClick() {
-                assert kitchen != null;
-                screenChange(kitchen);
-            }
-        }, new Button(Direction.U, Main.WIDTH / 2 - Button.WIDTH / 2, 20) {
-            @Override
-            public void onClick() {
-                assert bedroom != null;
-                screenChange(bedroom);
-            }
-        }, new Button(Direction.R, Main.WIDTH - Button.WIDTH - 20, Main.HEIGHT / 2 - Button.HEIGHT) {
-            @Override
-            public void onClick() {
-                assert door != null;
-                screenChange(door);
-            }
-        }, new Food(600, 75) {
-            @Override
-            public void onClick() {
-                onFoodClicked(this);
-            }
-        }, new Food(650, 235) {
-            @Override
-            public void onClick() {
-                onFoodClicked(this);
-            }
-        }, new Food(300, 290){
-             @Override
-             public void onClick() {
-                 onFoodClicked(this);
-             }
-         }
+        addObjects(Arrays.asList(
+                new Food(600, 75) {
+                    @Override
+                    public void onClick() {
+                        onFoodClicked(this);
+                    }
+                }, new Food(650, 235) {
+                    @Override
+                    public void onClick() {
+                        onFoodClicked(this);
+                    }
+                }, new Food(300, 290) {
+                    @Override
+                    public void onClick() {
+                        onFoodClicked(this);
+                    }
+                }
         ));
-    }
-
-    /**
-     * set the location to the right
-     * @param door the location to the right (the door)
-     */
-    public void setDoor(Location door) {
-        this.door = door;
-    }
-
-    /**
-     * Set the location to the left
-     * @param kitchen the location to the left
-     */
-    public void setKitchen(Location kitchen) {
-        this.kitchen = kitchen;
-    }
-
-    /**
-     * Set the location to the right
-     * @param bedroom the location to the right
-     */
-    public void setBedroom(Location bedroom) {
-        this.bedroom = bedroom;
     }
 }
