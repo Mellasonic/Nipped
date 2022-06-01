@@ -34,10 +34,6 @@ import java.util.Arrays;
  */
 public abstract class Door extends Location{
     /**
-     * whether or not the rest of the game is finished
-     */
-    private boolean finished = false;
-    /**
      * whether or not the door has already been opened
      */
     private boolean doorOpened = false;
@@ -60,10 +56,6 @@ public abstract class Door extends Location{
                         if(doorOpened) {
                             // if the door was opened and is clicked again, continue
                             onDoorClicked();
-                        } else if (finished) {
-                            // open the door if ready
-                            setBackground(Tools.getImage("assets/dooropen.png"));
-                            doorOpened = true;
                         } else {
                             // do nothing
                             System.out.println("not done yet");
@@ -96,6 +88,7 @@ public abstract class Door extends Location{
      * enables the door - should be called when all other activities have been completed
      */
     public void enable(){
-        finished = true;
+        doorOpened = true;
+        setBackground(Tools.getImage("assets/dooropen.png"));
     }
 }
