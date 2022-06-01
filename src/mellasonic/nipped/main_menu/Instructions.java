@@ -62,7 +62,8 @@ public class Instructions implements AppState {
      */
     private static final List<String> pages = Arrays.asList(
             "Level 1\nLevel 1 is a learning area. Mittens the cat has been having some troubles with food recently, and as you move through the level, you'll learn more about Mitten's addiction to eating. Mittens has left pieces of cat food and notes around for you to click on and read more about food addiction. Once you've looked at all the notes and cat food, a door will open up to level 2.",
-            "Level 2\nLevel 2 is about applying your learning. Mittens needs some help choosing which is a symptom of food addiction and which isn't. For each one you get right, you'll gain a streak, and once you've gotten a streak of 5, you'll continue to level 3."
+            "Level 2\nLevel 2 is about applying your learning. Mittens needs some help choosing which is a symptom of food addiction and which isn't. For each one you get right, you'll gain a streak, and once you've gotten a streak of 5, you'll continue to level 3.",
+            "Level 3\nLevel 3 is Mittens's final challenge. Mittens has to apply some strategies to prevent them from eating too much. You'll have to help Mittens write notes, find hobbies, and much more. Once you've helped Mittens in every room of their home, you'll be finished with the game!"
     );
 
     /**
