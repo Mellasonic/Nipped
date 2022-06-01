@@ -40,6 +40,6 @@ public class Tools {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-        throw new IllegalArgumentException("Invalid URL!");
+        throw new IllegalArgumentException("Invalid URL: " + url);
     }
 }
