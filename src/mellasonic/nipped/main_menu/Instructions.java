@@ -14,7 +14,7 @@
  Version 1.0
  2022/05/31
  Time spent: 1 hour
- New features/processing: Beginning code, adds background
+ New features/processing: Beginning code, adds background & writing
 */
 package mellasonic.nipped.main_menu;
 
@@ -54,8 +54,8 @@ public class Instructions implements AppState {
      * the text that appears on each page
      */
     private static final List<String> pages = Arrays.asList(
-            "In the first level, you eat food and you eat more food and blob blob blob and more sample text which is yummy",
-            "In the second level, you blob away"
+            "Level 1\nLevel 1 is a learning area. Mittens the cat has been having some troubles with food recently, and as you move through the level, you'll learn more about Mitten's addiction to eating. Mittens has left pieces of cat food and notes around for you to click on and read more about food addiction. Once you've looked at all the notes and cat food, a door will open up to level 2.",
+            "Level 2\nLevel 2 is about applying your learning. Mittens needs some help choosing which is a symptom of food addiction and which isn't. For each one you get right, you'll gain a streak, and once you've gotten a streak of 5, you'll continue to level 3."
     );
 
     /**
@@ -71,7 +71,7 @@ public class Instructions implements AppState {
      */
     public static final int CONTENT_MARGIN = 30;
     /**
-     * dimensions of the arrow
+     * dimensions of arrow
      */
     public static final int ARROW_WIDTH=60, ARROW_HEIGHT=48;
 
@@ -83,7 +83,7 @@ public class Instructions implements AppState {
 
     /**
      * Creates a node representing the current panel of the instructions
-     * @param page the page number
+     * @param page the page number to be rendered
      * @return a node displaying the panel
      */
     private Pane paneOf(int page){
