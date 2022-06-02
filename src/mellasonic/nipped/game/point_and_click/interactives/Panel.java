@@ -42,10 +42,6 @@ public abstract class Panel implements Screen {
      * default margins around the screen of the pane
      */
     public static final int DEFAULT_MARGINS = 30;
-    /**
-     * the size of the close button
-     */
-    public static final int CLOSE_SIZE = 40;
 
     /**
      * Class Constructor with default margins
@@ -96,7 +92,7 @@ public abstract class Panel implements Screen {
         cur.getChildren().add(text);
 
         // create the "close panel" button
-        MenuButton exitButton = new MenuButton(Main.WIDTH - DEFAULT_MARGINS - MenuButton.WIDTH / 2, DEFAULT_MARGINS - MenuButton.HEIGHT / 2) {
+        ExitButton exitButton = new ExitButton(Main.WIDTH - DEFAULT_MARGINS - MenuButton.WIDTH / 2, DEFAULT_MARGINS - MenuButton.HEIGHT / 2) {
             @Override
             public void onClick() {
                 onExit();

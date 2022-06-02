@@ -47,7 +47,7 @@ public abstract class Door extends Location {
      * Class constructor
      */
     public Door() {
-        super(Tools.getImage("assets/doorclose.png"), new ArrayList<>());
+        super(Tools.getImage("assets/doorclose.png"), null);
         // a ghost collider for detecting the door
         Image ghostCollide = Tools.getImage("assets/invisible.png");
         addObjects(Arrays.asList(
