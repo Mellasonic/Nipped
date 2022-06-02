@@ -30,7 +30,7 @@ import java.util.Arrays;
 /**
  * an attic
  */
-public abstract class Attic extends Location{
+public class Attic extends Location{
     /**
      * the bedroom
      */
@@ -40,8 +40,8 @@ public abstract class Attic extends Location{
      * Class constructor
      *
      */
-    public Attic() {
-        super(Tools.getImage("assets/attic.png"), new ArrayList<>());
+    public Attic(ScreenChanger changer) {
+        super(Tools.getImage("assets/attic.png"), changer);
         addObjects(Arrays.asList(
                 new Button(Direction.D, Main.WIDTH / 2 - Button.WIDTH / 2, Main.HEIGHT - 20 - Button.HEIGHT) {
                     @Override

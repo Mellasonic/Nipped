@@ -53,6 +53,7 @@ package mellasonic.nipped.game.point_and_click;
 
 import javafx.scene.text.Font;
 import mellasonic.nipped.game.point_and_click.interactives.Panel;
+import mellasonic.nipped.game.point_and_click.locations.ScreenChanger;
 import mellasonic.nipped.game.point_and_click.locations.level1.*;
 
 /**
@@ -84,37 +85,15 @@ public abstract class Level1 extends PointClick{
             onConsume();
         };
 
+        ScreenChanger changer = this::changeScreen;
+
         // initialize rooms
-        LivingRoom living = new LivingRoom(handler){
-            @Override
-            public void screenChange(Screen to) {
-                changeScreen(to);
-            }
-        };
-        Kitchen kitchen = new Kitchen(handler) {
-            @Override
-            public void screenChange(Screen to) {changeScreen(to);}
-        };
-        Bedroom bedroom = new Bedroom(handler) {
-            @Override
-            public void screenChange(Screen to) { changeScreen(to); }
-        };
-        BedroomDrawer bDrawer = new BedroomDrawer(handler) {
-            @Override
-            public void screenChange(Screen to) {
-                changeScreen(to);
-            }
-        };
-        KitchenDrawer kDrawer = new KitchenDrawer(handler) {
-            @Override
-            public void screenChange(Screen to) { changeScreen(to); }
-        };
-        Attic attic = new Attic(handler) {
-            @Override
-            public void screenChange(Screen to) {
-                changeScreen(to);
-            }
-        };
+        LivingRoom living = new LivingRoom(handler, changer);
+        Kitchen kitchen = new Kitchen(handler, changer);
+        Bedroom bedroom = new Bedroom(handler, changer);
+        BedroomDrawer bDrawer = new BedroomDrawer(handler, changer);
+        KitchenDrawer kDrawer = new KitchenDrawer(handler, changer);
+        Attic attic = new Attic(handler, changer);
         door = new Door() {
             @Override
             public void onDoorClicked() {

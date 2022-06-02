@@ -39,7 +39,7 @@ import java.util.Arrays;
 /**
  * the bedroom
  */
-public abstract class Bedroom extends Location {
+public class Bedroom extends Location {
     /**
      * the living room
      */
@@ -57,8 +57,8 @@ public abstract class Bedroom extends Location {
      * Class constructor
      *
      */
-    public Bedroom() {
-        super(Tools.getImage("assets/bedroom.png"), new ArrayList<>());
+    public Bedroom(ScreenChanger changer) {
+        super(Tools.getImage("assets/bedroom.png"), changer);
 
         addObjects(Arrays.asList(
                 new Button(Direction.D, Main.WIDTH / 2 - Button.WIDTH / 2, Main.HEIGHT - Button.HEIGHT - 20) {

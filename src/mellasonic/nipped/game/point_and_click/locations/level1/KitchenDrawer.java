@@ -20,19 +20,20 @@
 package mellasonic.nipped.game.point_and_click.locations.level1;
 
 import mellasonic.nipped.game.point_and_click.locations.Drawer;
+import mellasonic.nipped.game.point_and_click.locations.ScreenChanger;
 
 import java.util.Arrays;
 
 /**
  * a kitchen drawer
  */
-public abstract class KitchenDrawer extends Drawer{
+public class KitchenDrawer extends Drawer{
     /**
      * class constructor
      * @param handler the object for handling when something is consumed
      */
-    public KitchenDrawer(ConsumableHandler handler){
-        super();
+    public KitchenDrawer(ConsumableHandler handler, ScreenChanger changer){
+        super(changer);
         addObjects(Arrays.asList(
                 new Food(502, 250){
                     @Override

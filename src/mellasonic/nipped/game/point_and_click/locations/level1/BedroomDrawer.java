@@ -19,6 +19,7 @@
 
 package mellasonic.nipped.game.point_and_click.locations.level1;
 
+import mellasonic.nipped.game.point_and_click.locations.ScreenChanger;
 import mellasonic.nipped.game.point_and_click.locations.level1.Note;
 import mellasonic.nipped.game.point_and_click.locations.Drawer;
 
@@ -27,13 +28,13 @@ import java.util.Arrays;
 /**
  * a drawer in the bedroom
  */
-public abstract class BedroomDrawer extends Drawer{
+public class BedroomDrawer extends Drawer{
     /**
      * class constructor
      * @param handler the object for handling when something is consumed
      */
-    public BedroomDrawer(ConsumableHandler handler){
-        super();
+    public BedroomDrawer(ConsumableHandler handler, ScreenChanger changer){
+        super(changer);
         addObjects(Arrays.asList(
                 new Food(502, 250){
                     @Override

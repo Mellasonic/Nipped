@@ -21,18 +21,21 @@ package mellasonic.nipped.game.point_and_click.locations.level1;
 
 // imports
 
+import mellasonic.nipped.game.point_and_click.locations.ScreenChanger;
+
 import java.util.Arrays;
 
 /**
  * The first room - a living room in level 1 and 3
  */
-public abstract class LivingRoom extends mellasonic.nipped.game.point_and_click.locations.LivingRoom {
+public class LivingRoom extends mellasonic.nipped.game.point_and_click.locations.LivingRoom {
 
     /**
      * class constructor
      * @param handler the object for handling when something is consumed
      */
-    public LivingRoom(ConsumableHandler handler) {
+    public LivingRoom(ConsumableHandler handler, ScreenChanger changer) {
+        super(changer);
         // add objects to the list of interactives
         addObjects(Arrays.asList(
                 new Food(600, 75) {

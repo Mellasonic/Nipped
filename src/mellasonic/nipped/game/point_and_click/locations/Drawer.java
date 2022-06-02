@@ -31,7 +31,7 @@ import java.util.Arrays;
 /**
  * a drawer
  */
-public abstract class Drawer extends Location {
+public class Drawer extends Location {
     /**
      * the previous scene
      */
@@ -40,8 +40,8 @@ public abstract class Drawer extends Location {
     /**
      * Class constructor
      */
-    public Drawer() {
-        super(Tools.getImage("assets/drawer.png"), new ArrayList<>());
+    public Drawer(ScreenChanger changer) {
+        super(Tools.getImage("assets/drawer.png"), changer);
         addObjects(Arrays.asList(
                 new Button(Direction.D, 414, 436) {
                     @Override

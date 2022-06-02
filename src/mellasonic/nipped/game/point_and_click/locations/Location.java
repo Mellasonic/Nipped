@@ -64,15 +64,20 @@ public abstract class Location implements Screen {
      * The node of the location
      */
     private final Pane cur;
+    /**
+     * the object used to change the screen
+     */
+    private final ScreenChanger changer;
 
     /**
      * Class constructor
      * @param background the background of the image
-     * @param interactive the list of interactive objects
+     * @param changer the screen changer
      */
-    public Location(Image background, List<Interactive> interactive){
+    public Location(Image background, ScreenChanger changer){
         this.background = background;
-        this.objects = interactive;
+        this.changer = changer;
+        objects = new ArrayList<>();
 
         // initialize the current node and draw elements onto it
         cur = new Pane();
@@ -125,5 +130,7 @@ public abstract class Location implements Screen {
      * Requests a change in screen
      * @param to the screen to change to
      */
-    public abstract void screenChange(Screen to);
+    public void screenChange(Screen to){
+        changer.screenChange(to);
+    }
 }

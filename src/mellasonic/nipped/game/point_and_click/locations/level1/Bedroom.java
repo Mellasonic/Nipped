@@ -19,17 +19,20 @@
 
 package mellasonic.nipped.game.point_and_click.locations.level1;
 
+import mellasonic.nipped.game.point_and_click.locations.ScreenChanger;
+
 import java.util.Arrays;
 
 /**
  * the bedroom
  */
-public abstract class Bedroom extends mellasonic.nipped.game.point_and_click.locations.Bedroom {
+public class Bedroom extends mellasonic.nipped.game.point_and_click.locations.Bedroom {
     /**
      * class constructor
      * @param handler the object for handling when something is consumed
      */
-    public Bedroom(ConsumableHandler handler) {
+    public Bedroom(ConsumableHandler handler, ScreenChanger changer) {
+        super(changer);
         addObjects(Arrays.asList(
                 new Note(366, 298){
                     @Override

@@ -31,7 +31,7 @@ import java.util.Arrays;
 /**
  * Kitchen room
  */
-public abstract class Kitchen extends Location {
+public class Kitchen extends Location {
 
     /**
      * The living room
@@ -46,8 +46,8 @@ public abstract class Kitchen extends Location {
      * Class constructor
      *
      */
-    public Kitchen() {
-        super(Tools.getImage("assets/kitchen.png"), new ArrayList<>());
+    public Kitchen(ScreenChanger changer) {
+        super(Tools.getImage("assets/kitchen.png"), changer);
         addObjects(Arrays.asList(
                 new Button(Direction.R, Main.WIDTH - Button.WIDTH - 20, Main.HEIGHT / 2 - Button.HEIGHT / 2) {
                     @Override

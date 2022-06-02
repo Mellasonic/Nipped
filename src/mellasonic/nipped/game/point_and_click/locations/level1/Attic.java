@@ -19,17 +19,20 @@
 
 package mellasonic.nipped.game.point_and_click.locations.level1;
 
+import mellasonic.nipped.game.point_and_click.locations.ScreenChanger;
+
 import java.util.Arrays;
 
 /**
  * an attic
  */
-public abstract class Attic extends mellasonic.nipped.game.point_and_click.locations.Attic{
+public class Attic extends mellasonic.nipped.game.point_and_click.locations.Attic{
     /**
      * class constructor
      * @param handler the object for handling when something is consumed
      */
-    public Attic(ConsumableHandler handler) {
+    public Attic(ConsumableHandler handler, ScreenChanger changer) {
+        super(changer);
         addObjects(Arrays.asList(
                 new Food(599, 392) {
                     @Override

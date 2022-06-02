@@ -57,7 +57,7 @@ import static mellasonic.nipped.Tools.getImage;
 /**
  * The first room - a living room in level 1 and 3
  */
-public abstract class LivingRoom extends Location {
+public class LivingRoom extends Location {
     /**
      * The kitchen
      */
@@ -74,8 +74,8 @@ public abstract class LivingRoom extends Location {
     /**
      * Class constructor
      */
-    public LivingRoom() {
-        super(getImage("assets/livingroom.png"), new ArrayList<>());
+    public LivingRoom(ScreenChanger changer) {
+        super(getImage("assets/livingroom.png"), changer);
 
         // add objects to the list of interactives
         addObjects(Arrays.asList(new Button(Direction.L, 20, Main.HEIGHT / 2 - Button.HEIGHT / 2) {
