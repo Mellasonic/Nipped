@@ -3,6 +3,9 @@ package mellasonic.nipped.game.point_and_click.locations.level1;
 import javafx.scene.image.Image;
 import mellasonic.nipped.interactable.Rectangle;
 
+/**
+ * a consumable in level 1
+ */
 public abstract class Consumable extends Rectangle {
     /**
      * whether or not the food has already been clicked

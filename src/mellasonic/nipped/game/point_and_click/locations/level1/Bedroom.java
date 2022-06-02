@@ -26,8 +26,8 @@ import java.util.Arrays;
  */
 public abstract class Bedroom extends mellasonic.nipped.game.point_and_click.locations.Bedroom {
     /**
-     * Class constructor
-     *
+     * class constructor
+     * @param handler the object for handling when something is consumed
      */
     public Bedroom(ConsumableHandler handler) {
         addObjects(Arrays.asList(

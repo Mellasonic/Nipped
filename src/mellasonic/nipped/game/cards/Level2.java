@@ -72,6 +72,12 @@ public abstract class Level2 implements Level {
         cur.getChildren().add(getCard(0, counter).getNode());
     }
 
+    /**
+     * returns a card from an index
+     * @param curCard the index of the card content
+     * @param counter the streakcounter object
+     * @return a card
+     */
     public Card getCard(int curCard, StreakCounter counter) {
         CardTemplate cur = cards.get(curCard);
         return new Card(cur.getBackground(), cur.getMessage(), cur.isYes()) {
@@ -92,6 +98,10 @@ public abstract class Level2 implements Level {
         };
     }
 
+    /**
+     * changes the current card to another
+     * @param to the card to change to
+     */
     public void changeCard(Card to){
         cur.getChildren().remove(cur.getChildren().size() - 1);
         cur.getChildren().add(to.getNode());

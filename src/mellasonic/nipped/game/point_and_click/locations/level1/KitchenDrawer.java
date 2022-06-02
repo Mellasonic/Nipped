@@ -23,9 +23,13 @@ import mellasonic.nipped.game.point_and_click.locations.Drawer;
 
 import java.util.Arrays;
 
+/**
+ * a kitchen drawer
+ */
 public abstract class KitchenDrawer extends Drawer{
     /**
-     * Class Constructor
+     * class constructor
+     * @param handler the object for handling when something is consumed
      */
     public KitchenDrawer(ConsumableHandler handler){
         super();

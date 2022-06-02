@@ -4,6 +4,9 @@ import javafx.scene.image.Image;
 import mellasonic.nipped.Tools;
 import mellasonic.nipped.interactable.Rectangle;
 
+/**
+ * a note icon
+ */
 public abstract class Note extends Consumable {
     /**
      * Dimensions of the note

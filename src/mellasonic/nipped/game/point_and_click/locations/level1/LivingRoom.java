@@ -29,7 +29,8 @@ import java.util.Arrays;
 public abstract class LivingRoom extends mellasonic.nipped.game.point_and_click.locations.LivingRoom {
 
     /**
-     * Class constructor
+     * class constructor
+     * @param handler the object for handling when something is consumed
      */
     public LivingRoom(ConsumableHandler handler) {
         // add objects to the list of interactives

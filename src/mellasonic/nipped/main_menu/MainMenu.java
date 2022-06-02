@@ -49,6 +49,7 @@ import mellasonic.nipped.AppState;
 import mellasonic.nipped.Main;
 import mellasonic.nipped.Tools;
 import mellasonic.nipped.game.GameState;
+import mellasonic.nipped.game.ScoreState;
 import mellasonic.nipped.interactable.Button;
 import mellasonic.nipped.interactable.Interactive;
 

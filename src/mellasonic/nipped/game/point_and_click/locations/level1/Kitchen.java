@@ -27,8 +27,8 @@ import java.util.Arrays;
 public abstract class Kitchen extends mellasonic.nipped.game.point_and_click.locations.Kitchen{
 
     /**
-     * Class constructor
-     *
+     * class constructor
+     * @param handler the object for handling when something is consumed
      */
     public Kitchen(ConsumableHandler handler) {
         addObjects(Arrays.asList(

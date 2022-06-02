@@ -59,8 +59,17 @@ import mellasonic.nipped.game.point_and_click.locations.level1.*;
  * the first level
  */
 public abstract class Level1 extends PointClick{
+    /**
+     * the number of consumables consumed
+     */
     private int numConsumed = 0;
+    /**
+     * the total number of consumables
+     */
     private static final int totObject = 11;
+    /**
+     * the door
+     */
     private final Door door;
 
     /**

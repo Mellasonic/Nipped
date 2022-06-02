@@ -11,6 +11,9 @@ import javafx.scene.text.Text;
 import mellasonic.nipped.Main;
 import mellasonic.nipped.Tools;
 
+/**
+ * counts the current streak
+ */
 public class StreakCounter {
     /**
      * the current pane

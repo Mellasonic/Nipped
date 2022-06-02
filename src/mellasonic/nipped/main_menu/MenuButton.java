@@ -3,6 +3,9 @@ package mellasonic.nipped.main_menu;
 import mellasonic.nipped.Tools;
 import mellasonic.nipped.interactable.Rectangle;
 
+/**
+ * A button in the corner for going to the main menu
+ */
 public abstract class MenuButton extends Rectangle {
     /**
      * The dimensions of the menu button

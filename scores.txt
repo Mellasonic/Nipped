@@ -1,0 +1,2 @@
+Enter_your_name_here 100
+bob_is_cool 100

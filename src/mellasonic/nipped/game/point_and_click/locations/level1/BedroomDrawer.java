@@ -30,6 +30,7 @@ import java.util.Arrays;
 public abstract class BedroomDrawer extends Drawer{
     /**
      * class constructor
+     * @param handler the object for handling when something is consumed
      */
     public BedroomDrawer(ConsumableHandler handler){
         super();

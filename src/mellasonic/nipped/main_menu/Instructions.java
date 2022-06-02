@@ -83,6 +83,9 @@ public class Instructions implements AppState {
      */
     public static final int ARROW_WIDTH=60, ARROW_HEIGHT=48;
 
+    /**
+     * class constructor
+     */
     public Instructions(){
         // declare main pane
         screen = new Pane();

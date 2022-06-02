@@ -104,6 +104,7 @@ public class GameState implements AppState {
         container.getChildren().add(menuButton.getNode());
         cur = new Scene(container);
     }
+
     @Override
     public Scene getScene(){
         return cur;

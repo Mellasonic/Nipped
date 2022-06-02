@@ -26,8 +26,8 @@ import java.util.Arrays;
  */
 public abstract class Attic extends mellasonic.nipped.game.point_and_click.locations.Attic{
     /**
-     * Class constructor
-     *
+     * class constructor
+     * @param handler the object for handling when something is consumed
      */
     public Attic(ConsumableHandler handler) {
         addObjects(Arrays.asList(

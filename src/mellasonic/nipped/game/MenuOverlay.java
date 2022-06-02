@@ -10,6 +10,9 @@ import mellasonic.nipped.Main;
 import mellasonic.nipped.Tools;
 import mellasonic.nipped.interactable.Button;
 
+/**
+ * an overlay for the user to resume the game of exit
+ */
 public abstract class MenuOverlay {
     /**
      * the node to return
@@ -24,6 +27,9 @@ public abstract class MenuOverlay {
      */
     public static final int BUTTON_WIDTH = 340, BUTTON_HEIGHT=60;
 
+    /**
+     * class constructor
+     */
     public MenuOverlay(){
         // create a new pane that covers the screen
         ret = new Pane();
