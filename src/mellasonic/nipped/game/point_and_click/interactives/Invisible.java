@@ -22,6 +22,10 @@ package mellasonic.nipped.game.point_and_click.interactives;
 import javafx.scene.Node;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
+import javafx.scene.paint.Paint;
+import javafx.scene.shape.Rectangle;
+import javafx.scene.shape.StrokeType;
 import mellasonic.nipped.Tools;
 import mellasonic.nipped.interactable.Interactive;
 
@@ -68,9 +72,11 @@ public abstract class Invisible implements Interactive {
         cur.setLayoutY(y);
 
         // add the background of the box
-        ImageView bg = new ImageView(Tools.getImage("assets/invisible.png"));
-        bg.setFitWidth(width);
-        bg.setFitHeight(height);
+        Rectangle bg = new Rectangle(width, height);
+        bg.setFill(new Color(1, 1, 0, 0.2));
+        bg.setStrokeType(StrokeType.CENTERED);
+        bg.setStroke(new Color(1, 1, 0, 1));
+        bg.setStrokeWidth(1);
         cur.getChildren().add(bg);
 
         // add the star in the box
