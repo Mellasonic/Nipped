@@ -18,11 +18,11 @@ public abstract class MenuOverlay {
     /**
      * Dimensions of the card
      */
-    public static final int CARD_WIDTH=270, CARD_HEIGHT=360;
+    public static final int CARD_WIDTH=360, CARD_HEIGHT=360;
     /**
      * dimensions of the buttons
      */
-    public static final int BUTTON_WIDTH = 250, BUTTON_HEIGHT=60;
+    public static final int BUTTON_WIDTH = 340, BUTTON_HEIGHT=60;
 
     public MenuOverlay(){
         // create a new pane that covers the screen
