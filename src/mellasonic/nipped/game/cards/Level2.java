@@ -13,7 +13,7 @@
  Modification Authors: Daniel Ye
  Version 1.0
  2022/05/16
- Time spent: 10 mins
+ Time spent: 20 mins
  New features/processing: create level 2 template
 */
 
@@ -71,7 +71,12 @@ public abstract class Level2 implements Level {
 
         cur.getChildren().add(getCard(0, counter).getNode());
     }
-
+    /**
+    Returns a card object
+    @return The card specified
+    @param curCard The index
+    @param counter The streak counter for drawing purposes
+    */
     public Card getCard(int curCard, StreakCounter counter) {
         CardTemplate cur = cards.get(curCard);
         return new Card(cur.getBackground(), cur.getMessage(), cur.isYes()) {
@@ -91,7 +96,10 @@ public abstract class Level2 implements Level {
             }
         };
     }
-
+    /**
+    Changes the current card to the card inputted
+    @param to The card to be inputted
+    */
     public void changeCard(Card to){
         cur.getChildren().remove(cur.getChildren().size() - 1);
         cur.getChildren().add(to.getNode());
