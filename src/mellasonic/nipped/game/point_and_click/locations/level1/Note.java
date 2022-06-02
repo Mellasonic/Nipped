@@ -18,6 +18,6 @@ public abstract class Note extends Consumable {
      */
     public Note(int x, int y) {
         super(Tools.getImage("assets/note.png"), Tools.getImage("assets/note.png"),
-                Tools.getImage("assets/note.png"), x, y, WIDTH, HEIGHT);
+                Tools.getImage("assets/notegs.png"), x, y, WIDTH, HEIGHT);
     }
 }

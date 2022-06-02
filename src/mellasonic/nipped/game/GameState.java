@@ -28,10 +28,15 @@
 package mellasonic.nipped.game;
 
 import javafx.scene.Scene;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.Pane;
 import mellasonic.nipped.AppState;
+import mellasonic.nipped.Main;
 import mellasonic.nipped.game.cards.Level2;
 import mellasonic.nipped.game.point_and_click.Level1;
 import mellasonic.nipped.game.point_and_click.Level3;
+import mellasonic.nipped.main_menu.MainMenu;
+import mellasonic.nipped.main_menu.MenuButton;
 
 /**
  * When the player is playing the actual game
@@ -44,29 +49,60 @@ public class GameState implements AppState {
     /**
      * The current scene
      */
-    private Scene cur;
+    private final Scene cur;
+    /**
+     * the container for the levels
+     */
+    private final Pane container;
 
     /**
      * Class constructor
      */
     public GameState(){
+        // create a container
+        container = new Pane();
+
+        // add the menu button
+        MenuButton menuButton = new MenuButton(){
+            @Override
+            public void onClick() {
+                // add an overlay
+                container.getChildren().add(new MenuOverlay(){
+                    @Override
+                    public void onExit() {
+                        Main.getApp().changeState(new MainMenu());
+                    }
+                    @Override
+                    public void onResume() {
+                        // remove the overlay
+                        container.getChildren().remove(this.getNode());
+                    }
+                }.getNode());
+            }
+        };
+
+        // starting time
+        long start = System.currentTimeMillis();
+
+        // add levels
         curLevel = new Level1(){
             @Override
             public void nextLevel() {
                 changeLevel(new Level2(){
                     @Override
                     public void nextLevel() {
-                        changeLevel(new Level3(){
-                            @Override
-                            public void nextLevel() {
-
-                            }
-                        });
+                        // calculate scores
+                       long end = System.currentTimeMillis();
+                       long score = (int) ((end - start) / 1000);
                     }
                 });
             }
         };
-        cur = new Scene(curLevel.getNode());
+
+        // add the components
+        container.getChildren().add(curLevel.getNode());
+        container.getChildren().add(menuButton.getNode());
+        cur = new Scene(container);
     }
     @Override
     public Scene getScene(){
@@ -79,6 +115,6 @@ public class GameState implements AppState {
      */
     public void changeLevel(Level to){
         curLevel = to;
-        cur.setRoot(curLevel.getNode());
+        container.getChildren().set(1, curLevel.getNode());
     }
 }

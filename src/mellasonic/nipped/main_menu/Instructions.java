@@ -191,7 +191,7 @@ public class Instructions implements AppState {
         // set the screen to the first pane
         screen.getChildren().add(paneOf(0));
 
-        screen.getChildren().add(new MenuButton(10,10){
+        screen.getChildren().add(new MenuButton(){
             @Override
             public void onClick() {
                 Main.getApp().changeState(new MainMenu());

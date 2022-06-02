@@ -10,6 +10,13 @@ public abstract class MenuButton extends Rectangle {
     public static final int WIDTH=50, HEIGHT=50;
 
     /**
+     * Class Constructor
+     */
+    public MenuButton(){
+        this(10, 10);
+    }
+
+    /**
      * Class constructor
      *
      * @param x       x of bounding box
