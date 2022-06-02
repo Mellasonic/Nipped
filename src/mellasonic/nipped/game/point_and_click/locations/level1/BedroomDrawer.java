@@ -32,6 +32,7 @@ public class BedroomDrawer extends Drawer{
     /**
      * class constructor
      * @param handler the object for handling when something is consumed
+     * @param changer the screen change handler
      */
     public BedroomDrawer(ConsumableHandler handler, ScreenChanger changer){
         super(changer);

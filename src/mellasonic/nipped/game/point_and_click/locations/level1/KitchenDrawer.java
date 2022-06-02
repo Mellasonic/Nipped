@@ -31,6 +31,7 @@ public class KitchenDrawer extends Drawer{
     /**
      * class constructor
      * @param handler the object for handling when something is consumed
+     * @param changer the screen change handler
      */
     public KitchenDrawer(ConsumableHandler handler, ScreenChanger changer){
         super(changer);

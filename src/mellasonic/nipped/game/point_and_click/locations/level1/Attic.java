@@ -30,6 +30,7 @@ public class Attic extends mellasonic.nipped.game.point_and_click.locations.Atti
     /**
      * class constructor
      * @param handler the object for handling when something is consumed
+     * @param changer the screen change handler
      */
     public Attic(ConsumableHandler handler, ScreenChanger changer) {
         super(changer);

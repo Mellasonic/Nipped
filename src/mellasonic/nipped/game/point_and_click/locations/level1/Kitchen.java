@@ -31,6 +31,7 @@ public class Kitchen extends mellasonic.nipped.game.point_and_click.locations.Ki
     /**
      * class constructor
      * @param handler the object for handling when something is consumed
+     * @param changer the screen change handler
      */
     public Kitchen(ConsumableHandler handler, ScreenChanger changer) {
         super(changer);

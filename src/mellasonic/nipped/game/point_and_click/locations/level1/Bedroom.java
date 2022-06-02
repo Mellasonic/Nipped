@@ -30,6 +30,7 @@ public class Bedroom extends mellasonic.nipped.game.point_and_click.locations.Be
     /**
      * class constructor
      * @param handler the object for handling when something is consumed
+     * @param changer the screen change handler
      */
     public Bedroom(ConsumableHandler handler, ScreenChanger changer) {
         super(changer);
