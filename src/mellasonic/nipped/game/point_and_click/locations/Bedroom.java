@@ -56,6 +56,7 @@ public class Bedroom extends Location {
     /**
      * Class constructor
      *
+     * @param changer the screen change handler
      */
     public Bedroom(ScreenChanger changer) {
         super(Tools.getImage("assets/bedroom.png"), changer);

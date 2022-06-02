@@ -39,6 +39,8 @@ public class Drawer extends Location {
 
     /**
      * Class constructor
+     *
+     * @param changer the screen change handler
      */
     public Drawer(ScreenChanger changer) {
         super(Tools.getImage("assets/drawer.png"), changer);

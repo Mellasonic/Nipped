@@ -73,6 +73,8 @@ public class LivingRoom extends Location {
 
     /**
      * Class constructor
+     *
+     * @param changer the screen change handler
      */
     public LivingRoom(ScreenChanger changer) {
         super(getImage("assets/livingroom.png"), changer);

@@ -45,6 +45,7 @@ public class Kitchen extends Location {
     /**
      * Class constructor
      *
+     * @param changer the screen change handler
      */
     public Kitchen(ScreenChanger changer) {
         super(Tools.getImage("assets/kitchen.png"), changer);

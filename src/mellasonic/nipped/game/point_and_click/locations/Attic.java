@@ -39,6 +39,7 @@ public class Attic extends Location{
     /**
      * Class constructor
      *
+     * @param changer the screen change handler
      */
     public Attic(ScreenChanger changer) {
         super(Tools.getImage("assets/attic.png"), changer);

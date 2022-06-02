@@ -27,14 +27,39 @@
 
 package mellasonic.nipped.game.point_and_click;
 
+import mellasonic.nipped.game.point_and_click.locations.ScreenChanger;
+import mellasonic.nipped.game.point_and_click.locations.level3.*;
+
 /**
  * The third level
  */
 public abstract class Level3 extends PointClick{
     /**
+     * the door
+     */
+    private Door door;
+
+    /**
      * Class Constructor
      */
     public Level3() {
         super();
+        ScreenChanger changer = this::changeScreen;
+
+        // initialize rooms
+        LivingRoom living = new LivingRoom(changer);
+        Kitchen kitchen = new Kitchen(changer);
+        Bedroom bedroom = new Bedroom(changer);
+        BedroomDrawer bDrawer = new BedroomDrawer(changer);
+        KitchenDrawer kDrawer = new KitchenDrawer(changer);
+        Attic attic = new Attic(changer);
+        door = new Door() {
+            @Override
+            public void onDoorClicked() {
+                nextLevel();
+            }
+        };
+
+
     }
 }

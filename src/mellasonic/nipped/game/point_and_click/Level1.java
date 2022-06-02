@@ -99,10 +99,6 @@ public abstract class Level1 extends PointClick{
             public void onDoorClicked() {
                 nextLevel();
             }
-            @Override
-            public void screenChange(Screen to) {
-                changeScreen(to);
-            }
         };
 
         // link rooms to each other
