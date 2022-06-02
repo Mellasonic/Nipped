@@ -27,6 +27,7 @@
 
 package mellasonic.nipped.game.point_and_click;
 
+import mellasonic.nipped.game.point_and_click.locations.Door;
 import mellasonic.nipped.game.point_and_click.locations.ScreenChanger;
 import mellasonic.nipped.game.point_and_click.locations.level3.*;
 
@@ -53,13 +54,27 @@ public abstract class Level3 extends PointClick{
         BedroomDrawer bDrawer = new BedroomDrawer(changer);
         KitchenDrawer kDrawer = new KitchenDrawer(changer);
         Attic attic = new Attic(changer);
-        door = new Door() {
+        door = new Door(changer) {
             @Override
             public void onDoorClicked() {
                 nextLevel();
             }
         };
 
+        // link rooms to each other
+        living.setKitchen(kitchen);
+        living.setBedroom(bedroom);
+        living.setDoor(door);
+        door.setLiving(living);
+        kitchen.setLiving(living);
+        kitchen.setDrawer(kDrawer);
+        kDrawer.setPrev(kitchen);
+        bedroom.setLiving(living);
+        bedroom.setAttic(attic);
+        bedroom.setDrawer(bDrawer);
+        bDrawer.setPrev(bedroom);
+        attic.setBedroom(bedroom);
 
+        changeScreen(living);
     }
 }

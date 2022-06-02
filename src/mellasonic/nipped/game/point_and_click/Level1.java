@@ -53,6 +53,7 @@ package mellasonic.nipped.game.point_and_click;
 
 import javafx.scene.text.Font;
 import mellasonic.nipped.game.point_and_click.interactives.Panel;
+import mellasonic.nipped.game.point_and_click.locations.Door;
 import mellasonic.nipped.game.point_and_click.locations.ScreenChanger;
 import mellasonic.nipped.game.point_and_click.locations.level1.*;
 
@@ -94,7 +95,7 @@ public abstract class Level1 extends PointClick{
         BedroomDrawer bDrawer = new BedroomDrawer(handler, changer);
         KitchenDrawer kDrawer = new KitchenDrawer(handler, changer);
         Attic attic = new Attic(handler, changer);
-        door = new Door() {
+        door = new Door(changer) {
             @Override
             public void onDoorClicked() {
                 nextLevel();

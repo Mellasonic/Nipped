@@ -17,7 +17,7 @@
  New features/processing: created door, add opening & next-level functions, add ghost collider
 */
 
-package mellasonic.nipped.game.point_and_click.locations.level1;
+package mellasonic.nipped.game.point_and_click.locations;
 
 import javafx.scene.image.Image;
 import mellasonic.nipped.Main;
@@ -45,9 +45,11 @@ public abstract class Door extends Location {
 
     /**
      * Class constructor
+     *
+     * @param changer the screen change handler
      */
-    public Door() {
-        super(Tools.getImage("assets/doorclose.png"), null);
+    public Door(ScreenChanger changer) {
+        super(Tools.getImage("assets/doorclose.png"), changer);
         // a ghost collider for detecting the door
         Image ghostCollide = Tools.getImage("assets/invisible.png");
         addObjects(Arrays.asList(
