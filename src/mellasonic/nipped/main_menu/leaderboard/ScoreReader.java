@@ -26,9 +26,40 @@
 package mellasonic.nipped.main_menu.leaderboard;
 
 import java.util.*;
+import java.io.*;
 
+/**
+* This class has utilites to read scores from the text file.
+*/
 public class ScoreReader {
+    final static int readAmt = 15;
+    /**
+    * This method returns a sorted arraylist of scores for every score in the folder
+    * @return A sorted arraylist of scores
+    */
     public static ArrayList<Score> getScores(){
-        
+        ArrayList<Score> out = new ArrayList<Score>();
+        try{
+            BufferedReader in = new BufferedReader(new FileReader("scores.txt"));
+            for(int i = 0; i < readAmt;i++){
+               String line = in.readLine();
+               if(line == null) break;
+               String[] arr = line.split(" ");
+               out.add(new Score(arr[0], Integer.parseInt(arr[1])));
+            }
+        }
+        catch(Exception e){ e.printStackTrace();}
+        for(int i = 0 ; i < out.size();i++){
+            int swapInd = i;
+            for(int j = i+1;j < out.size(); j++){
+               if(out.get(j).score < out.get(i).score){
+                  swapInd = j;
+               }
+            }
+            Score store = out.get(swapInd);
+            out.set(swapInd, out.get(i));
+            out.set(i, store);
+        }
+        return out;
     }
 }
