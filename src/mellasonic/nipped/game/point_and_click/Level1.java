@@ -95,7 +95,7 @@ public abstract class Level1 extends PointClick{
         BedroomDrawer bDrawer = new BedroomDrawer(handler, changer);
         KitchenDrawer kDrawer = new KitchenDrawer(handler, changer);
         Attic attic = new Attic(handler, changer);
-        door = new Door(changer) {
+        door = new Door(changer, true) {
             @Override
             public void onDoorClicked() {
                 nextLevel();

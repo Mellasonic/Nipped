@@ -34,7 +34,7 @@ public class Kitchen extends mellasonic.nipped.game.point_and_click.locations.Ki
      * @param changer the screen change handler
      */
     public Kitchen(ConsumableHandler handler, ScreenChanger changer) {
-        super(changer);
+        super(changer, true);
         addObjects(Arrays.asList(
                 new Food(200, 235) {
                     @Override

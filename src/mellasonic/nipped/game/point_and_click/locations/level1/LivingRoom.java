@@ -36,7 +36,7 @@ public class LivingRoom extends mellasonic.nipped.game.point_and_click.locations
      * @param changer the screen change handler
      */
     public LivingRoom(ConsumableHandler handler, ScreenChanger changer) {
-        super(changer);
+        super(changer, true);
         // add objects to the list of interactives
         addObjects(Arrays.asList(
                 new Food(600, 75) {

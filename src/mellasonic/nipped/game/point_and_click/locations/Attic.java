@@ -41,8 +41,8 @@ public class Attic extends Location{
      *
      * @param changer the screen change handler
      */
-    public Attic(ScreenChanger changer) {
-        super(Tools.getImage("assets/attic.png"), changer);
+    public Attic(ScreenChanger changer, boolean grey) {
+        super(grey ? Tools.getImage("assets/atticgs.png") : Tools.getImage("assets/attic.png"), changer);
         addObjects(Arrays.asList(
                 new Button(Direction.D, Main.WIDTH / 2 - Button.WIDTH / 2, Main.HEIGHT - 20 - Button.HEIGHT) {
                     @Override

@@ -33,7 +33,7 @@ public class Attic extends mellasonic.nipped.game.point_and_click.locations.Atti
      * @param changer the screen change handler
      */
     public Attic(ConsumableHandler handler, ScreenChanger changer) {
-        super(changer);
+        super(changer, true);
         addObjects(Arrays.asList(
                 new Food(599, 392) {
                     @Override

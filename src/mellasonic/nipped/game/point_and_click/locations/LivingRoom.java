@@ -76,8 +76,8 @@ public class LivingRoom extends Location {
      *
      * @param changer the screen change handler
      */
-    public LivingRoom(ScreenChanger changer) {
-        super(getImage("assets/livingroom.png"), changer);
+    public LivingRoom(ScreenChanger changer, boolean grey) {
+        super(grey ? getImage("assets/livingroomgs.png") : getImage("assets/livingroom.png"), changer);
 
         // add objects to the list of interactives
         addObjects(Arrays.asList(new Button(Direction.L, 20, Main.HEIGHT / 2 - Button.HEIGHT / 2) {

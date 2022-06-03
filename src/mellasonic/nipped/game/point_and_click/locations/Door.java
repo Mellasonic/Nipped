@@ -42,14 +42,20 @@ public abstract class Door extends Location {
      * the living room
      */
     private Location living;
+    /**
+     * whether or not the sprites are greyscaled
+     */
+    private final boolean isGrey;
 
     /**
      * Class constructor
      *
      * @param changer the screen change handler
      */
-    public Door(ScreenChanger changer) {
-        super(Tools.getImage("assets/doorclose.png"), changer);
+    public Door(ScreenChanger changer, boolean grey) {
+        super(grey ? Tools.getImage("assets/doorclosegs.png") : Tools.getImage("assets/doorclose.png"), changer);
+        this.isGrey = grey;
+
         // a ghost collider for detecting the door
         Image ghostCollide = Tools.getImage("assets/invisible.png");
         addObjects(Arrays.asList(
@@ -92,6 +98,6 @@ public abstract class Door extends Location {
      */
     public void enable(){
         doorOpened = true;
-        setBackground(Tools.getImage("assets/dooropen.png"));
+        setBackground(isGrey ? Tools.getImage("assets/dooropengs.png") : Tools.getImage("assets/dooropen.png"));
     }
 }
