@@ -29,6 +29,6 @@ public class Kitchen extends mellasonic.nipped.game.point_and_click.locations.Ki
      * @param changer the screen change handler
      */
     public Kitchen(ScreenChanger changer) {
-        super(changer);
+        super(changer, false);
     }
 }

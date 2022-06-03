@@ -47,8 +47,8 @@ public class Kitchen extends Location {
      *
      * @param changer the screen change handler
      */
-    public Kitchen(ScreenChanger changer) {
-        super(Tools.getImage("assets/kitchen.png"), changer);
+    public Kitchen(ScreenChanger changer, boolean grey) {
+        super(grey ? Tools.getImage("assets/kitchengs.png") : Tools.getImage("assets/kitchen.png"), changer);
         addObjects(Arrays.asList(
                 new Button(Direction.R, Main.WIDTH - Button.WIDTH - 20, Main.HEIGHT / 2 - Button.HEIGHT / 2) {
                     @Override

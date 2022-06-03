@@ -42,8 +42,8 @@ public class Drawer extends Location {
      *
      * @param changer the screen change handler
      */
-    public Drawer(ScreenChanger changer) {
-        super(Tools.getImage("assets/drawer.png"), changer);
+    public Drawer(ScreenChanger changer, boolean grey) {
+        super(grey ? Tools.getImage("assets/drawergs.png") : Tools.getImage("assets/drawer.png"), changer);
         addObjects(Arrays.asList(
                 new Button(Direction.D, 414, 436) {
                     @Override

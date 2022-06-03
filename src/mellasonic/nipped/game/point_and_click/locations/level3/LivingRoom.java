@@ -28,6 +28,6 @@ public class LivingRoom extends mellasonic.nipped.game.point_and_click.locations
      * @param changer the screen change handler
      */
     public LivingRoom(ScreenChanger changer) {
-        super(changer);
+        super(changer, false);
     }
 }

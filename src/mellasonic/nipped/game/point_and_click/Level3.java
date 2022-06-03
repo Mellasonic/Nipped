@@ -38,7 +38,7 @@ public abstract class Level3 extends PointClick{
     /**
      * the door
      */
-    private Door door;
+    private final Door door;
 
     /**
      * Class Constructor
@@ -54,7 +54,7 @@ public abstract class Level3 extends PointClick{
         BedroomDrawer bDrawer = new BedroomDrawer(changer);
         KitchenDrawer kDrawer = new KitchenDrawer(changer);
         Attic attic = new Attic(changer);
-        door = new Door(changer) {
+        door = new Door(changer, false) {
             @Override
             public void onDoorClicked() {
                 nextLevel();

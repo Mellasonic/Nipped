@@ -29,6 +29,6 @@ public class KitchenDrawer extends Drawer {
      * @param changer the screen change handler
      */
     public KitchenDrawer(ScreenChanger changer) {
-        super(changer);
+        super(changer, false);
     }
 }

@@ -34,7 +34,7 @@ public class KitchenDrawer extends Drawer{
      * @param changer the screen change handler
      */
     public KitchenDrawer(ConsumableHandler handler, ScreenChanger changer){
-        super(changer);
+        super(changer, true);
         addObjects(Arrays.asList(
                 new Food(502, 250){
                     @Override

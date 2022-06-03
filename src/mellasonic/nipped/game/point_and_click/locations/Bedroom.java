@@ -58,8 +58,8 @@ public class Bedroom extends Location {
      *
      * @param changer the screen change handler
      */
-    public Bedroom(ScreenChanger changer) {
-        super(Tools.getImage("assets/bedroom.png"), changer);
+    public Bedroom(ScreenChanger changer, boolean grey) {
+        super(grey ? Tools.getImage("assets/bedroomgs.png") : Tools.getImage("assets/bedroom.png"), changer);
 
         addObjects(Arrays.asList(
                 new Button(Direction.D, Main.WIDTH / 2 - Button.WIDTH / 2, Main.HEIGHT - Button.HEIGHT - 20) {

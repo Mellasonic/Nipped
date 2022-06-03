@@ -33,7 +33,7 @@ public class Bedroom extends mellasonic.nipped.game.point_and_click.locations.Be
      * @param changer the screen change handler
      */
     public Bedroom(ConsumableHandler handler, ScreenChanger changer) {
-        super(changer);
+        super(changer, true);
         addObjects(Arrays.asList(
                 new Note(366, 298){
                     @Override
