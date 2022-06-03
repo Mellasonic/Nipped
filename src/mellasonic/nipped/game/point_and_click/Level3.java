@@ -28,8 +28,11 @@
 package mellasonic.nipped.game.point_and_click;
 
 import mellasonic.nipped.game.point_and_click.locations.Door;
+import mellasonic.nipped.game.point_and_click.locations.Drawer;
 import mellasonic.nipped.game.point_and_click.locations.ScreenChanger;
 import mellasonic.nipped.game.point_and_click.locations.level3.*;
+import mellasonic.nipped.game.point_and_click.locations.level3.interactives.Interactive;
+import mellasonic.nipped.game.point_and_click.locations.level3.interactives.InteractiveHandler;
 
 /**
  * The third level
@@ -46,13 +49,14 @@ public abstract class Level3 extends PointClick{
     public Level3() {
         super();
         ScreenChanger changer = this::changeScreen;
+        InteractiveHandler handler = this::handleConsume;
 
         // initialize rooms
         LivingRoom living = new LivingRoom(changer);
         Kitchen kitchen = new Kitchen(changer);
         Bedroom bedroom = new Bedroom(changer);
-        BedroomDrawer bDrawer = new BedroomDrawer(changer);
-        KitchenDrawer kDrawer = new KitchenDrawer(changer);
+        Drawer bDrawer = new L3Drawer(changer, handler);
+        Drawer kDrawer = new L3Drawer(changer, handler);
         Attic attic = new Attic(changer);
         door = new Door(changer, false) {
             @Override
@@ -60,11 +64,14 @@ public abstract class Level3 extends PointClick{
                 nextLevel();
             }
         };
+        Drawer lDrawer = new L3Drawer(changer, handler);
 
         // link rooms to each other
         living.setKitchen(kitchen);
         living.setBedroom(bedroom);
         living.setDoor(door);
+        living.setDrawer(lDrawer);
+        lDrawer.setPrev(living);
         door.setLiving(living);
         kitchen.setLiving(living);
         kitchen.setDrawer(kDrawer);
@@ -76,5 +83,13 @@ public abstract class Level3 extends PointClick{
         attic.setBedroom(bedroom);
 
         changeScreen(living);
+    }
+
+    /**
+     * handles consumption
+     * @param consumed the interactive object consumed
+     */
+    private void handleConsume(Interactive consumed){
+
     }
 }

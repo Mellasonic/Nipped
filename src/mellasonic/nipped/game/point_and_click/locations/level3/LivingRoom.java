@@ -19,9 +19,18 @@
 
 package mellasonic.nipped.game.point_and_click.locations.level3;
 
+import mellasonic.nipped.game.point_and_click.interactives.Invisible;
+import mellasonic.nipped.game.point_and_click.locations.Location;
 import mellasonic.nipped.game.point_and_click.locations.ScreenChanger;
 
+import java.util.Arrays;
+
 public class LivingRoom extends mellasonic.nipped.game.point_and_click.locations.LivingRoom {
+    /**
+     * the drawer
+     */
+    private Location drawer;
+
     /**
      * Class constructor
      *
@@ -29,5 +38,22 @@ public class LivingRoom extends mellasonic.nipped.game.point_and_click.locations
      */
     public LivingRoom(ScreenChanger changer) {
         super(changer, false);
+        addObjects(Arrays.asList(
+                new Invisible(612, 339, 87, 51, true) {
+                    @Override
+                    public void onClick() {
+                        assert drawer != null;
+                        screenChange(drawer);
+                    }
+                }
+        ));
+    }
+
+    /**
+     * sets the drawer location
+     * @param drawer the drawer location
+     */
+    public void setDrawer(Location drawer){
+        this.drawer = drawer;
     }
 }
