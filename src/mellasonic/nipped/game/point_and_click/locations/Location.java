@@ -1,6 +1,6 @@
 /* ICS Final Project Nipped
- 2022/05/18
- Time spent: 1 hour 20 min
+ 2022/06/02
+ Time spent: 2 hour 50 min
 */
 
 /*
@@ -31,6 +31,14 @@
  2022/05/20
  Time spent: 10 min
  New features/processing: Add request location change
+*/
+
+/*
+ Modification Authors: Eric Jin, James Huynh
+ Version 1.4
+ 2022/06/02
+ Time spent: 1 hour 30 min
+ New features/processing: Add consumable and screen change handler
 */
 
 package mellasonic.nipped.game.point_and_click.locations;
