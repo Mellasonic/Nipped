@@ -10,7 +10,7 @@
 */
 
 /*
- Modification Authors: Daniel Ye
+ Modification Authors: Daniel Ye, Eric Jin
  Version 1.1
  2022/05/31
  Time spent: 20 min
