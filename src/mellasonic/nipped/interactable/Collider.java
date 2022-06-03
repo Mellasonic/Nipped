@@ -23,6 +23,7 @@ package mellasonic.nipped.interactable;
 import javafx.scene.Node;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.Pane;
 
 /**
  * The default interactive type for point and click games
@@ -40,6 +41,10 @@ public abstract class Collider implements Interactive{
      * the bounding box of the image
      */
     protected final int x, y, width, height;
+    /**
+     * the current node
+     */
+    private final ImageView view;
 
     /**
      * Class constructor
@@ -57,6 +62,32 @@ public abstract class Collider implements Interactive{
         this.y = y;
         this.width = width;
         this.height = height;
+
+        // create a bounded image of the collider
+        view = new ImageView(normal);
+        view.setFitWidth(width);
+        view.setFitHeight(height);
+        view.setLayoutX(x);
+        view.setLayoutY(y);
+
+        view.setOnMouseMoved(me -> {
+            // change image to hover or normal depending on if the mouse is in the interactive range
+            if(hit(me.getX(), me.getY())){
+                view.setImage(this.onHover);
+            } else {
+                view.setImage(this.normal);
+            }
+        });
+
+        // when the mouse exits the node, unhighlight it
+        view.setOnMouseExited(me -> view.setImage(this.normal));
+
+        view.setOnMouseClicked(me -> {
+            // perform the onClick function when the node is considered to be "clicked"
+            if(hit(me.getX(), me.getY())){
+                onClick();
+            }
+        });
     }
 
     /**
@@ -65,6 +96,7 @@ public abstract class Collider implements Interactive{
      */
     protected void setNormal(Image normal) {
         this.normal = normal;
+        view.setImage(normal);
     }
 
     /**
@@ -73,6 +105,7 @@ public abstract class Collider implements Interactive{
      */
     protected void setOnHover(Image onHover) {
         this.onHover = onHover;
+        view.setImage(normal);
     }
 
     /**
@@ -85,32 +118,6 @@ public abstract class Collider implements Interactive{
 
     @Override
     public Node getNode(){
-        // create a bounded image of the collider
-        ImageView view = new ImageView(normal);
-        view.setFitWidth(width);
-        view.setFitHeight(height);
-        view.setLayoutX(x);
-        view.setLayoutY(y);
-
-        view.setOnMouseMoved(me -> {
-            // change image to hover or normal depending on if the mouse is in the interactive range
-            if(hit(me.getX(), me.getY())){
-                view.setImage(onHover);
-            } else {
-                view.setImage(normal);
-            }
-        });
-
-        // when the mouse exits the node, unhighlight it
-        view.setOnMouseExited(me -> view.setImage(normal));
-
-        view.setOnMouseClicked(me -> {
-            // perform the onClick function when the node is considered to be "clicked"
-            if(hit(me.getX(), me.getY())){
-                onClick();
-            }
-        });
-
         return view;
     }
 }

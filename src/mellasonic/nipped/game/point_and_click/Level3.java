@@ -57,7 +57,7 @@ public abstract class Level3 extends PointClick{
         Bedroom bedroom = new Bedroom(changer);
         Drawer bDrawer = new L3Drawer(changer, handler);
         Drawer kDrawer = new L3Drawer(changer, handler);
-        Attic attic = new Attic(changer);
+        Attic attic = new Attic(changer, handler);
         door = new Door(changer, false) {
             @Override
             public void onDoorClicked() {
