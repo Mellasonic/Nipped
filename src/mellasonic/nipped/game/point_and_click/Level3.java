@@ -32,6 +32,7 @@ import mellasonic.nipped.game.point_and_click.locations.ScreenChanger;
 import mellasonic.nipped.game.point_and_click.locations.level3.*;
 import mellasonic.nipped.game.point_and_click.locations.level3.interactives.Consumable;
 import mellasonic.nipped.game.point_and_click.locations.level3.interactives.ConsumableHandler;
+import mellasonic.nipped.interactable.Interactive;
 
 /**
  * The third level
@@ -47,8 +48,8 @@ public abstract class Level3 extends PointClick{
         ConsumableHandler handler = this::handleConsume;
 
         // initialize rooms
-        LivingRoom living = new LivingRoom(changer);
-        Kitchen kitchen = new Kitchen(changer);
+        LivingRoom living = new LivingRoom(changer, handler);
+        Kitchen kitchen = new Kitchen(changer, handler);
         Bedroom bedroom = new Bedroom(changer);
         Drawer bDrawer = new L3Drawer(changer, handler);
         Drawer kDrawer = new L3Drawer(changer, handler);
@@ -84,7 +85,7 @@ public abstract class Level3 extends PointClick{
      * handles consumption
      * @param consumed the interactive object consumed
      */
-    private void handleConsume(Consumable consumed){
+    private void handleConsume(Interactive consumed){
 
     }
 }

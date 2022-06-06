@@ -20,15 +20,27 @@
 package mellasonic.nipped.game.point_and_click.locations.level3;
 
 import mellasonic.nipped.game.point_and_click.locations.ScreenChanger;
-import mellasonic.nipped.game.point_and_click.locations.level1.ConsumableHandler;
+import mellasonic.nipped.game.point_and_click.locations.level3.interactives.Checklist;
+import mellasonic.nipped.game.point_and_click.locations.level3.interactives.ConsumableHandler;
+
+import java.util.Arrays;
 
 public class Kitchen extends mellasonic.nipped.game.point_and_click.locations.Kitchen {
     /**
      * class constructor
      *
      * @param changer the screen change handler
+     * @param handler the onconsumed object handler
      */
-    public Kitchen(ScreenChanger changer) {
+    public Kitchen(ScreenChanger changer, ConsumableHandler handler) {
         super(changer, false);
+        addObjects(Arrays.asList(
+                new Checklist(687, 265 - Checklist.HEIGHT, changer, this) {
+                    @Override
+                    public void onConsume() {
+                        handler.onConsume(this);
+                    }
+                }
+        ));
     }
 }

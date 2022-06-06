@@ -109,6 +109,26 @@ public abstract class Collider implements Interactive{
     }
 
     /**
+     * sets the dimensions
+     * @param width the width
+     * @param height the height
+     */
+    protected void setDimensions(int width, int height){
+        this.view.setFitWidth(width);
+        this.view.setFitHeight(height);
+    }
+
+    /**
+     * sets the position
+     * @param x the x coordinate
+     * @param y the y coordinate
+     */
+    protected void setPosition(int x, int y){
+        this.view.setLayoutX(x);
+        this.view.setLayoutY(y);
+    }
+
+    /**
      * returns whether or not the cursor hits the collider
      * @param x x coordinate relative to bounding box
      * @param y y coordinate relative to bounding box

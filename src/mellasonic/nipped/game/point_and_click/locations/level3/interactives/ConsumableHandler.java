@@ -19,10 +19,12 @@
 
 package mellasonic.nipped.game.point_and_click.locations.level3.interactives;
 
+import mellasonic.nipped.interactable.Interactive;
+
 public interface ConsumableHandler {
     /**
      * called when an interactive object is consumed
      * @param object the consumed object
      */
-    void onConsume(Consumable object);
+    void onConsume(Interactive object);
 }

@@ -22,6 +22,8 @@ package mellasonic.nipped.game.point_and_click.locations.level3;
 import mellasonic.nipped.game.point_and_click.interactives.Invisible;
 import mellasonic.nipped.game.point_and_click.locations.Location;
 import mellasonic.nipped.game.point_and_click.locations.ScreenChanger;
+import mellasonic.nipped.game.point_and_click.locations.level3.interactives.Book;
+import mellasonic.nipped.game.point_and_click.locations.level3.interactives.ConsumableHandler;
 
 import java.util.Arrays;
 
@@ -35,8 +37,9 @@ public class LivingRoom extends mellasonic.nipped.game.point_and_click.locations
      * Class constructor
      *
      * @param changer the screen change handler
+     * @param handler the interactive objects handler
      */
-    public LivingRoom(ScreenChanger changer) {
+    public LivingRoom(ScreenChanger changer, ConsumableHandler handler) {
         super(changer, false);
         addObjects(Arrays.asList(
                 new Invisible(612, 339, 87, 51, true) {
@@ -44,6 +47,12 @@ public class LivingRoom extends mellasonic.nipped.game.point_and_click.locations
                     public void onClick() {
                         assert drawer != null;
                         screenChange(drawer);
+                    }
+                },
+                new Book(369, 318-Book.HEIGHT) {
+                    @Override
+                    public void onConsume() {
+                        handler.onConsume(this);
                     }
                 }
         ));
