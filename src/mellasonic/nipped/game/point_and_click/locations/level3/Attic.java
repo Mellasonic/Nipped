@@ -20,9 +20,8 @@
 package mellasonic.nipped.game.point_and_click.locations.level3;
 
 import mellasonic.nipped.game.point_and_click.locations.ScreenChanger;
-import mellasonic.nipped.game.point_and_click.locations.level1.ConsumableHandler;
 import mellasonic.nipped.game.point_and_click.locations.level3.interactives.CatClean;
-import mellasonic.nipped.game.point_and_click.locations.level3.interactives.InteractiveHandler;
+import mellasonic.nipped.game.point_and_click.locations.level3.interactives.ConsumableHandler;
 
 import java.util.Arrays;
 
@@ -35,7 +34,7 @@ public class Attic extends mellasonic.nipped.game.point_and_click.locations.Atti
      * @param changer the screen change handler
      * @param handler the interactive objects handler
      */
-    public Attic(ScreenChanger changer, InteractiveHandler handler) {
+    public Attic(ScreenChanger changer, ConsumableHandler handler) {
         super(changer, false);
         addObjects(Arrays.asList(
                 new CatClean(414, 282) {

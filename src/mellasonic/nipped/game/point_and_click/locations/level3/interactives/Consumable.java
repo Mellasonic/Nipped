@@ -22,7 +22,7 @@ package mellasonic.nipped.game.point_and_click.locations.level3.interactives;
 import javafx.scene.image.Image;
 import mellasonic.nipped.interactable.Rectangle;
 
-public abstract class Interactive extends Rectangle {
+public abstract class Consumable extends Rectangle {
     /**
      * whether or not this object can be clicked
      */
@@ -43,7 +43,7 @@ public abstract class Interactive extends Rectangle {
      * @param width   width of bounding box
      * @param height  height of bounding box
      */
-    public Interactive(Image normal, Image onHover, Image disabled, int x, int y, int width, int height) {
+    public Consumable(Image normal, Image onHover, Image disabled, int x, int y, int width, int height) {
         super(normal, onHover, x, y, width, height);
         enabled = true;
         this.disabled = disabled;

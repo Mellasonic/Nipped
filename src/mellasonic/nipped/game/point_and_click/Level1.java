@@ -53,7 +53,7 @@ package mellasonic.nipped.game.point_and_click;
 
 import javafx.scene.text.Font;
 import mellasonic.nipped.game.point_and_click.interactives.Panel;
-import mellasonic.nipped.game.point_and_click.locations.Door;
+import mellasonic.nipped.game.point_and_click.locations.level1.Door;
 import mellasonic.nipped.game.point_and_click.locations.ScreenChanger;
 import mellasonic.nipped.game.point_and_click.locations.level1.*;
 

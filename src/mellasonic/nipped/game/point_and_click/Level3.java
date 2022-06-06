@@ -27,21 +27,16 @@
 
 package mellasonic.nipped.game.point_and_click;
 
-import mellasonic.nipped.game.point_and_click.locations.Door;
 import mellasonic.nipped.game.point_and_click.locations.Drawer;
 import mellasonic.nipped.game.point_and_click.locations.ScreenChanger;
 import mellasonic.nipped.game.point_and_click.locations.level3.*;
-import mellasonic.nipped.game.point_and_click.locations.level3.interactives.Interactive;
-import mellasonic.nipped.game.point_and_click.locations.level3.interactives.InteractiveHandler;
+import mellasonic.nipped.game.point_and_click.locations.level3.interactives.Consumable;
+import mellasonic.nipped.game.point_and_click.locations.level3.interactives.ConsumableHandler;
 
 /**
  * The third level
  */
 public abstract class Level3 extends PointClick{
-    /**
-     * the door
-     */
-    private final Door door;
 
     /**
      * Class Constructor
@@ -49,7 +44,7 @@ public abstract class Level3 extends PointClick{
     public Level3() {
         super();
         ScreenChanger changer = this::changeScreen;
-        InteractiveHandler handler = this::handleConsume;
+        ConsumableHandler handler = this::handleConsume;
 
         // initialize rooms
         LivingRoom living = new LivingRoom(changer);
@@ -58,10 +53,10 @@ public abstract class Level3 extends PointClick{
         Drawer bDrawer = new L3Drawer(changer, handler);
         Drawer kDrawer = new L3Drawer(changer, handler);
         Attic attic = new Attic(changer, handler);
-        door = new Door(changer, false) {
+        Door door = new Door(changer){
             @Override
-            public void onDoorClicked() {
-                nextLevel();
+            public void onExercise() {
+
             }
         };
         Drawer lDrawer = new L3Drawer(changer, handler);
@@ -89,7 +84,7 @@ public abstract class Level3 extends PointClick{
      * handles consumption
      * @param consumed the interactive object consumed
      */
-    private void handleConsume(Interactive consumed){
+    private void handleConsume(Consumable consumed){
 
     }
 }

@@ -102,6 +102,15 @@ public abstract class Location implements Screen {
     }
 
     /**
+     * removes an interactive object
+     * @param toRemove the object to remove
+     */
+    public void removeObject(Interactive toRemove){
+        objects.remove(toRemove);
+        drawElements();
+    }
+
+    /**
      * sets the background
      * @param to the image to set the background to
      */

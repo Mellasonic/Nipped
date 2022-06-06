@@ -17,7 +17,7 @@
  New features/processing: created door, add opening & next-level functions, add ghost collider
 */
 
-package mellasonic.nipped.game.point_and_click.locations;
+package mellasonic.nipped.game.point_and_click.locations.level1;
 
 import javafx.scene.image.Image;
 import mellasonic.nipped.Main;
@@ -25,6 +25,7 @@ import mellasonic.nipped.Tools;
 import mellasonic.nipped.game.point_and_click.interactives.Button;
 import mellasonic.nipped.game.point_and_click.interactives.Direction;
 import mellasonic.nipped.game.point_and_click.locations.Location;
+import mellasonic.nipped.game.point_and_click.locations.ScreenChanger;
 import mellasonic.nipped.interactable.Rectangle;
 
 import java.util.ArrayList;

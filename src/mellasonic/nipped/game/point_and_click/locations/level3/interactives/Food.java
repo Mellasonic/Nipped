@@ -19,11 +19,9 @@
 
 package mellasonic.nipped.game.point_and_click.locations.level3.interactives;
 
-import javafx.scene.image.Image;
 import mellasonic.nipped.Tools;
-import mellasonic.nipped.interactable.Rectangle;
 
-public abstract class Food extends Interactive {
+public abstract class Food extends Consumable {
     /**
      * Dimensions of this food
      */

@@ -19,10 +19,9 @@
 
 package mellasonic.nipped.game.point_and_click.locations.level3.interactives;
 
-import javafx.scene.image.Image;
 import mellasonic.nipped.Tools;
 
-public abstract class CatClean extends Interactive{
+public abstract class CatClean extends Consumable {
     /**
      * Dimensions of the icon
      */

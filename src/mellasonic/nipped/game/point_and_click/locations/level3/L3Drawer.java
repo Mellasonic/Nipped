@@ -22,7 +22,7 @@ package mellasonic.nipped.game.point_and_click.locations.level3;
 import mellasonic.nipped.game.point_and_click.locations.Drawer;
 import mellasonic.nipped.game.point_and_click.locations.ScreenChanger;
 import mellasonic.nipped.game.point_and_click.locations.level3.interactives.Food;
-import mellasonic.nipped.game.point_and_click.locations.level3.interactives.InteractiveHandler;
+import mellasonic.nipped.game.point_and_click.locations.level3.interactives.ConsumableHandler;
 
 import java.util.Arrays;
 
@@ -33,10 +33,10 @@ public class L3Drawer extends Drawer {
     /**
      * Class constructor
      *
-     * @param changer the screen change handler
+     * @param changer the screen change handle
      * @param handler the interactive consumable handler
      */
-    public L3Drawer(ScreenChanger changer, InteractiveHandler handler) {
+    public L3Drawer(ScreenChanger changer, ConsumableHandler handler) {
         super(changer, false);
 
         addObjects(Arrays.asList(

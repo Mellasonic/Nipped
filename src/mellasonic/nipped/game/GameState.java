@@ -28,7 +28,6 @@
 package mellasonic.nipped.game;
 
 import javafx.scene.Scene;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import mellasonic.nipped.AppState;
 import mellasonic.nipped.Main;
