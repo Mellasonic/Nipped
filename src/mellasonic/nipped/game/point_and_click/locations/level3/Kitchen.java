@@ -22,6 +22,7 @@ package mellasonic.nipped.game.point_and_click.locations.level3;
 import mellasonic.nipped.game.point_and_click.locations.ScreenChanger;
 import mellasonic.nipped.game.point_and_click.locations.level3.interactives.Checklist;
 import mellasonic.nipped.game.point_and_click.locations.level3.interactives.ConsumableHandler;
+import mellasonic.nipped.game.point_and_click.locations.level3.interactives.Note;
 
 import java.util.Arrays;
 
@@ -36,6 +37,12 @@ public class Kitchen extends mellasonic.nipped.game.point_and_click.locations.Ki
         super(changer, false);
         addObjects(Arrays.asList(
                 new Checklist(687, 265 - Checklist.HEIGHT, changer, this) {
+                    @Override
+                    public void onConsume() {
+                        handler.onConsume(this);
+                    }
+                },
+                new Note(215, 265-Note.HEIGHT, changer, this) {
                     @Override
                     public void onConsume() {
                         handler.onConsume(this);

@@ -16,15 +16,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 /**
  * an overlay for adding a checklist
  */
-public class ChecklistOverlay implements Screen {
-    /**
-     * the previous location
-     */
-    private final Location prev;
-    /**
-     * the pane
-     */
-    private final Pane cur;
+public class ChecklistOverlay extends Overlay {
     /**
      * dimensions of the checklist overlay
      */
@@ -36,20 +28,11 @@ public class ChecklistOverlay implements Screen {
      * @param changer the screen changer
      */
     public ChecklistOverlay(Location prev, ScreenChanger changer){
-        // create current pane
-        this.prev = prev;
-        cur = new Pane(prev.getNode());
-
-        // make the pane the full screen
-        cur.setLayoutX(0);
-        cur.setLayoutY(0);
-        cur.setPrefSize(Main.WIDTH, Main.HEIGHT);
-
+        super(prev, changer);
         // create the overlay & position it
         Pane overlay = new Pane();
         Tools.setPos(overlay, 0, 0);
         overlay.setPrefSize(Main.WIDTH, Main.HEIGHT);
-        cur.getChildren().add(overlay);
 
         // darken the background
         Rectangle bg = new Rectangle(0, 0, Main.WIDTH, Main.HEIGHT);
@@ -67,7 +50,7 @@ public class ChecklistOverlay implements Screen {
         click.setOnMouseClicked(me -> {
             // if we already changed the notepad, go to the previous screen
             if(changed.get()){
-                changer.screenChange(prev);
+                changeBack();
             } else {
                 // add text to the notepad
                 click.setImage(Tools.getImage("assets/checklistmain.png"));
@@ -75,10 +58,7 @@ public class ChecklistOverlay implements Screen {
             }
         });
         overlay.getChildren().add(click);
-    }
 
-    @Override
-    public Node getNode() {
-        return cur;
+        addNode(overlay);
     }
 }
