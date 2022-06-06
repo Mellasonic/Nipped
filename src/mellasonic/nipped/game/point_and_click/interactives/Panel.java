@@ -41,7 +41,7 @@ public abstract class Panel implements Screen {
     /**
      * default margins around the screen of the pane
      */
-    public static final int DEFAULT_MARGINS = 30;
+    public static final int DEFAULT_MARGINS = 50;
 
     /**
      * Class Constructor with default margins

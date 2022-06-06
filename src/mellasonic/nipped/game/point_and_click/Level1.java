@@ -1,11 +1,11 @@
 /* ICS Final Project Nipped
- 2022/05/31
- Time spent: 3 hours
+ 2022/06/06
+ Time spent: 4 hours
 */
 
 /*
  Nipped is a java game with three different levels.
- Version 1.5 - 31 May 2022
+ Version 1.6 - 6 June 2022
  Authors: Daniel Ye, James Huynh, Eric Jin
 */
 
@@ -49,6 +49,14 @@
  New features/processing: add attic, drawers, door, panels when food has been consumed
 */
 
+/*
+ Modification Authors: James Huynh
+ Version 1.6
+ 2022/06/06
+ Time spent: 1 hour
+ New features/processing: add facts and randomizing facts
+*/
+
 package mellasonic.nipped.game.point_and_click;
 
 import javafx.scene.text.Font;
@@ -56,7 +64,7 @@ import mellasonic.nipped.game.point_and_click.interactives.Panel;
 import mellasonic.nipped.game.point_and_click.locations.level1.Door;
 import mellasonic.nipped.game.point_and_click.locations.ScreenChanger;
 import mellasonic.nipped.game.point_and_click.locations.level1.*;
-
+import java.util.*;
 /**
  * the first level
  */
@@ -73,13 +81,28 @@ public abstract class Level1 extends PointClick{
     * the door
     */
    private final Door door;
-
+   /**
+   * All possible facts as an arraylist
+   */
+   private List<String> facts = Arrays.asList(
+      "Animal and human experiments show that food, especially ones high in sugar, starch, and fat, can activate the same reward and pleasure centers, like dopamine centers, in the brain as addictive drugs like cocaine and heroin.  ",
+      "Common symptoms of food addiction include hiding eating from others, inability to stop despite physical problems, and feeling guilty afterwards but soon eating until excessively stuffed again. ",
+      "Steps towards a solution to food addiction are listing foods to avoid completely, listing fast food places with healthier alternatives, and thinking before you eat, remembering the pros and cons to your choices. ",
+      "An ongoing abuse of food will lead to emotional, social, and physical costs such as obesity, depression, low-self-worth, and isolation, not to mention the additional physical effects.",
+      "Healthy eating can be a challenge for anyone, but it is especially challenging for teens. With hormones causing imbalanced food cravings, teens also have access to easily obtained and widespread junk food items in places such as most stores, school, and at home. ",
+      "A healthy diet includes whole grains, fruits, vegetables, low-fat milk, beans, eggs, fish, nuts, lean meats, and eight glasses of water everyday. Another important element of healthy teenage eating habits is to reduce sugar intake. This helps teens maintain a healthy weight and avoid the mood swings that sugar creates.",
+      "Teens need to eat more food than they did as children. If they just eat more food overall, this may be a normal sign of healthy development. If they tend to eat when not hungry or binge-eat while under stress, they may be struggling with food addiction. ",
+      "Like most addicts, food addicts often have certain triggers that turn on a craving which may include deadlines, arguments, or food courts.",
+      "For adolescents, the palatable food rewards center is much stronger when eating. In other words, teenagers are a lot more affected by food and processed foods because of its effect on reward centers in the brain.",
+      "A conscious decision to stop with imposed goals and deadlines may help break the cycle of compulsive eating. Always consider seeking help from a professional or support groups. ",
+      "Food addiction is defined by whether it is frequent and whether the eating interferes in one's life. Research has found that more than half a million teenagers are suffering from some sort of food addiction or eating disorder."
+    );
    /**
     * Class constructor
     */
    public Level1() {
       super();
-   
+      Collections.shuffle(facts);
       // initialize handlers
       ConsumableHandler handler = 
          consumed -> {
@@ -130,14 +153,15 @@ public abstract class Level1 extends PointClick{
       ++numConsumed;
       if(numConsumed == totObject) door.enable();
       Screen prev = getCurScreen();
-      anel display = 
-         new Panel("Hello this is a super duper cool text", prev.getNode()){
+      String text = facts.get(0);
+      Panel display = 
+         new Panel(text, prev.getNode()){
             @Override
             public void onExit() {
                changeScreen(prev);
             }
          };
       changeScreen(display);
-      
+      Collections.shuffle(facts);
    }
 }
