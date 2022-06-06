@@ -10,7 +10,7 @@ public abstract class Diary extends Consumable{
     /**
      * the dimensions of the checklist
      */
-    public static final int WIDTH=30, HEIGHT=26;
+    public static final int WIDTH=45, HEIGHT=39;
     /**
      * the screen changer
      */

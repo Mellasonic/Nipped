@@ -7,7 +7,7 @@ public abstract class Book extends Consumable{
     /**
      * dimensions of the book
      */
-    public static int WIDTH=35, HEIGHT=40;
+    public static int WIDTH=45, HEIGHT=39;
     public static int CAT_WIDTH=70, CAT_HEIGHT=70;
     /**
      * position of the book

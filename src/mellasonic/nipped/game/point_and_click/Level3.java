@@ -38,6 +38,10 @@ import mellasonic.nipped.interactable.Interactive;
  * The third level
  */
 public abstract class Level3 extends PointClick{
+    /**
+     * total number of interactive objects
+     */
+    public static final int TOT_OBJ = 12;
 
     /**
      * Class Constructor
@@ -54,12 +58,7 @@ public abstract class Level3 extends PointClick{
         Drawer bDrawer = new L3Drawer(changer, handler);
         Drawer kDrawer = new L3Drawer(changer, handler);
         Attic attic = new Attic(changer, handler);
-        Door door = new Door(changer){
-            @Override
-            public void onExercise() {
-
-            }
-        };
+        Door door = new Door(changer, handler);
         Drawer lDrawer = new L3Drawer(changer, handler);
 
         // link rooms to each other
