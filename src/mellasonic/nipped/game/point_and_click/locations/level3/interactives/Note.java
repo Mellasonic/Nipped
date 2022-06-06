@@ -10,7 +10,7 @@ public abstract class Note extends Consumable{
     /**
      * the dimensions of the checklist
      */
-    public static final int WIDTH=30, HEIGHT=40;
+    public static final int WIDTH=30, HEIGHT=26;
     /**
      * the screen changer
      */
