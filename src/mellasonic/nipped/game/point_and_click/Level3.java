@@ -28,6 +28,7 @@
 package mellasonic.nipped.game.point_and_click;
 
 import mellasonic.nipped.game.point_and_click.locations.Drawer;
+import mellasonic.nipped.game.point_and_click.locations.Location;
 import mellasonic.nipped.game.point_and_click.locations.ScreenChanger;
 import mellasonic.nipped.game.point_and_click.locations.level3.*;
 import mellasonic.nipped.game.point_and_click.locations.level3.interactives.Consumable;
@@ -38,6 +39,10 @@ import mellasonic.nipped.interactable.Interactive;
  * The third level
  */
 public abstract class Level3 extends PointClick{
+    /**
+     * the number of objects consumed
+     */
+    int numConsumed = 0;
     /**
      * total number of interactive objects
      */
@@ -80,11 +85,20 @@ public abstract class Level3 extends PointClick{
         changeScreen(living);
     }
 
+    @Override
+    public void changeScreen(Screen to) {
+        super.changeScreen(to);
+        // checking for when everything is complete when switching back to a location guarantees the user is "ready" for the change
+        if(getCurScreen() instanceof Location && numConsumed == TOT_OBJ){
+            nextLevel();
+        }
+    }
+
     /**
      * handles consumption
      * @param consumed the interactive object consumed
      */
     private void handleConsume(Interactive consumed){
-
+        numConsumed += 1;
     }
 }

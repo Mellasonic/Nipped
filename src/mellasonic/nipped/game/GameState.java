@@ -90,9 +90,14 @@ public class GameState implements AppState {
                 changeLevel(new Level2(){
                     @Override
                     public void nextLevel() {
-                        // calculate scores
-                       long end = System.currentTimeMillis();
-                       long score = (int) ((end - start) / 1000);
+                        changeLevel(new Level3(){
+                            @Override
+                            public void nextLevel() {
+                                // calculate scores
+                                long end = System.currentTimeMillis();
+                                long score = (int) ((end - start) / 1000);
+                            }
+                        });
                     }
                 });
             }
