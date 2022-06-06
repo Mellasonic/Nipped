@@ -50,7 +50,7 @@ public abstract class Level3 extends PointClick{
         // initialize rooms
         LivingRoom living = new LivingRoom(changer, handler);
         Kitchen kitchen = new Kitchen(changer, handler);
-        Bedroom bedroom = new Bedroom(changer);
+        Bedroom bedroom = new Bedroom(changer, handler);
         Drawer bDrawer = new L3Drawer(changer, handler);
         Drawer kDrawer = new L3Drawer(changer, handler);
         Attic attic = new Attic(changer, handler);
