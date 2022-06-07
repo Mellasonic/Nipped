@@ -153,7 +153,7 @@ public abstract class Level1 extends PointClick{
       ++numConsumed;
       if(numConsumed == totObject) door.enable();
       Screen prev = getCurScreen();
-      String text = facts.get(0);
+      String text = facts.remove(0);
       Panel display = 
          new Panel(text, prev.getNode()){
             @Override
