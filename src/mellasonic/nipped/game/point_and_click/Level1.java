@@ -84,7 +84,7 @@ public abstract class Level1 extends PointClick{
    /**
    * All possible facts as an arraylist
    */
-   private List<String> facts = Arrays.asList(
+   public List<String> facts = new ArrayList<String>(Arrays.asList(
       "Animal and human experiments show that food, especially ones high in sugar, starch, and fat, can activate the same reward and pleasure centers, like dopamine centers, in the brain as addictive drugs like cocaine and heroin.  ",
       "Common symptoms of food addiction include hiding eating from others, inability to stop despite physical problems, and feeling guilty afterwards but soon eating until excessively stuffed again. ",
       "Steps towards a solution to food addiction are listing foods to avoid completely, listing fast food places with healthier alternatives, and thinking before you eat, remembering the pros and cons to your choices. ",
@@ -96,7 +96,7 @@ public abstract class Level1 extends PointClick{
       "For adolescents, the palatable food rewards center is much stronger when eating. In other words, teenagers are a lot more affected by food and processed foods because of its effect on reward centers in the brain.",
       "A conscious decision to stop with imposed goals and deadlines may help break the cycle of compulsive eating. Always consider seeking help from a professional or support groups. ",
       "Food addiction is defined by whether it is frequent and whether the eating interferes in one's life. Research has found that more than half a million teenagers are suffering from some sort of food addiction or eating disorder."
-    );
+    ));
    /**
     * Class constructor
     */
