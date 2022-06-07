@@ -25,7 +25,7 @@ public abstract class CatClean extends Consumable {
     /**
      * Dimensions of the icon
      */
-    public static int WIDTH=70, HEIGHT=90;
+    public static int WIDTH=70, HEIGHT=80;
 
     /**
      * Class constructor
