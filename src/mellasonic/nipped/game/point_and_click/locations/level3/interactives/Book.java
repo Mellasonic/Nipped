@@ -8,7 +8,7 @@ public abstract class Book extends Consumable{
      * dimensions of the book
      */
     public static int WIDTH=45, HEIGHT=39;
-    public static int CAT_WIDTH=70, CAT_HEIGHT=70;
+    public static int CAT_WIDTH=60, CAT_HEIGHT=80;
     /**
      * position of the book
      */
@@ -33,7 +33,7 @@ public abstract class Book extends Consumable{
 
         // reposition and resize the sprite
         x -= (CAT_WIDTH - WIDTH) / 2;
-        y -= (CAT_HEIGHT - HEIGHT);
+        y -= (CAT_HEIGHT - HEIGHT - 10);
         setPosition(x, y);
         setDimensions(CAT_WIDTH, CAT_HEIGHT);
     }

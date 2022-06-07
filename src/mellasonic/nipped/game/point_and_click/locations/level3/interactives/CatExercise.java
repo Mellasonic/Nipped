@@ -21,7 +21,7 @@ public abstract class CatExercise implements Interactive {
     /**
      * dimensions of the jumping cat
      */
-    public static final int WIDTH=60, HEIGHT=45;
+    public static final int WIDTH=60, HEIGHT=50;
 
 
     /**

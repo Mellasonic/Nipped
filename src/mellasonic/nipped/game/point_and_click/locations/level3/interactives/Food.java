@@ -25,7 +25,7 @@ public abstract class Food extends Consumable {
     /**
      * Dimensions of this food
      */
-    public static int WIDTH=40, HEIGHT=30;
+    public static int WIDTH=40, HEIGHT=40;
 
     /**
      * Class constructor
