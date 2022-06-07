@@ -40,7 +40,7 @@ public abstract class CatExercise implements Interactive {
                 instance.onClick();
                 node.getChildren().clear();
                 node.getChildren().add(
-                        Tools.makeSprite("assets/jumpcat.png", width / 2 - WIDTH / 2,
+                        Tools.makeSprite("assets/exercisingcat.gif", width / 2 - WIDTH / 2,
                                 190 - HEIGHT, WIDTH, HEIGHT)
                 );
             }
