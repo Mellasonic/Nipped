@@ -109,7 +109,7 @@ public abstract class Card {
         nArrow.setLayoutY(Main.HEIGHT / 2.0 + HEIGHT / 2.0 - ARROW_HEIGHT - 15);
 
         // add prompts for the arrows
-        Text yes = new Text("YES");
+        Text yes = new Text("TRUE");
         yes.setFont(new Font("Old Antic Outline", 18));
         yes.setLayoutX(0);
         yes.setWrappingWidth(yArrow.getLayoutX() - 10);
@@ -117,7 +117,7 @@ public abstract class Card {
         yes.setTextOrigin(VPos.CENTER);
         yes.setLayoutY(yArrow.getLayoutY() + ARROW_HEIGHT / 2.0);
 
-        Text no = new Text("NO");
+        Text no = new Text("FALSE");
         no.setFont(new Font("Old Antic Outline", 18));
         no.setLayoutX(nArrow.getLayoutX() + ARROW_WIDTH + 10);
         no.setLayoutY(nArrow.getLayoutY() + ARROW_HEIGHT / 2.0);
