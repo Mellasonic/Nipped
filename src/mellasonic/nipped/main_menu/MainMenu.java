@@ -52,6 +52,7 @@ import mellasonic.nipped.game.GameState;
 import mellasonic.nipped.game.ScoreState;
 import mellasonic.nipped.interactable.Button;
 import mellasonic.nipped.interactable.Interactive;
+import mellasonic.nipped.main_menu.leaderboard.Leaderboard;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -73,7 +74,7 @@ public class MainMenu implements AppState {
     /**
      * Starting y coordinate of buttons
      */
-    public static final int BUTTON_START = 235;
+    public static final int BUTTON_START = 230;
 
     @Override
     public Scene getScene() {
@@ -91,7 +92,7 @@ public class MainMenu implements AppState {
         buttons.setPrefHeight(Main.HEIGHT - BUTTON_START);
         buttons.setPrefWidth(Main.WIDTH);
         buttons.setAlignment(Pos.TOP_CENTER);
-        buttons.setSpacing(10);
+        buttons.setSpacing(5);
 
         // initialize buttons
         Interactive exitButton = new Button(getImage("assets/exitbutton.png"), getImage("assets/exitbuttonhover.png"), BUTTON_WIDTH, BUTTON_HEIGHT) {
@@ -112,9 +113,13 @@ public class MainMenu implements AppState {
                 instructions();
             }
         };
+        Interactive leaderboardButton = new Button(getImage("assets/scoresbutton.png"), getImage("assets/scoresbuttonhover.png"), BUTTON_WIDTH, BUTTON_HEIGHT){
+            @Override
+            public void onClick() {leaderboard();}
+        };
 
         // add buttons to vbox
-        buttons.getChildren().addAll(playButton.getNode(), instructionsButton.getNode(), exitButton.getNode());
+        buttons.getChildren().addAll(playButton.getNode(), instructionsButton.getNode(), leaderboardButton.getNode(), exitButton.getNode());
 
         // add buttons to Pane
         p.getChildren().add(buttons);
@@ -143,5 +148,13 @@ public class MainMenu implements AppState {
      */
     private void quit() {
         System.out.println("quit");
+    }
+
+    /**
+     * switches to the leaderboard screen
+     */
+    private void leaderboard(){
+        Leaderboard leaderboard = new Leaderboard();
+        Main.getApp().changeState(leaderboard);
     }
 }

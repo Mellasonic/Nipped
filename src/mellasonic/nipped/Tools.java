@@ -22,6 +22,9 @@ package mellasonic.nipped;
 import javafx.scene.Node;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.text.Font;
+import javafx.scene.text.Text;
+import javafx.scene.text.TextAlignment;
 
 import java.io.*;
 
@@ -98,5 +101,25 @@ public class Tools {
         } catch(IOException e){
             e.printStackTrace();
         }
+    }
+
+    /**
+     * creates a text object
+     * @param message the message to display
+     * @param align the alignment of the text
+     * @param font the font to use
+     * @param x the x coordinate of the top left
+     * @param y the y coordinate of the top left
+     * @param width the width of the textbox
+     * @return a text object with the specified parameters
+     */
+    public static Text createText(String message, TextAlignment align, Font font, int x, int y, int width){
+        Text ret = new Text(message);
+        ret.setWrappingWidth(width);
+        ret.setFont(font);
+        ret.setTextAlignment(align);
+        ret.setX(x);
+        ret.setY(y);
+        return ret;
     }
 }
