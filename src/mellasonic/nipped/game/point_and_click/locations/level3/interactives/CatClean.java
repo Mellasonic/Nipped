@@ -14,7 +14,7 @@
  Version 1.1
  2022/06/03
  Time spent: 20 min
- New features/processing: create interactive
+ New features/processing: create cat cleaning interactive
 */
 
 package mellasonic.nipped.game.point_and_click.locations.level3.interactives;
