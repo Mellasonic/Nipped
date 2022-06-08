@@ -1,6 +1,6 @@
 /* ICS Final Project Nipped
- 2022/05/18
- Time spent: 4 hours
+ 2022/06/08
+ Time spent: 4 hours 30 min
 */
 
 /*
@@ -31,6 +31,14 @@
  2022/05/18
  Time spent: 1 hour
  New features/processing: ported to jgrasp
+*/
+
+/*
+ Modification Authors: Daniel Ye
+ Version 1.4
+ 2022/06/08
+ Time spent: 30 min
+ New features/processing: add leaderboard button
 */
 
 package mellasonic.nipped.main_menu;
