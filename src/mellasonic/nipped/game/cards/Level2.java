@@ -56,7 +56,7 @@ public abstract class Level2 implements Level {
             new CardTemplate(Tools.getImage("assets/catface.png"), "Food addiction tends to not have triggers, unlike other addictions.", false),
             new CardTemplate(Tools.getImage("assets/book.png"), "Teenagers are more affected by food and processed foods due to reward centers in the brain.", true),
             new CardTemplate(Tools.getImage("assets/apple.png"), "Food addicts should try to avoid seeking professional help.", false),
-            new CardTemplate(Tools.getImage("assets/book.png"), "Food addiction is when food is eaten frequently and it interferes with one’s life.", true),
+            new CardTemplate(Tools.getImage("assets/book.png"), "Food addiction is when food is eaten frequently and it interferes with one’s life.", true)
     );
 
     /**

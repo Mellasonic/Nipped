@@ -94,4 +94,11 @@ public class Main {
         stage.setScene(curState.getScene());
         stage.show();
     }
+
+    /**
+     * closes the stage and exits
+     */
+    public void exit(){
+        stage.close();
+    }
 }

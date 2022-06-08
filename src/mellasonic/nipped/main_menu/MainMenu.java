@@ -147,7 +147,7 @@ public class MainMenu implements AppState {
      * Behavior when exit button is clicked
      */
     private void quit() {
-        System.out.println("quit");
+        Main.getApp().changeState(new QuitScreen());
     }
 
     /**
