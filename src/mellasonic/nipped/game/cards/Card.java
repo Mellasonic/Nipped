@@ -79,7 +79,7 @@ public abstract class Card {
         ImageView supportImage = new ImageView(background);
         int boxWidth = 198 - 2 * MARGIN, boxHeight = 126 - 2 * MARGIN;
         // calculate the optimal dimensions for the image
-        double width = Math.min(boxWidth, (double) boxHeight * background.getHeight() / background.getWidth());
+        double width = Math.min(boxWidth, (double) boxHeight * background.getWidth() / background.getHeight());
         double height = background.getHeight() / background.getWidth() * width;
 
         // set the dimensions & add it
