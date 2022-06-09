@@ -52,11 +52,12 @@ public class ScoreReader {
         for(int i = 0 ; i < out.size();i++){
             int swapInd = i;
             for(int j = i+1;j < out.size(); j++){
-               if(out.get(j).score < out.get(i).score){
+               if(out.get(j).score < out.get(swapInd).score){
                   swapInd = j;
                }
             }
             Score store = out.get(swapInd);
+            System.out.println("swap " + store + " " +out.get(i));
             out.set(swapInd, out.get(i));
             out.set(i, store);
         }

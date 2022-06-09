@@ -2,3 +2,5 @@ Enter_your_name_here 200
 bob_is_cool 100
 jakdskflsadjkfkzcxnklvxzclisaoifiower 24
 Trent_Tree 19
+hello 22
+testing 55

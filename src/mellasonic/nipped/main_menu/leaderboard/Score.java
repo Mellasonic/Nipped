@@ -40,4 +40,7 @@ public class Score {
         this.name = name;
         this.score = score;
     }
+    public String toString(){
+      return "[" + score + " " + name + "]";
+    }
 }

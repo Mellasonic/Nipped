@@ -22,7 +22,8 @@ package mellasonic.nipped;
 import javafx.application.Application;
 import javafx.stage.Stage;
 import mellasonic.nipped.main_menu.MainMenu;
-
+import mellasonic.nipped.main_menu.leaderboard.*;
+import java.util.*;
 /**
  * Entry point for applications
  */
@@ -38,6 +39,8 @@ public class Driver extends Application {
      * @param args args
      */
     public static void main(String[] args){
+        ArrayList<Score> out = ScoreReader.getScores();
+        System.out.println(out);
         launch(args);
     }
 }
