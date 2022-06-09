@@ -40,10 +40,6 @@ public abstract class Card {
      * The current node
      */
     private final Pane cur;
-    /**
-     * The correct answer for the card (true=yes, false=no)
-     */
-    private final boolean ans;
 
     /**
      * Dimensions of the card
@@ -53,6 +49,10 @@ public abstract class Card {
      * Dimensions of the arrows
      */
     public static final int ARROW_WIDTH = 40, ARROW_HEIGHT = 32;
+    /**
+     * the margins of the support image
+     */
+    public static int MARGIN = 7;
 
     /**
      * Class constructor
@@ -61,9 +61,6 @@ public abstract class Card {
      * @param isYes whether or not the answer is "yes"
      */
     public Card(Image background, String message, boolean isYes){
-        // initialize instance variables
-        this.ans = isYes;
-
         // current pane
         cur = new Pane();
         cur.setLayoutX(0);
@@ -80,10 +77,16 @@ public abstract class Card {
 
         // initialize and add the supporting image
         ImageView supportImage = new ImageView(background);
-        supportImage.setLayoutX(329);
-        supportImage.setLayoutY(98);
-        supportImage.setFitWidth(198);
-        supportImage.setFitHeight(126);
+        int boxWidth = 198 - 2 * MARGIN, boxHeight = 126 - 2 * MARGIN;
+        // calculate the optimal dimensions for the image
+        double width = Math.min(boxWidth, (double) boxHeight * background.getHeight() / background.getWidth());
+        double height = background.getHeight() / background.getWidth() * width;
+
+        // set the dimensions & add it
+        supportImage.setFitWidth(width);
+        supportImage.setFitHeight(height);
+        supportImage.setLayoutX(329 + boxWidth / 2.0 - width / 2.0 + MARGIN);
+        supportImage.setLayoutY(98 + boxHeight / 2.0 - height / 2.0 + MARGIN);
         cur.getChildren().add(supportImage);
 
         // initialize and add the question

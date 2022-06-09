@@ -52,6 +52,7 @@ public class StreakCounter {
 
         // initialize component organizer
         VBox contain = new VBox(3);
+        contain.setLayoutY(60);
 
         // add the text with the streak
         Text streak = new Text("Streak: " + cnt);

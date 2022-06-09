@@ -24,6 +24,7 @@ import mellasonic.nipped.Main;
 import mellasonic.nipped.Tools;
 import mellasonic.nipped.game.point_and_click.interactives.Button;
 import mellasonic.nipped.game.point_and_click.interactives.Direction;
+import mellasonic.nipped.game.point_and_click.interactives.Invisible;
 import mellasonic.nipped.game.point_and_click.locations.Location;
 import mellasonic.nipped.game.point_and_click.locations.ScreenChanger;
 import mellasonic.nipped.interactable.Rectangle;
@@ -60,7 +61,7 @@ public abstract class Door extends Location {
         // a ghost collider for detecting the door
         Image ghostCollide = Tools.getImage("assets/invisible.png");
         addObjects(Arrays.asList(
-                new Rectangle(ghostCollide, ghostCollide, 368, 144, 138, 251) {
+                new Invisible(368, 144, 138, 251) {
                     @Override
                     public void onClick() {
                         if(doorOpened) {
