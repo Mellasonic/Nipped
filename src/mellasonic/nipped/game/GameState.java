@@ -86,23 +86,38 @@ public class GameState implements AppState {
         long start = System.currentTimeMillis();
 
         // add levels
-        curLevel = new Level1(){
+        curLevel = new PopupInstructions("1") {
             @Override
             public void nextLevel() {
-                changeLevel(new Level2(){
+            changeLevel(new Level1(){
+                @Override
+                public void nextLevel() {
+                changeLevel(new PopupInstructions("2") {
                     @Override
                     public void nextLevel() {
-                        changeLevel(new Level3(){
+                    changeLevel(new Level2(){
+                        @Override
+                        public void nextLevel() {
+                        changeLevel(new PopupInstructions("3") {
                             @Override
                             public void nextLevel() {
+                            changeLevel(new Level3(){
+                                @Override
+                                public void nextLevel() {
                                 // calculate scores
                                 long end = System.currentTimeMillis();
                                 int score = (int) ((end - start) / 1000);
                                 Main.getApp().changeState(new WinScreen(score));
+                                }
+                            });
                             }
                         });
+                        }
+                    });
                     }
                 });
+                }
+            });
             }
         };
 
