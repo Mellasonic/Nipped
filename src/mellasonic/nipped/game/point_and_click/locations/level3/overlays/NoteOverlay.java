@@ -70,8 +70,8 @@ public class NoteOverlay extends Overlay{
         display.setFont(new Font("MV Boli", 18));
         overlay.getChildren().add(display);
 
-        view.setOnMouseClicked(me -> changeBack());
-        display.setOnMouseClicked(me -> changeBack());
+        overlay.setOnMouseClicked(me -> changeBack());
+        overlay.setOnMouseClicked(me -> changeBack());
 
         addNode(overlay);
     }

@@ -53,6 +53,8 @@ public class Drawer extends Location {
                     }
                 }
         ));
+
+        setNeedCat(false);
     }
 
     /**

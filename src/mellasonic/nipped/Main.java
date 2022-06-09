@@ -19,6 +19,7 @@
 
 package mellasonic.nipped;
 
+import javafx.scene.Cursor;
 import javafx.stage.Stage;
 
 /**
@@ -101,5 +102,13 @@ public class Main {
      */
     public void exit(){
         stage.close();
+    }
+
+    /**
+     * sets the cursor
+     * @param cursor the cursor
+     */
+    public void setCursor(Cursor cursor){
+        this.stage.getScene().setCursor(cursor);
     }
 }

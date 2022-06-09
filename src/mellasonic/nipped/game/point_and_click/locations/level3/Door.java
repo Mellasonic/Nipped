@@ -44,6 +44,7 @@ public class Door extends Location {
                                 new CatExercise(368, 142, 137, 250) {
                                     @Override
                                     public void onClick() {
+                                        setNeedCat(false);
                                         handler.onConsume(this);
                                     }
                                 }

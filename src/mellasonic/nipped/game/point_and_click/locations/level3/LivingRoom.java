@@ -52,6 +52,7 @@ public class LivingRoom extends mellasonic.nipped.game.point_and_click.locations
                 new Book(369, 318-Book.HEIGHT) {
                     @Override
                     public void onConsume() {
+                        setNeedCat(false);
                         handler.onConsume(this);
                     }
                 }

@@ -106,6 +106,13 @@ public class GameState implements AppState {
             }
         };
 
+        curLevel = new Level3() {
+            @Override
+            public void nextLevel() {
+
+            }
+        };
+
         // add the components
         container.getChildren().add(curLevel.getNode());
         container.getChildren().add(menuButton.getNode());

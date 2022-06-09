@@ -60,7 +60,7 @@ public class DiaryOverlay extends Overlay{
         AtomicBoolean changed = new AtomicBoolean(false);
 
         // fill the diary then return
-        view.setOnMouseClicked(me -> {
+        overlay.setOnMouseClicked(me -> {
             if(changed.get()){
                 changeBack();
             } else {
