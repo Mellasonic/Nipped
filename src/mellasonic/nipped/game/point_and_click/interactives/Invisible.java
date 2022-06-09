@@ -19,6 +19,7 @@
 
 package mellasonic.nipped.game.point_and_click.interactives;
 
+import javafx.scene.Cursor;
 import javafx.scene.Node;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
@@ -26,6 +27,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.StrokeType;
+import mellasonic.nipped.Main;
 import mellasonic.nipped.Tools;
 import mellasonic.nipped.interactable.Interactive;
 
@@ -73,9 +75,9 @@ public abstract class Invisible implements Interactive {
 
         // add the background of the box
         Rectangle bg = new Rectangle(width, height);
-        bg.setFill(new Color(1, 1, 0, 0.2));
+        bg.setFill(new Color(1, 1, 0, 0));
         bg.setStrokeType(StrokeType.CENTERED);
-        bg.setStroke(new Color(1, 1, 0, 1));
+        bg.setStroke(new Color(1, 1, 0, 0));
         bg.setStrokeWidth(1);
         cur.getChildren().add(bg);
 
@@ -94,6 +96,9 @@ public abstract class Invisible implements Interactive {
             cur.getChildren().remove(star);
             onClick();
         });
+
+        cur.setOnMouseEntered(me -> Main.getApp().setCursor(Cursor.HAND));
+        cur.setOnMouseExited(me -> Main.getApp().setCursor(Cursor.DEFAULT));
     }
 
     @Override

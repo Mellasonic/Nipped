@@ -53,11 +53,6 @@ public class ChecklistOverlay extends Overlay {
         Tools.setPos(overlay, 0, 0);
         overlay.setPrefSize(Main.WIDTH, Main.HEIGHT);
 
-        // darken the background
-        Rectangle bg = new Rectangle(0, 0, Main.WIDTH, Main.HEIGHT);
-        bg.setFill(new Color(0, 0, 0, 0.4));
-        overlay.getChildren().add(bg);
-
         // the clickable notepad
         ImageView click = new ImageView(Tools.getImage("assets/note.png"));
         Tools.setPos(click, Main.WIDTH / 2 - WIDTH / 2, Main.HEIGHT / 2 - HEIGHT / 2);
@@ -66,7 +61,7 @@ public class ChecklistOverlay extends Overlay {
 
         // add functionality to the notepad
         AtomicBoolean changed = new AtomicBoolean(false);
-        click.setOnMouseClicked(me -> {
+        overlay.setOnMouseClicked(me -> {
             // if we already changed the notepad, go to the previous screen
             if(changed.get()){
                 changeBack();

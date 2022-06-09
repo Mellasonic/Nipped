@@ -40,6 +40,7 @@ public class Attic extends mellasonic.nipped.game.point_and_click.locations.Atti
                 new CatClean(414, 282) {
                     @Override
                     public void onConsume() {
+                        setNeedCat(false);
                         handler.onConsume(this);
                     }
                 }

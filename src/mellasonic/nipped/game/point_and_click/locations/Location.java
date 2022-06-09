@@ -48,6 +48,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import mellasonic.nipped.Main;
+import mellasonic.nipped.Tools;
 import mellasonic.nipped.game.point_and_click.Screen;
 import mellasonic.nipped.interactable.Interactive;
 
@@ -59,7 +60,10 @@ import java.util.List;
  * A Location in the point and click game
  */
 public abstract class Location implements Screen {
-
+    /**
+     * dimensions of the cat icon
+     */
+    public static final int CAT_WIDTH=70, CAT_HEIGHT=60;
     /**
      * A list of interactive objects
      */
@@ -76,6 +80,10 @@ public abstract class Location implements Screen {
      * the object used to change the screen
      */
     private final ScreenChanger changer;
+    /**
+     * whether or not we need the cat
+     */
+    private boolean addCat;
 
     /**
      * Class constructor
@@ -90,6 +98,8 @@ public abstract class Location implements Screen {
         // initialize the current node and draw elements onto it
         cur = new Pane();
         drawElements();
+
+        addCat = true;
     }
 
     /**
@@ -136,6 +146,12 @@ public abstract class Location implements Screen {
         for(Interactive i : objects){
             cur.getChildren().add(i.getNode());
         }
+
+        // add the cat icon
+        if(addCat){
+            cur.getChildren().add(Tools.makeSprite("assets/catspritebig.png", Main.WIDTH - CAT_WIDTH - 15,
+                    Main.HEIGHT - CAT_HEIGHT - 15, CAT_WIDTH, CAT_HEIGHT));
+        }
     }
 
     @Override
@@ -149,5 +165,14 @@ public abstract class Location implements Screen {
      */
     public void screenChange(Screen to){
         changer.screenChange(to);
+    }
+
+    /**
+     * sets whether or not we should have a cat in the bottom right
+     * @param doNeed whether or not we need a cat
+     */
+    public void setNeedCat(boolean doNeed){
+        addCat = doNeed;
+        drawElements();
     }
 }

@@ -20,10 +20,12 @@
 package mellasonic.nipped.interactable;
 
 // imports
+import javafx.scene.Cursor;
 import javafx.scene.Node;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
+import mellasonic.nipped.Main;
 
 /**
  * The default interactive type for point and click games
@@ -74,13 +76,17 @@ public abstract class Collider implements Interactive{
             // change image to hover or normal depending on if the mouse is in the interactive range
             if(hit(me.getX(), me.getY())){
                 view.setImage(this.onHover);
+                Main.getApp().setCursor(Cursor.HAND);
             } else {
                 view.setImage(this.normal);
             }
         });
 
         // when the mouse exits the node, unhighlight it
-        view.setOnMouseExited(me -> view.setImage(this.normal));
+        view.setOnMouseExited(me -> {
+            view.setImage(this.normal);
+            Main.getApp().setCursor(Cursor.DEFAULT);
+        });
 
         view.setOnMouseClicked(me -> {
             // perform the onClick function when the node is considered to be "clicked"
