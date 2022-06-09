@@ -86,19 +86,19 @@ public class GameState implements AppState {
         long start = System.currentTimeMillis();
 
         // add levels
-        curLevel = new PopupInstructions("1") {
+        curLevel = new PopupInstructions("Mittens the cat suffers from food addiction. In this level, you will learn about food addiction, specifically what it is and some symptoms of it. There are bags of cat food and notes scattered about Mittens’s home, and when you click on one, an information notification will appear, telling you about food addiction. Once you’ve clicked on all the notes and food bags, a door will open up to the next level.") {
             @Override
             public void nextLevel() {
             changeLevel(new Level1(){
                 @Override
                 public void nextLevel() {
-                changeLevel(new PopupInstructions("2") {
+                changeLevel(new PopupInstructions("In this level, you have to put your knowledge to the test! Mittens the cat needs help recognizing their food addiction, and you have to answer questions correctly. Each question will have a yes or no option, and you have to get five questions in a row correct in order to move onto the final level.") {
                     @Override
                     public void nextLevel() {
                     changeLevel(new Level2(){
                         @Override
                         public void nextLevel() {
-                        changeLevel(new PopupInstructions("3") {
+                        changeLevel(new PopupInstructions("Mittens the cat now sees their faults and wants to improve. Help Mittens use different techniques to overcome food addiction. These include replacing unhealthy food with healthy food, writing checklists, finding distractions, and being mindful. Once you’ve helped Mittens in every room of their home, you win!") {
                             @Override
                             public void nextLevel() {
                             changeLevel(new Level3(){
