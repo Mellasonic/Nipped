@@ -54,6 +54,7 @@ public class Main {
     private Main(Stage primaryStage, AppState start){
         this.curState = start;
         this.stage = primaryStage;
+        this.stage.setResizable(false);
     }
 
     /**
