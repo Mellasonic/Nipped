@@ -14,7 +14,7 @@
  Version 1.1
  2022/06/07
  Time spent: 30 min
- New features/processing: Create Quit Screen
+ New features/processing: Create Quit Screen, add click functionality
 */
 
 package mellasonic.nipped.main_menu;
@@ -33,6 +33,9 @@ import mellasonic.nipped.Tools;
 import java.util.Timer;
 import java.util.TimerTask;
 
+/**
+ * A screen that is displayed when the user quits
+ */
 public class QuitScreen implements AppState {
     /**
      * the screen
