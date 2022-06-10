@@ -70,9 +70,6 @@ public abstract class Door extends Location {
                 if(doorOpened) {
                     // if the door was opened and is clicked again, continue
                     onDoorClicked();
-                } else {
-                    // do nothing
-                    System.out.println("not done yet");
                 }
             }
         };

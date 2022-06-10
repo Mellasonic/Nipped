@@ -45,7 +45,7 @@ public class Main {
     /**
      * Debugging variable
      */
-    public static final boolean DEBUG_MOUSE = true;
+    public static final boolean DEBUG_MOUSE = false;
 
     /**
      * Class Constructor

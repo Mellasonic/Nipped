@@ -47,8 +47,8 @@ public class QuitScreen implements AppState {
         bg.setFitHeight(Main.HEIGHT);
 
         // prompt the user to exit
-        Text text = Tools.createText("<Click anywhere to exit>", TextAlignment.CENTER, new Font("Bell MT", 32),
-                0, Main.HEIGHT - 100, Main.WIDTH);
+        Text text = Tools.createText("Created by: Eric Jin, James Huynh, Daniel Ye\n<Click anywhere to exit>", TextAlignment.CENTER, new Font("Bell MT", 32),
+                0, Main.HEIGHT - 125, Main.WIDTH);
         text.setStroke(new Color(1, 1, 1, 1));
         text.setFill(new Color(1, 1, 1, 1));
 

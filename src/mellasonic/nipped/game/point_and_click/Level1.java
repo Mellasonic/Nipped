@@ -143,7 +143,6 @@ public abstract class Level1 extends PointClick{
    
       // go to a living room screen
       changeScreen(living);
-      System.out.println(Font.getFamilies());
    }
 
    /**

@@ -57,7 +57,6 @@ public class ScoreReader {
                }
             }
             Score store = out.get(swapInd);
-            System.out.println("swap " + store + " " +out.get(i));
             out.set(swapInd, out.get(i));
             out.set(i, store);
         }
