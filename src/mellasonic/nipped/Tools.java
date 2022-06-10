@@ -27,6 +27,7 @@
 
 package mellasonic.nipped;
 
+import javafx.scene.Cursor;
 import javafx.scene.Node;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -129,5 +130,14 @@ public class Tools {
         ret.setX(x);
         ret.setY(y);
         return ret;
+    }
+
+    /**
+     * alters a node so that the cursor changes when the node is clicked
+     * @param toChange the node to change
+     */
+    public static void addCursorChange(Node toChange){
+        toChange.setOnMouseEntered(me -> Main.getApp().setCursor(Cursor.HAND));
+        toChange.setOnMouseExited(me -> Main.getApp().setCursor(Cursor.DEFAULT));
     }
 }

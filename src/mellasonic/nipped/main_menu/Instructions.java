@@ -149,6 +149,8 @@ public class Instructions implements AppState {
                 screen.getChildren().set(1, add);
             });
 
+            Tools.addCursorChange(leftArrow);
+
             // add the left arrow
             p.getChildren().add(leftArrow);
             p.getChildren().add(left);
@@ -177,6 +179,7 @@ public class Instructions implements AppState {
                 Pane add = paneOf(page + 1);
                 screen.getChildren().set(1, add);
             });
+            Tools.addCursorChange(rightArrow);
 
             // add the right arrow
             p.getChildren().add(rightArrow);

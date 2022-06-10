@@ -104,12 +104,14 @@ public abstract class Card {
         yArrow.setFitHeight(ARROW_HEIGHT);
         yArrow.setLayoutX(Main.WIDTH / 2.0 + WIDTH / 2.0 - ARROW_WIDTH - 15);
         yArrow.setLayoutY(Main.HEIGHT / 2.0 + HEIGHT / 2.0 - ARROW_HEIGHT - 15);
+        Tools.addCursorChange(yArrow);
 
         ImageView nArrow = new ImageView(Tools.getImage("assets/R-redarrow.png"));
         nArrow.setFitWidth(ARROW_WIDTH);
         nArrow.setFitHeight(ARROW_HEIGHT);
         nArrow.setLayoutX(Main.WIDTH / 2.0 - WIDTH / 2.0 + 15);
         nArrow.setLayoutY(Main.HEIGHT / 2.0 + HEIGHT / 2.0 - ARROW_HEIGHT - 15);
+        Tools.addCursorChange(nArrow);
 
         // add prompts for the arrows
         Text yes = new Text("TRUE");

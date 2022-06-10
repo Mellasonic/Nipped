@@ -66,6 +66,7 @@ public abstract class PopupInstructions implements Level {
         ImageView rightArrow = Tools.makeSprite("assets/R-greenarrow.png", (int) (panel.getLayoutX() + panel.getFitWidth() - 20 - ARROW_WIDTH),
                 (int) (panel.getLayoutY() + panel.getFitHeight() - 20 - ARROW_HEIGHT), ARROW_WIDTH, ARROW_HEIGHT);
         rightArrow.setOnMouseClicked(me -> nextLevel());
+        Tools.addCursorChange(rightArrow);
         screen.getChildren().add(rightArrow);
     }
 
