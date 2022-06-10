@@ -75,6 +75,7 @@ public class LivingRoom extends Location {
      * Class constructor
      *
      * @param changer the screen change handler
+     * @param grey whether or not the room is greyscale
      */
     public LivingRoom(ScreenChanger changer, boolean grey) {
         super(grey ? getImage("assets/livingroomgs.png") : getImage("assets/livingroom.png"), changer);
