@@ -21,14 +21,14 @@ package mellasonic.nipped;
 
 import javafx.application.Application;
 import javafx.stage.Stage;
-import mellasonic.nipped.main_menu.MainMenu;
+import mellasonic.nipped.main_menu.SplashScreen;
 /**
  * Entry point for applications
  */
 public class Driver extends Application {
     @Override
     public void start(Stage stage) throws Exception {
-        Main m = Main.newApp(stage, new MainMenu());
+        Main m = Main.newApp(stage, new SplashScreen());
         m.render();
     }
 
