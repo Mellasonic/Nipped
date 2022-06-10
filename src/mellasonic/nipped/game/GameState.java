@@ -138,6 +138,6 @@ public class GameState implements AppState {
      */
     public void changeLevel(Level to){
         curLevel = to;
-        container.getChildren().set(1, curLevel.getNode());
+        container.getChildren().set(0, curLevel.getNode());
     }
 }
