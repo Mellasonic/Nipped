@@ -1,6 +1,6 @@
 /* ICS Final Project Nipped
  2022/05/18
- Time spent: 1 hour
+ Time spent: 1 hour 20 min
 */
 
 /*
@@ -21,8 +21,8 @@
  Modification Authors: Daniel Ye, James Huynh
  Version 1.2
  2022/06/05
- Time spent: 40 min
- New features/processing: create addsprite, positioning, add score, create text
+ Time spent: 1 hour
+ New features/processing: create addsprite, positioning, add score, create text, add cursor change
 */
 
 package mellasonic.nipped;

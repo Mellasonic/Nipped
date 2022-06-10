@@ -1,6 +1,6 @@
 /* ICS Final Project Nipped
- 2022/05/31
- Time spent: 1 hour
+ 2022/06/09
+ Time spent: 1 hour 30 min
 */
 
 /*
@@ -23,6 +23,14 @@
  2022/05/31
  Time spent: 50 min
  New features/processing: Change between levels & add menu overlay
+*/
+
+/*
+ Modification Authors: James Huynh
+ Version 1.3
+ 2022/06/09
+ Time spent: 30 min
+ New features/processing: Add instructions screen before each level, fix bug of overlay disappearing
 */
 
 package mellasonic.nipped.game;

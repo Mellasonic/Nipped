@@ -1,3 +1,22 @@
+/* ICS Final Project Nipped
+ 2022/06/01
+ Time spent: 1 hour
+*/
+
+/*
+ Nipped is a java game with three different levels.
+ Version 1.1 - 01 June 2022
+ Authors: Daniel Ye, James Huynh, Eric Jin
+*/
+
+/*
+ Modification Authors: Eric Jin
+ Version 1.1
+ 2022/06/01
+ Time spent: 1 hour
+ New features/processing: Create Streak Counter, Add & position text, set spacing, add icons; create renderStreak(), getter/setter methods
+*/
+
 package mellasonic.nipped.game.cards;
 
 import javafx.geometry.VPos;

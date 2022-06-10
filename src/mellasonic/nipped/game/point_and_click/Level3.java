@@ -22,7 +22,7 @@
  Version 1.0.1
  2022/05/19
  Time spent: 10 mins
- New features/processing: Refactor
+ New features/processing: Refactor handleConsume & change argument class
 */
 
 package mellasonic.nipped.game.point_and_click;

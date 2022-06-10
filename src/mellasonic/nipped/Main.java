@@ -1,6 +1,6 @@
 /* ICS Final Project Nipped
  2022/05/17
- Time spent: 1 hour
+ Time spent: 1 hour 10 min
 */
 
 /*
@@ -15,6 +15,14 @@
  2022/05/17
  Time spent: 1 hour
  New features/processing: created main class, implement scene switching
+*/
+
+/*
+ Modification Authors: James Huynh
+ Version 1.1
+ 2022/06/08
+ Time spent: 10 min
+ New features/processing: add cursor changing
 */
 
 package mellasonic.nipped;

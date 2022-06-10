@@ -42,6 +42,9 @@ public class QuitScreen implements AppState {
      */
     private final Scene screen;
 
+    /**
+     * class constructor
+     */
     public QuitScreen(){
         // create the background
         ImageView bg = new ImageView(Tools.getImage("assets/goodbyescreen.png"));
