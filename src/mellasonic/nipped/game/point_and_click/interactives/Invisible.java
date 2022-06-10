@@ -44,6 +44,14 @@ public abstract class Invisible implements Interactive {
      * Dimensions of the star
      */
     public static final int STAR_WIDTH=20, STAR_HEIGHT=30;
+    /**
+     * whether or not there is a star in the collider
+     */
+    private boolean hasStar;
+    /**
+     * the star that will be added or removed
+     */
+    private final ImageView star;
 
     /**
      * Class constructor - will have a star by default
@@ -73,6 +81,15 @@ public abstract class Invisible implements Interactive {
         cur.setLayoutX(x);
         cur.setLayoutY(y);
 
+        // initialize the star
+        star = new ImageView(Tools.getImage("assets/sparkles.png"));
+        star.setFitWidth(STAR_WIDTH);
+        star.setFitHeight(STAR_HEIGHT);
+        star.setLayoutX(width - STAR_WIDTH);
+        star.setLayoutY(0);
+        this.hasStar = false;
+        setHasStar(hasStar);
+
         // add the background of the box
         Rectangle bg = new Rectangle(width, height);
         bg.setFill(new Color(1, 1, 0, 0));
@@ -81,24 +98,29 @@ public abstract class Invisible implements Interactive {
         bg.setStrokeWidth(1);
         cur.getChildren().add(bg);
 
-        // add the star in the box
-        ImageView star = new ImageView(Tools.getImage("assets/sparkles.png"));
-        if(hasStar){
-            star.setFitWidth(STAR_WIDTH);
-            star.setFitHeight(STAR_HEIGHT);
-            star.setLayoutX(width - STAR_WIDTH);
-            star.setLayoutY(0);
-            cur.getChildren().add(star);
-        }
-
         // handle click
         cur.setOnMouseClicked(me -> {
-            cur.getChildren().remove(star);
+            setHasStar(false);
             onClick();
         });
 
         cur.setOnMouseEntered(me -> Main.getApp().setCursor(Cursor.HAND));
         cur.setOnMouseExited(me -> Main.getApp().setCursor(Cursor.DEFAULT));
+    }
+
+    /**
+     * sets whether or not there is a star sprite in the collider
+     * @param hasStar whether or not the add the star sprite
+     */
+    public void setHasStar(boolean hasStar){
+        if(this.hasStar != hasStar){
+            if(!hasStar){
+                cur.getChildren().remove(star);
+            } else {
+                cur.getChildren().add(star);
+            }
+            this.hasStar = hasStar;
+        }
     }
 
     @Override
