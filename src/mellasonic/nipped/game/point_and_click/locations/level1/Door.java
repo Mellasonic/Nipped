@@ -48,6 +48,10 @@ public abstract class Door extends Location {
      * whether or not the sprites are greyscaled
      */
     private final boolean isGrey;
+    /**
+     * the invisible collider for the door
+     */
+    private Invisible collider;
 
     /**
      * Class constructor
@@ -60,20 +64,22 @@ public abstract class Door extends Location {
         this.isGrey = grey;
 
         // a ghost collider for detecting the door
-        Image ghostCollide = Tools.getImage("assets/invisible.png");
+        collider = new Invisible(368, 144, 138, 251, false) {
+            @Override
+            public void onClick() {
+                if(doorOpened) {
+                    // if the door was opened and is clicked again, continue
+                    onDoorClicked();
+                } else {
+                    // do nothing
+                    System.out.println("not done yet");
+                }
+            }
+        };
+
         addObjects(Arrays.asList(
-                new Invisible(368, 144, 138, 251) {
-                    @Override
-                    public void onClick() {
-                        if(doorOpened) {
-                            // if the door was opened and is clicked again, continue
-                            onDoorClicked();
-                        } else {
-                            // do nothing
-                            System.out.println("not done yet");
-                        }
-                    }
-                }, new Button(Direction.L, 20, Main.HEIGHT / 2 - Button.HEIGHT / 2) {
+                collider,
+                new Button(Direction.L, 20, Main.HEIGHT / 2 - Button.HEIGHT / 2) {
                     @Override
                     public void onClick() {
                         assert living != null;
@@ -101,6 +107,7 @@ public abstract class Door extends Location {
      */
     public void enable(){
         doorOpened = true;
+        collider.setHasStar(true);
         setBackground(isGrey ? Tools.getImage("assets/dooropengs.png") : Tools.getImage("assets/dooropen.png"));
     }
 }
