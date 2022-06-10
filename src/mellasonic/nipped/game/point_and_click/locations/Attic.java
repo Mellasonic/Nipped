@@ -40,6 +40,7 @@ public class Attic extends Location{
      * Class constructor
      *
      * @param changer the screen change handler
+     * @param grey whether or not the room is greyscale
      */
     public Attic(ScreenChanger changer, boolean grey) {
         super(grey ? Tools.getImage("assets/atticgs.png") : Tools.getImage("assets/attic.png"), changer);

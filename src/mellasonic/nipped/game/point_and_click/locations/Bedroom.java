@@ -57,6 +57,7 @@ public class Bedroom extends Location {
      * Class constructor
      *
      * @param changer the screen change handler
+     * @param grey whether or not the room is greyscale
      */
     public Bedroom(ScreenChanger changer, boolean grey) {
         super(grey ? Tools.getImage("assets/bedroomgs.png") : Tools.getImage("assets/bedroom.png"), changer);

@@ -46,6 +46,7 @@ public class Kitchen extends Location {
      * Class constructor
      *
      * @param changer the screen change handler
+     * @param grey whether or not the room is greyscale
      */
     public Kitchen(ScreenChanger changer, boolean grey) {
         super(grey ? Tools.getImage("assets/kitchengs.png") : Tools.getImage("assets/kitchen.png"), changer);

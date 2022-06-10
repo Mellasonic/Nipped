@@ -53,6 +53,7 @@ public abstract class Door extends Location {
      * Class constructor
      *
      * @param changer the screen change handler
+     * @param grey whether or not the room is greyscale
      */
     public Door(ScreenChanger changer, boolean grey) {
         super(grey ? Tools.getImage("assets/doorclosegs.png") : Tools.getImage("assets/doorclose.png"), changer);

@@ -45,6 +45,8 @@ public abstract class Checklist extends Consumable{
      *
      * @param x        x of bounding box
      * @param y        y of bounding box
+     * @param changer  the screen changer
+     * @param cur      the location of the current location
      */
     public Checklist(int x, int y, ScreenChanger changer, Location cur) {
         super(Tools.getImage("assets/note.png"), Tools.getImage("assets/note.png"),

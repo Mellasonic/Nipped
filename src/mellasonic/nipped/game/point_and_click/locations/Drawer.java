@@ -41,6 +41,7 @@ public class Drawer extends Location {
      * Class constructor
      *
      * @param changer the screen change handler
+     * @param grey whether or not the room is greyscale
      */
     public Drawer(ScreenChanger changer, boolean grey) {
         super(grey ? Tools.getImage("assets/drawergs.png") : Tools.getImage("assets/drawer.png"), changer);

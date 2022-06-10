@@ -46,6 +46,10 @@ public abstract class CatExercise implements Interactive {
     /**
      * Class Constructor
      *
+     * @param x the x value of the sprite
+     * @param y the y value of the sprite
+     * @param width the width of the sprite
+     * @param height the height of the sprite
      */
     public CatExercise(int x, int y, int width, int height){
         // an instance to this
