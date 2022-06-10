@@ -22,6 +22,10 @@ package mellasonic.nipped.main_menu;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.image.ImageView;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
+import javafx.scene.text.Text;
+import javafx.scene.text.TextAlignment;
 import mellasonic.nipped.AppState;
 import mellasonic.nipped.Main;
 import mellasonic.nipped.Tools;
@@ -42,15 +46,16 @@ public class QuitScreen implements AppState {
         bg.setFitWidth(Main.WIDTH);
         bg.setFitHeight(Main.HEIGHT);
 
-        screen = new Scene(new Group(bg));
+        // prompt the user to exit
+        Text text = Tools.createText("<Click anywhere to exit>", TextAlignment.CENTER, new Font("Bell MT", 32),
+                0, Main.HEIGHT - 100, Main.WIDTH);
+        text.setStroke(new Color(1, 1, 1, 1));
+        text.setFill(new Color(1, 1, 1, 1));
 
-        // create a timer to exit the program
-        new Timer().schedule(new TimerTask() {
-            @Override
-            public void run() {
-                Main.getApp().exit();
-            }
-        }, 5000);
+        // on click, exit
+        bg.setOnMouseClicked(me -> Main.getApp().exit());
+
+        screen = new Scene(new Group(bg, text));
     }
 
     @Override
