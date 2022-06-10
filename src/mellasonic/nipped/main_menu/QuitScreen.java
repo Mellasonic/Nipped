@@ -52,10 +52,12 @@ public class QuitScreen implements AppState {
         text.setStroke(new Color(1, 1, 1, 1));
         text.setFill(new Color(1, 1, 1, 1));
 
-        // on click, exit
-        bg.setOnMouseClicked(me -> Main.getApp().exit());
+        Group container = new Group(bg, text);
 
-        screen = new Scene(new Group(bg, text));
+        // on click, exit
+        container.setOnMouseClicked(me -> Main.getApp().exit());
+
+        screen = new Scene(container);
     }
 
     @Override
