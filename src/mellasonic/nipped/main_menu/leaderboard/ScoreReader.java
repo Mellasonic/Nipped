@@ -25,8 +25,9 @@
 */
 package mellasonic.nipped.main_menu.leaderboard;
 
-import java.util.*;
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.util.ArrayList;
 
 /**
 * This class has utilites to read scores from the text file.

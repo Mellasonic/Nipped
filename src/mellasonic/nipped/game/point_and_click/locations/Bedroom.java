@@ -33,7 +33,6 @@ import mellasonic.nipped.game.point_and_click.interactives.Button;
 import mellasonic.nipped.game.point_and_click.interactives.Direction;
 import mellasonic.nipped.game.point_and_click.interactives.Invisible;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 
 /**

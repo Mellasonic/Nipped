@@ -19,7 +19,6 @@
 
 package mellasonic.nipped.game.point_and_click.locations.level3.interactives;
 
-import javafx.scene.image.Image;
 import mellasonic.nipped.Tools;
 
 public abstract class Book extends Consumable{

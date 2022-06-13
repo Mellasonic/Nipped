@@ -24,8 +24,7 @@ import mellasonic.nipped.Tools;
 import mellasonic.nipped.game.point_and_click.interactives.Button;
 import mellasonic.nipped.game.point_and_click.interactives.Direction;
 
-import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.Collections;
 
 /**
  * an attic
@@ -44,7 +43,7 @@ public class Attic extends Location{
      */
     public Attic(ScreenChanger changer, boolean grey) {
         super(grey ? Tools.getImage("assets/atticgs.png") : Tools.getImage("assets/attic.png"), changer);
-        addObjects(Arrays.asList(
+        addObjects(Collections.singletonList(
                 new Button(Direction.D, Main.WIDTH / 2 - Button.WIDTH / 2, Main.HEIGHT - 20 - Button.HEIGHT) {
                     @Override
                     public void onClick() {

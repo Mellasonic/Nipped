@@ -38,8 +38,6 @@ import javafx.scene.text.TextAlignment;
 import mellasonic.nipped.Main;
 import mellasonic.nipped.Tools;
 
-import java.beans.EventHandler;
-
 /**
  * A card for the quiz
  */

@@ -22,7 +22,7 @@ package mellasonic.nipped.game.point_and_click.locations.level1;
 import mellasonic.nipped.game.point_and_click.locations.Drawer;
 import mellasonic.nipped.game.point_and_click.locations.ScreenChanger;
 
-import java.util.Arrays;
+import java.util.Collections;
 
 /**
  * a kitchen drawer
@@ -35,8 +35,8 @@ public class KitchenDrawer extends Drawer{
      */
     public KitchenDrawer(ConsumableHandler handler, ScreenChanger changer){
         super(changer, true);
-        addObjects(Arrays.asList(
-                new Food(502, 250){
+        addObjects(Collections.singletonList(
+                new Food(502, 250) {
                     @Override
                     public void onClick() {
                         handler.onConsume(this);

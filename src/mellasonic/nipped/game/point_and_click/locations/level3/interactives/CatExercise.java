@@ -20,14 +20,10 @@
 package mellasonic.nipped.game.point_and_click.locations.level3.interactives;
 
 import javafx.scene.Node;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import mellasonic.nipped.Tools;
 import mellasonic.nipped.game.point_and_click.interactives.Invisible;
-import mellasonic.nipped.interactable.Collider;
 import mellasonic.nipped.interactable.Interactive;
-import mellasonic.nipped.interactable.Rectangle;
 
 /**
  * The sprite for a cat exercising

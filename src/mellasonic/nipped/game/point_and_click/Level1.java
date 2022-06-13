@@ -59,12 +59,14 @@
 
 package mellasonic.nipped.game.point_and_click;
 
-import javafx.scene.text.Font;
 import mellasonic.nipped.game.point_and_click.interactives.Panel;
-import mellasonic.nipped.game.point_and_click.locations.level1.Door;
 import mellasonic.nipped.game.point_and_click.locations.ScreenChanger;
 import mellasonic.nipped.game.point_and_click.locations.level1.*;
-import java.util.*;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 /**
  * the first level
  */

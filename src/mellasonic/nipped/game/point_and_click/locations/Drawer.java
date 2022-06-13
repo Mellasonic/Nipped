@@ -23,10 +23,9 @@ import mellasonic.nipped.Tools;
 import mellasonic.nipped.game.point_and_click.Screen;
 import mellasonic.nipped.game.point_and_click.interactives.Button;
 import mellasonic.nipped.game.point_and_click.interactives.Direction;
-import mellasonic.nipped.game.point_and_click.locations.Location;
 
-import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 
 /**
  * a drawer
@@ -45,7 +44,7 @@ public class Drawer extends Location {
      */
     public Drawer(ScreenChanger changer, boolean grey) {
         super(grey ? Tools.getImage("assets/drawergs.png") : Tools.getImage("assets/drawer.png"), changer);
-        addObjects(Arrays.asList(
+        addObjects(Collections.singletonList(
                 new Button(Direction.D, 414, 436) {
                     @Override
                     public void onClick() {

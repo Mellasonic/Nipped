@@ -39,7 +39,6 @@ import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 import mellasonic.nipped.AppState;
 import mellasonic.nipped.Main;
-import mellasonic.nipped.Tools;
 import mellasonic.nipped.WinScreen;
 import mellasonic.nipped.game.cards.Level2;
 import mellasonic.nipped.game.point_and_click.Level1;

@@ -49,7 +49,6 @@ import mellasonic.nipped.Main;
 import mellasonic.nipped.game.point_and_click.interactives.Button;
 import mellasonic.nipped.game.point_and_click.interactives.Direction;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 
 import static mellasonic.nipped.Tools.getImage;

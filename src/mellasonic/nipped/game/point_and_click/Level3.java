@@ -31,7 +31,6 @@ import mellasonic.nipped.game.point_and_click.locations.Drawer;
 import mellasonic.nipped.game.point_and_click.locations.Location;
 import mellasonic.nipped.game.point_and_click.locations.ScreenChanger;
 import mellasonic.nipped.game.point_and_click.locations.level3.*;
-import mellasonic.nipped.game.point_and_click.locations.level3.interactives.Consumable;
 import mellasonic.nipped.game.point_and_click.locations.level3.interactives.ConsumableHandler;
 import mellasonic.nipped.interactable.Interactive;
 

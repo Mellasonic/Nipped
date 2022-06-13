@@ -19,9 +19,8 @@
 
 package mellasonic.nipped.game.point_and_click.locations.level1;
 
-import mellasonic.nipped.game.point_and_click.locations.ScreenChanger;
-import mellasonic.nipped.game.point_and_click.locations.level1.Note;
 import mellasonic.nipped.game.point_and_click.locations.Drawer;
+import mellasonic.nipped.game.point_and_click.locations.ScreenChanger;
 
 import java.util.Arrays;
 

@@ -22,6 +22,7 @@ package mellasonic.nipped.game.point_and_click.locations.level1;
 import mellasonic.nipped.game.point_and_click.locations.ScreenChanger;
 
 import java.util.Arrays;
+import java.util.Collections;
 
 /**
  * the bedroom
@@ -34,8 +35,8 @@ public class Bedroom extends mellasonic.nipped.game.point_and_click.locations.Be
      */
     public Bedroom(ConsumableHandler handler, ScreenChanger changer) {
         super(changer, true);
-        addObjects(Arrays.asList(
-                new Note(366, 298){
+        addObjects(Collections.singletonList(
+                new Note(366, 298) {
                     @Override
                     public void onClick() {
                         handler.onConsume(this);

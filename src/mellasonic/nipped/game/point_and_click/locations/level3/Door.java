@@ -30,6 +30,7 @@ import mellasonic.nipped.game.point_and_click.locations.level3.interactives.CatE
 import mellasonic.nipped.game.point_and_click.locations.level3.interactives.ConsumableHandler;
 
 import java.util.Arrays;
+import java.util.Collections;
 
 public class Door extends Location {
     /**
@@ -59,7 +60,7 @@ public class Door extends Location {
                         open();
 
                         // add the catexercise object when the door is opened
-                        addObjects(Arrays.asList(
+                        addObjects(Collections.singletonList(
                                 new CatExercise(368, 142, 137, 250) {
                                     @Override
                                     public void onClick() {

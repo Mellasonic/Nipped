@@ -24,6 +24,7 @@ import mellasonic.nipped.game.point_and_click.locations.level3.interactives.CatC
 import mellasonic.nipped.game.point_and_click.locations.level3.interactives.ConsumableHandler;
 
 import java.util.Arrays;
+import java.util.Collections;
 
 public class Attic extends mellasonic.nipped.game.point_and_click.locations.Attic {
 
@@ -36,7 +37,7 @@ public class Attic extends mellasonic.nipped.game.point_and_click.locations.Atti
      */
     public Attic(ScreenChanger changer, ConsumableHandler handler) {
         super(changer, false);
-        addObjects(Arrays.asList(
+        addObjects(Collections.singletonList(
                 new CatClean(414, 282) {
                     @Override
                     public void onConsume() {

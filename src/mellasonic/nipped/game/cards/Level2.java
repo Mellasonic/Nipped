@@ -19,19 +19,14 @@
 
 package mellasonic.nipped.game.cards;
 
-import javafx.event.EventHandler;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
 import mellasonic.nipped.Main;
 import mellasonic.nipped.Tools;
 import mellasonic.nipped.game.Level;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 /**

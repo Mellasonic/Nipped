@@ -18,27 +18,11 @@
  */
 package mellasonic.nipped.main_menu;
 
-import javafx.event.EventHandler;
-import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
-import javafx.scene.layout.VBox;
-import javafx.scene.text.Font;
-import javafx.scene.text.Text;
 import mellasonic.nipped.AppState;
 import mellasonic.nipped.Main;
-import mellasonic.nipped.Tools;
-import mellasonic.nipped.game.GameState;
-import mellasonic.nipped.game.ScoreState;
-import mellasonic.nipped.interactable.Button;
-import mellasonic.nipped.interactable.Interactive;
-import mellasonic.nipped.main_menu.leaderboard.Leaderboard;
-
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 
 import static mellasonic.nipped.Tools.getImage;
  /**
@@ -49,9 +33,7 @@ import static mellasonic.nipped.Tools.getImage;
    public Scene getScene(){
       Pane p = new Pane();
       ImageView bg = new ImageView(getImage("assets/splash.png"));
-      bg.setOnMouseClicked(me -> {
-         next();
-      });
+      bg.setOnMouseClicked(me -> next());
       bg.setFitWidth(Main.WIDTH);
       bg.setFitHeight(Main.HEIGHT);
       p.getChildren().add(bg);

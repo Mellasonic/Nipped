@@ -20,11 +20,11 @@
 package mellasonic.nipped.interactable;
 
 // imports
+
 import javafx.scene.Cursor;
 import javafx.scene.Node;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.Pane;
 import mellasonic.nipped.Main;
 
 /**

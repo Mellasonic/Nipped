@@ -19,7 +19,6 @@
 
 package mellasonic.nipped.game.point_and_click.locations.level1;
 
-import javafx.scene.image.Image;
 import mellasonic.nipped.Main;
 import mellasonic.nipped.Tools;
 import mellasonic.nipped.game.point_and_click.interactives.Button;
@@ -27,9 +26,7 @@ import mellasonic.nipped.game.point_and_click.interactives.Direction;
 import mellasonic.nipped.game.point_and_click.interactives.Invisible;
 import mellasonic.nipped.game.point_and_click.locations.Location;
 import mellasonic.nipped.game.point_and_click.locations.ScreenChanger;
-import mellasonic.nipped.interactable.Rectangle;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 
 /**
@@ -51,7 +48,7 @@ public abstract class Door extends Location {
     /**
      * the invisible collider for the door
      */
-    private Invisible collider;
+    private final Invisible collider;
 
     /**
      * Class constructor

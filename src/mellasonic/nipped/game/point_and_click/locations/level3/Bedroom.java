@@ -24,6 +24,7 @@ import mellasonic.nipped.game.point_and_click.locations.level3.interactives.Cons
 import mellasonic.nipped.game.point_and_click.locations.level3.interactives.Diary;
 
 import java.util.Arrays;
+import java.util.Collections;
 
 public class Bedroom extends mellasonic.nipped.game.point_and_click.locations.Bedroom {
     /**
@@ -35,8 +36,8 @@ public class Bedroom extends mellasonic.nipped.game.point_and_click.locations.Be
     public Bedroom(ScreenChanger changer, ConsumableHandler handler) {
         super(changer, false);
 
-        addObjects(Arrays.asList(
-                new Diary(365, 329-Diary.HEIGHT, changer, this) {
+        addObjects(Collections.singletonList(
+                new Diary(365, 329 - Diary.HEIGHT, changer, this) {
                     @Override
                     public void onConsume() {
                         handler.onConsume(this);

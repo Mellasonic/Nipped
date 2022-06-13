@@ -30,9 +30,6 @@ import mellasonic.nipped.AppState;
 import mellasonic.nipped.Main;
 import mellasonic.nipped.Tools;
 
-import java.util.Timer;
-import java.util.TimerTask;
-
 /**
  * A screen that is displayed when the user quits
  */

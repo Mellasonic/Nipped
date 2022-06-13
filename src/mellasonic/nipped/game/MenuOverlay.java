@@ -20,10 +20,8 @@
 package mellasonic.nipped.game;
 
 import javafx.geometry.Pos;
-import javafx.scene.Node;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
-import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 import mellasonic.nipped.Main;
 import mellasonic.nipped.Tools;

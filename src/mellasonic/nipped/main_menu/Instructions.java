@@ -32,29 +32,17 @@
 */
 package mellasonic.nipped.main_menu;
 
-import javafx.event.EventHandler;
-import javafx.geometry.Pos;
 import javafx.geometry.VPos;
-import javafx.scene.Node;
 import javafx.scene.Scene;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
-import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
 import mellasonic.nipped.AppState;
 import mellasonic.nipped.Main;
 import mellasonic.nipped.Tools;
-import mellasonic.nipped.game.GameState;
-import mellasonic.nipped.interactable.Button;
-import mellasonic.nipped.interactable.Interactive;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 

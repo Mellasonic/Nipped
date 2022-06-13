@@ -19,9 +19,7 @@
 
 package mellasonic.nipped.game.point_and_click.locations.level3.interactives;
 
-import javafx.scene.image.Image;
 import mellasonic.nipped.Tools;
-import mellasonic.nipped.game.point_and_click.Screen;
 import mellasonic.nipped.game.point_and_click.locations.Location;
 import mellasonic.nipped.game.point_and_click.locations.ScreenChanger;
 import mellasonic.nipped.game.point_and_click.locations.level3.overlays.ChecklistOverlay;

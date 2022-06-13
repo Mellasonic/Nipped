@@ -19,7 +19,6 @@
 
 package mellasonic.nipped.game.point_and_click.interactives;
 
-import javafx.scene.image.Image;
 import mellasonic.nipped.Tools;
 import mellasonic.nipped.interactable.Rectangle;
 
